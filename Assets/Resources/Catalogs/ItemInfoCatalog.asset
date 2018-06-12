@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0cf3803a1d53042ac81d3f5bdf6b07, type: 3}
+  m_Name: ItemInfoCatalog
+  m_EditorClassIdentifier: 
+  Items:
+  - Id: 0
+    Info:
+      Name: Unknow
+      Description: Something wrong...
+  - Id: 1
+    Info:
+      Name: Green skin
+      Description: Great skin for a great player
+  - Id: 2
+    Info:
+      Name: Yellow skin
+      Description: Yellow like a big yellow refrigerator
+  - Id: 3
+    Info:
+      Name: Red skin
+      Description: Skin of a true Spartan
+  - Id: 4
+    Info:
+      Name: Blue skin
+      Description: For special man
+  - Id: 5
+    Info:
+      Name: Gray skin
+      Description: Gray like my grandfather horse
+  - Id: 6
+    Info:
+      Name: Violet skin
+      Description: Violet is a new black
+  - Id: 7
+    Info:
+      Name: Child Cap
+      Description: Child Cap
+  - Id: 8
+    Info:
+      Name: Unicorn Horn
+      Description: Unicorn Horn
+  - Id: 9
+    Info:
+      Name: Viking
+      Description: Viking
+  - Id: 10
+    Info:
+      Name: Glasses
+      Description: Good glasses
+  - Id: 11
+    Info:
+      Name: Military helmet
+      Description: Military helmet

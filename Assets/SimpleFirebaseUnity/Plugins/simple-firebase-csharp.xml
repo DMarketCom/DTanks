@@ -1,0 +1,783 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>simple-firebase-csharp</name>
+    </assembly>
+    <members>
+        <member name="M:SimpleFirebaseUnity.DataSnapshot.#ctor(System.String)">
+            <summary>
+            Creates snapshot from Json string 
+            </summary>
+            <param name="json">Json string</param>
+        </member>
+        <member name="P:SimpleFirebaseUnity.DataSnapshot.Keys">
+            <summary>
+            If snapshot is a Dictionary, returns keys of the snapshot , else null
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.DataSnapshot.FirstKey">
+            <summary>
+            If snapshot is a Dictionary, gives the first key found on snapshot, else null
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.DataSnapshot.RawJson">
+            <summary>
+            Raw json of snapshot
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.DataSnapshot.RawValue">
+            <summary>
+            Raw value of snapshot
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.DataSnapshot.Value``1">
+            <summary>
+            Gets value from snapshot
+            </summary>
+            <typeparam name="T">Desired type</typeparam>
+            <returns>Value of snapshot as the defined type, null if typecasting failed</returns>
+        </member>
+        <member name="P:SimpleFirebaseUnity.Firebase.Parent">
+            <summary>
+            Parent of current firebase pointer
+            </summary>                 
+        </member>
+        <member name="P:SimpleFirebaseUnity.Firebase.Root">
+            <summary>
+            Root firebase pointer of the endpoint
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.Firebase.Endpoint">
+            <summary>
+            Returns .json endpoint to this Firebase point
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.Firebase.Host">
+            <summary>
+            Returns main host of Firebase
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.Firebase.FullKey">
+            <summary>
+            Returns full key path to current pointer from root endpoint
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.Firebase.Key">
+            <summary>
+            Returns key of current pointer
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.Firebase.Credential">
+            <summary>
+            Credential for auth parameter. If no credential set to empty string
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.Firebase.RulesEndpoint">
+            <summary>
+            Gets the rules endpoint.
+            </summary>
+            <value>The rules endpoint.</value>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.#ctor(SimpleFirebaseUnity.Firebase,System.String,SimpleFirebaseUnity.FirebaseRoot,System.Boolean)">
+            <summary>
+            Create new Firebase endpoint
+            </summary>
+            <param name="_parent">Parent Firebase pointer</param>
+            <param name="_key">Key under parent Firebase</param>
+            <param name="_root">Root Firebase pointer</param>
+            <param name="inheritCallback">If set to <c>true</c> inherit callback.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Child(System.String,System.Boolean)">
+            <summary>
+            Get Firebase child from given key
+            </summary>
+            <param name="_key">A string</param>
+            <param name="inheritCallback">If set to <c>true</c> inherit callback.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Childs(System.Collections.Generic.List{System.String})">
+            <summary>
+            Get Firebase childs from given keys
+            </summary>
+            <param name="_keys">List of string</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Childs(System.String[])">
+            <summary>
+            Get Firebase childs from given keys
+            </summary>
+            <param name="_keys">Array of string</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Copy(System.Boolean)">
+            <summary>
+            Get a fresh copy of this Firebase object
+            </summary>
+            <param name="inheritCallback">If set to <c>true</c> inherit callback.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.GetValue(SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Fetch data from Firebase. Calls OnGetSuccess on success, OnGetFailed on failed.
+            OnGetSuccess action contains the corresponding Firebase and the fetched Snapshot
+            OnGetFailed action contains the error exception
+            </summary>
+            <param name="query">REST call parameters wrapped in FirebaseQuery class</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.GetValue(System.String)">
+            <summary>
+            Fetch data from Firebase. Calls OnGetSuccess on success, OnGetFailed on failed.
+            OnGetSuccess action contains the corresponding Firebase and the fetched Snapshot
+            OnGetFailed action contains the error exception
+            </summary>
+            <param name="param">REST call parameters on a string. Example: &quot;orderBy=&#92;"$key&#92;"&quot;print=pretty&quot;shallow=true"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetValue(System.String,System.Boolean,System.String)">
+            <summary>
+            Set value of a key on Firebase. Calls OnUpdateSuccess on success, OnUpdateFailed on failed.
+            OnUpdateSuccess action contains the corresponding Firebase and the response Snapshot
+            OnUpdateFailed action contains the error exception
+            </summary>
+            <param name="json">String</param>
+            <param name="isJson">True if string is json (necessary to differentiate with the other overloading)</param>
+            <param name="param">REST call parameters on a string. Example: "auth=ASDF123"</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetValue(System.Object,System.String)">
+            <summary>
+            Set value of a key on Firebase. Calls OnUpdateSuccess on success, OnUpdateFailed on failed.
+            OnSetSuccess action contains the corresponding Firebase and the response Snapshot
+            OnSetFailed action contains the error exception
+            </summary>
+            <param name="_val">Set value</param>
+            <param name="param">REST call parameters on a string. Example: "auth=ASDF123"</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetValue(System.String,System.Boolean,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Set value of a key on Firebase. Calls OnUpdateSuccess on success, OnUpdateFailed on failed.
+            OnSetSuccess action contains the corresponding Firebase and the response Snapshot
+            OnSetFailed action contains the error exception
+            </summary>
+            <param name="json">String</param>
+            <param name="isJson">True if string is json (necessary to differentiate the other overloading)</param>
+            <param name="query">REST call parameters wrapped in FirebaseQuery class</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetValue(System.Object,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Set value of a key on Firebase. Calls OnUpdateSuccess on success, OnUpdateFailed on failed.
+            OnSetSuccess action contains the corresponding Firebase and the response Snapshot
+            OnSetFailed action contains the error exception
+            </summary>
+            <param name="_val">Update value</param>
+            <param name="query">REST call parameters wrapped in FirebaseQuery class</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.UpdateValue(System.Object,System.String)">
+            <summary>
+            Update value of a key on Firebase. Calls OnUpdateSuccess on success, OnUpdateFailed on failed.
+            OnUpdateSuccess action contains the corresponding Firebase and the response Snapshot
+            OnUpdateFailed action contains the error exception
+            </summary>
+            <param name="_val">Set value</param>
+            <param name="param">REST call parameters on a string. Example: "auth=ASDF123"</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.UpdateValue(System.String,System.Boolean,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Update value of a key on Firebase. Calls OnUpdateSuccess on success, OnUpdateFailed on failed.
+            OnUpdateSuccess action contains the corresponding Firebase and the response Snapshot
+            OnUpdateFailed action contains the error exception
+            </summary>
+            <param name="json">String</param>
+            <param name="isJson">True if string is json (necessary to differentiate the other overloading)</param>
+            <param name="query">REST call parameters wrapped in FirebaseQuery class</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.UpdateValue(System.Object,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Update value of a key on Firebase. Calls OnUpdateSuccess on success, OnUpdateFailed on failed.
+            OnUpdateSuccess action contains the corresponding Firebase and the response Snapshot
+            OnUpdateFailed action contains the error exception
+            </summary>
+            <param name="_val">Update value</param>
+            <param name="query">REST call parameters wrapped in FirebaseQuery class</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Push(System.String,System.Boolean,System.String)">
+            <summary>
+            Push a value (with random new key) on a key in Firebase. Calls OnPushSuccess on success, OnPushFailed on failed.
+            OnPushSuccess action contains the corresponding Firebase and the response Snapshot
+            OnPushFailed action contains the error exception
+            </summary>
+            <param name="json">String</param>
+            <param name="isJson">True if string is json (necessary to differentiate with the other overloading)</param>
+            <param name="param">REST call parameters on a string. Example: "auth=ASDF123"</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Push(System.Object,System.String)">
+            <summary>
+            Update value of a key on Firebase. Calls OnUpdateSuccess on success, OnUpdateFailed on failed.
+            OnUpdateSuccess action contains the corresponding Firebase and the response Snapshot
+            OnUpdateFailed action contains the error exception
+            </summary>
+            <param name="_val">New value</param>
+            <param name="param">REST call parameters on a string. Example: "auth=ASDF123"</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Push(System.String,System.Boolean,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Push a value (with random new key) on a key in Firebase. Calls OnPushSuccess on success, OnPushFailed on failed.
+            OnPushSuccess action contains the corresponding Firebase and the response Snapshot
+            OnPushFailed action contains the error exception
+            </summary>
+            <param name="json">String</param>
+            <param name="isJson">True if string is json (necessary to differentiate with the other overloading)</param>
+            <param name="param">REST call parameters on a string. Example: "auth=ASDF123"</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Push(System.Object,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Push a value (with random new key) on a key in Firebase. Calls OnPushSuccess on success, OnPushFailed on failed.
+            OnPushSuccess action contains the corresponding Firebase and the response Snapshot
+            OnPushFailed action contains the error exception
+            </summary>
+            <param name="_val">New value</param>
+            <param name="query">REST call parameters wrapped in FirebaseQuery class</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Delete(System.String)">
+            <summary>
+            Delete a key in Firebase. Calls OnDeleteSuccess on success, OnDeleteFailed on failed.
+            OnDeleteSuccess action contains the corresponding Firebase and the response Snapshot
+            OnDeleteFailed action contains the error exception
+            </summary>
+            <param name="param">REST call parameters on a string. Example: "auth=ASDF123"</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.Delete(SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Delete a key in Firebase. Calls OnDeleteSuccess on success, OnDeleteFailed on failed.
+            OnDeleteSuccess action contains the corresponding Firebase and the response Snapshot
+            OnDeleteFailed action contains the error exception
+            </summary>
+            <param name="query">REST call parameters wrapped in FirebaseQuery class</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetTimeStamp(System.String)">
+            <summary>
+            Sets the time stamp with the time since UNIX epoch by server value (in milliseconds).
+            </summary>
+            <param name="keyName">Key name.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetTimeStamp(System.String,System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.DataSnapshot},System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.FirebaseError})">
+            <summary>
+            Sets the time stamp with the time since UNIX epoch by server value (in milliseconds).
+            </summary>
+            <param name="keyName">Key name.</param>
+            <param name="OnSuccess">On success callback.</param>
+            <param name="OnFailed">On fail callback.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.GetRules(System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.DataSnapshot},System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.FirebaseError},System.String)">
+            <summary>
+            Gets Firebase Rules. Returned value is treated the same as returned value on Get request, packaged in DataSnapshot. Please note that FIREBASE_SECRET is required. If secret parameter is not set, it will use the Credential that has been set when CreateNew called.
+            </summary>
+            <param name="OnSuccess">On success callback.</param>
+            <param name="OnFailed">On failed callback.</param>
+            <param name="secret">Firebase Secret.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetRules(System.String,System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.DataSnapshot},System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.FirebaseError},System.String)">
+            <summary>
+            Sets Firebase Rules. Returned value is treated the same as returned value on Set request, packaged in DataSnapshot.Please note that FIREBASE_SECRET is required. If secret parameter is not set, it will use the Credential that has been set when CreateNew called.
+            </summary>
+            <param name="json">Valid rules Json.</param>
+            <param name="OnSuccess">On success callback.</param>
+            <param name="OnFailed">On failed callback.</param>
+            <param name="secret">Firebase Secret.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetRules(System.String,System.String)">
+            <summary>
+            Sets Firebase Rules silently. Please note that FIREBASE_SECRET is required. If secret parameter is not set, it will use the Credential that has been set when CreateNew called.
+            </summary>
+            <param name="json">Valid rules Json.</param>
+            <param name="secret">Firebase Secret.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetRules(System.Collections.Generic.Dictionary{System.String,System.Object},System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.DataSnapshot},System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.FirebaseError},System.String)">
+            <summary>
+            Sets Firebase Rules silently. Please note that FIREBASE_SECRET is required. If secret parameter is not set, it will use the Credential that has been set when CreateNew called.Sets the rules.
+            </summary>
+            <param name="rules">Valid rules that could be serialized into json.</param>
+            <param name="OnSuccess">On success.</param>
+            <param name="OnFailed">On failed.</param>
+            <param name="secret">Firebase Secret.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.SetRules(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            Sets Firebase Rules silently. Please note that FIREBASE_SECRET is required. If secret parameter is not set, it will use the Credential that has been set when CreateNew called.Sets the rules.
+            </summary>
+            <param name="rules">Valid rules that could be serialized into json.</param>
+            <param name="secret">Firebase Secret.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.CreateNew(System.String,System.String)">
+            <summary>
+            Creates new Firebase pointer at a valid Firebase url
+            </summary>
+            <param name="host">Example: "hostname.firebaseio.com" (with no https://)</param>
+            <param name="credential">Credential value for auth parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.Firebase.TimeStampToDateTime(System.Int64)">
+            <summary>
+            Converts unix time stamp into DateTime
+            </summary>
+            <returns>The stamp to date time.</returns>
+            <param name="unixTimeStamp">Unix time stamp.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseError.Create(System.Net.WebException)">
+            <summary>
+            Create the FirebaseError initialized based on the given WebException.
+            </summary>
+            <param name="webEx">Web exception.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseError.Create(System.Net.HttpStatusCode)">
+            <summary>
+            Create the FirebaseError initialized based on the given http status code.
+            </summary>
+            <param name="status">Http status code.</param>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseError.Status">
+            <summary>
+            Gets the status code. 
+            Tips: Typecast to integer to get the code. You could also typecast to string to print as it is.
+            </summary>
+            <value>The status.</value>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseManager.OnDestroy">
+            <summary>
+            When Unity quits, it destroys objects in a random order.
+            In principle, a Singleton is only destroyed when application quits.
+            If any script calls Instance after it have been destroyed, 
+              it will create a buggy ghost object that will stay on the Editor scene
+              even after stopping playing the Application. Really bad!
+            So, this was made to be sure we're not creating that buggy ghost object.
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseObserver.#ctor(SimpleFirebaseUnity.Firebase,System.Single,System.String)">
+            <summary>
+            Creates an Observer that calls GetValue request at the given refresh rate (in seconds) and checks whether the value has changed.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="refreshRate">Refresh rate (in seconds).</param>
+            <param name="getParam">Parameter value for the Get request that will be called periodically.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseObserver.#ctor(SimpleFirebaseUnity.Firebase,System.Single,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Creates an Observer that calls GetValue request at the given refresh rate (in seconds) and checks whether the value has changed.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="refreshRate">Refresh rate (in seconds).</param>
+            <param name="getParam">Parameter value for the Get request that will be called periodically.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseObserver.Start">
+            <summary>
+            Start the observer.
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseObserver.Stop">
+            <summary>
+            Stop the observer.
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseParam.Parameter">
+            <summary>
+            Created parameter for REST API call
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseParam.SafeParameter">
+            <summary>
+            Created parameter for REST API call with the symbols encoded to url-safe escape characters.
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.#ctor(System.String)">
+            <summary>
+            Create new FirebaseQuery
+            </summary>
+            <param name="param">REST call parameters on a string. Example: &quot;orderBy=&#92;"$key&#92;"&quot;print=pretty&quot;auth=secret123"></param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.Add(System.String)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.Add(System.String,System.String,System.Boolean)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data . Set quoted parameter if necessary
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.Add(System.String,System.Int32)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.Add(System.String,System.Single)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.Add(System.String,System.Boolean)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.OrderByChild(System.String)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.OrderByKey">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.OrderByValue">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.OrderByPriority">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.LimitToFirst(System.Int32)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.LimitToLast(System.Int32)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.StartAt(System.String)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.StartAt(System.Int32)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.StartAt(System.Boolean)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.StartAt(System.Single)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.EndAt(System.String)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.EndAt(System.Int32)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.EndAt(System.Boolean)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.EndAt(System.Single)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.EqualTo(System.String)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.EqualTo(System.Int32)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.EqualTo(System.Boolean)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.EqualTo(System.Single)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.PrintPretty">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.PrintSilent">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.Shallow">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseParam.Auth(System.String)">
+            <summary>
+            For details see https://firebase.google.com/docs/database/rest/retrieve-data
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseParam.Empty">
+            <summary>
+            Empty paramete or \"\"
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="!:SimpleFirebaseUnity.FirebaseQueueManager"/> class.
+            </summary>
+            <param name="_autoStart">If set to <c>true</c> auto start when a queue added.</param>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseQueue.Count">
+            <summary>
+            Gets the number of request in queue.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.IsEmpty">
+            <summary>
+            Determines whether the queue is empty.
+            </summary>
+            <returns><c>true</c> if this instance is empty; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueGet(SimpleFirebaseUnity.Firebase,System.String)">
+            <summary>
+            Adds Firebase Get request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueGet(SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Adds Firebase Get request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueSet(SimpleFirebaseUnity.Firebase,System.Object,System.String)">
+            <summary>
+            Adds Firebase Set request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="val">Value.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueSet(SimpleFirebaseUnity.Firebase,System.Object,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Adds Firebase Set request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="val">Value.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueSet(SimpleFirebaseUnity.Firebase,System.String,System.Boolean,System.String)">
+            <summary>
+            Adds Firebase Set request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="json">Json.</param>
+            <param name="isJson">If set to <c>true</c> is json.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueSet(SimpleFirebaseUnity.Firebase,System.String,System.Boolean,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Adds Firebase Set request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="json">Json.</param>
+            <param name="isJson">If set to <c>true</c> is json.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueUpdate(SimpleFirebaseUnity.Firebase,System.Object,System.String)">
+            <summary>
+            Adds Firebase Update request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="val">Value.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueUpdate(SimpleFirebaseUnity.Firebase,System.Object,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Adds Firebase Update request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="val">Value.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueUpdate(SimpleFirebaseUnity.Firebase,System.String,System.Boolean,System.String)">
+            <summary>
+            Adds Firebase Update request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="json">Json.</param>
+            <param name="isJson">If set to <c>true</c> is json.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueUpdate(SimpleFirebaseUnity.Firebase,System.String,System.Boolean,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Adds Firebase Update request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="json">Json.</param>
+            <param name="isJson">If set to <c>true</c> is json.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueuePush(SimpleFirebaseUnity.Firebase,System.Object,System.String)">
+            <summary>
+            Adds Firebase Push request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="val">Value.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueuePush(SimpleFirebaseUnity.Firebase,System.Object,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Adds Firebase Push request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="val">Value.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueuePush(SimpleFirebaseUnity.Firebase,System.String,System.Boolean,System.String)">
+            <summary>
+            Adds Firebase Push request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="json">Json.</param>
+            <param name="isJson">If set to <c>true</c> is json.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueuePush(SimpleFirebaseUnity.Firebase,System.String,System.Boolean,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Adds Firebase Push request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="json">Json.</param>
+            <param name="isJson">If set to <c>true</c> is json.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueDelete(SimpleFirebaseUnity.Firebase,System.String)">
+            <summary>
+            Adds Firebase Delete request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueDelete(SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.FirebaseParam)">
+            <summary>
+            Adds Firebase Delete request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="param">Parameter.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueSetTimeStamp(SimpleFirebaseUnity.Firebase,System.String)">
+            <summary>
+            Adds Firebase Set Time Stamp request to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="keyName">Time stamp key name.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.AddQueueSetTimeStamp(SimpleFirebaseUnity.Firebase,System.String,System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.DataSnapshot},System.Action{SimpleFirebaseUnity.Firebase,SimpleFirebaseUnity.FirebaseError})">
+            <summary>
+            Adds Firebase Set Time Stamp request with callback to queue.
+            </summary>
+            <param name="firebase">Firebase.</param>
+            <param name="keyName">Key name.</param>
+            <param name="_OnSuccess">On success callback.</param>
+            <param name="_OnFailed">On fail callback.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseQueue.ForceClearQueue">
+            <summary>
+            Force stop the command queue chain and clears the queue.
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseRoot.Endpoint">
+            <summary>
+            Returns .json endpoint to this Firebase point
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseRoot.Credential">
+            <summary>
+            Credential for auth parameter
+            </summary>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseRoot.RulesEndpoint">
+            <summary>
+            Returns .json endpoint to Firebase Rules.
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseRoot.Copy">
+            <summary>
+            Copy this instance.
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseRoot.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SimpleFirebaseUnity.FirebaseRoot"/> class.
+            </summary>
+            <param name="_host">Host.</param>
+            <param name="_cred">Cred.</param>
+        </member>
+        <member name="P:SimpleFirebaseUnity.FirebaseRoot.Host">
+            <summary>
+            Returns main host of Firebase
+            </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseRoot.StartCoroutine(System.Collections.IEnumerator)">
+            <summary>
+            Starts the coroutine.
+            </summary>
+            <param name="routine">Routine.</param>
+        </member>
+        <member name="M:SimpleFirebaseUnity.FirebaseRoot.StopCoroutine(System.Collections.IEnumerator)">
+            <summary>
+            Stops the coroutine.
+            </summary>
+            <param name="routine">Routine.</param>
+        </member>
+        <member name="T:SimpleFirebaseUnity.MiniJSON.Json">
+             <summary>
+             This class encodes and decodes JSON strings.
+             Spec. details, see http://www.json.org/
+            
+             JSON uses Arrays and Objects. These correspond here to the datatypes IList and IDictionary.
+             All numbers are parsed to doubles.
+             </summary>
+        </member>
+        <member name="M:SimpleFirebaseUnity.MiniJSON.Json.Deserialize(System.String)">
+            <summary>
+            Parses the string json into a value
+            </summary>
+            <param name="json">A JSON string.</param>
+            <returns>An List&lt;object&gt;, a Dictionary&lt;string, object&gt;, a double, an integer,a string, null, true, or false</returns>
+        </member>
+        <member name="M:SimpleFirebaseUnity.MiniJSON.Json.Serialize(System.Object)">
+            <summary>
+            Converts a IDictionary / IList object or a simple type (string, int, etc.) into a JSON string
+            </summary>
+            <param name="json">A Dictionary&lt;string, object&gt; / List&lt;object&gt;</param>
+            <returns>A JSON encoded string, or null if object 'json' is not serializable</returns>
+        </member>
+    </members>
+</doc>

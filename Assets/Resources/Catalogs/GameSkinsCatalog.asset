@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5eff0e1ad43b24dab246554ad6e3c3, type: 3}
+  m_Name: GameSkinsCatalog
+  m_EditorClassIdentifier: 
+  Items:
+  - ItemType: 0
+    TankMaterial: {fileID: 0}
+    ItemPickUpMaterial: {fileID: 0}
+  - ItemType: 1
+    TankMaterial: {fileID: 2100000, guid: dc04d2d491b21394182e34559f9e9dd7, type: 2}
+    ItemPickUpMaterial: {fileID: 2100000, guid: eca95def0706d6147a818e3c942a3a7a,
+      type: 2}
+  - ItemType: 2
+    TankMaterial: {fileID: 2100000, guid: 3cbf3b3fcce509c448df0aa6fa7c3201, type: 2}
+    ItemPickUpMaterial: {fileID: 2100000, guid: ed793a2fb827fd44194d467039cbb68a,
+      type: 2}
+  - ItemType: 3
+    TankMaterial: {fileID: 2100000, guid: cdc52e19754d4764f9178f3ce67d7bcf, type: 2}
+    ItemPickUpMaterial: {fileID: 2100000, guid: f1ab5244e33cb5c4898444bb9c746f9b,
+      type: 2}
+  - ItemType: 4
+    TankMaterial: {fileID: 2100000, guid: 652c10d71d3c3104b9b0d1724c221dae, type: 2}
+    ItemPickUpMaterial: {fileID: 2100000, guid: 3ff879bab8993904e9becf593d366528,
+      type: 2}
+  - ItemType: 5
+    TankMaterial: {fileID: 2100000, guid: 3897e0123c5ef264d8e708ab139bd550, type: 2}
+    ItemPickUpMaterial: {fileID: 2100000, guid: 8007369ad8b8f8141ab81dd91306bdff,
+      type: 2}
+  - ItemType: 6
+    TankMaterial: {fileID: 2100000, guid: 12c120f2400576c4f97a98bcca5529bc, type: 2}
+    ItemPickUpMaterial: {fileID: 2100000, guid: 812199c021b3745f398a86a49ef69de6,
+      type: 2}

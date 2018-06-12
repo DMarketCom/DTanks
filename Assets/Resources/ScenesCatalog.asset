@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e06a6105ab0f847823ced1ca4c351f, type: 3}
+  m_Name: ScenesCatalog
+  m_EditorClassIdentifier: 
+  Scenes:
+  - Type: 0
+    Scene: _start
+  - Type: 3
+    Scene: Authorization
+  - Type: 4
+    Scene: Game
+  - Type: 2
+    Scene: Lobby
+  - Type: 1
+    Scene: SelectAppType
+  - Type: 5
+    Scene: Server
+  - Type: 6
+    Scene: Shop
