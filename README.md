@@ -5,13 +5,13 @@ Project’s Basic Structure
 
 ####The structure of the game is broken down into the following scenes:
 
-	 *_start* is the base scene with the main controller
-	 *SelectAppType*. Contains the application selection logic: client, server, or offline
-	 *Lobby*. Contains logic for server connection
-	 *Authorization*. Contains the logic for authorization / registration within DTanks game
-	 *Game*. Contains game’s battle logic; if mode is “multiplayer”, every player can get virtual in-game items
-	 *Server*. Contains server logic
-	 *Shop*. Contains the game content interaction logic and the logic of interaction with the Basic Widget
+1. *_start* is the base scene with the main controller
+2. *SelectAppType*. Contains the application selection logic: client, server, or offline
+3. *Lobby*. Contains logic for server connection
+4. *Authorization*. Contains the logic for authorization / registration within DTanks game
+5. *Game*. Contains game’s battle logic; if mode is “multiplayer”, every player can get virtual in-game items
+6. *Server*. Contains server logic
+7. *Shop*. Contains the game content interaction logic and the logic of interaction with the Basic Widget
 
 Basic Structure of Basic Widget Integration Part
 
