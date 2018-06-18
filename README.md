@@ -3,7 +3,7 @@
 The project contains a client and a master game server along with an integrated DMarket widget
 (BasicWidget) for DTanks game.
 
-##### Project’s Basic Structure
+#### Project’s Basic Structure
 
 The structure of the game is broken down into the following scenes:
 
@@ -16,7 +16,7 @@ The structure of the game is broken down into the following scenes:
     6. Server. Contains server logic
     7. Shop. Contains the game content interaction logic and the logic of interaction with the Basic Widget
 
-##### Basic Structure of Basic Widget Integration Part
+#### Basic Structure of Basic Widget Integration Part
 
 On a client side, you can find the following:
         
