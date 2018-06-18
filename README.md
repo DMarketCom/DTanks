@@ -1,9 +1,9 @@
-###DTank documentation
+### DTank documentation
 
 The project contains a client and a master game server along with an integrated DMarket widget (BasicWidget) for DTanks game.
 Project’s Basic Structure
 
-####The structure of the game is broken down into the following scenes:
+#### The structure of the game is broken down into the following scenes:
 
 1. *_start* is the base scene with the main controller
 2. *SelectAppType*. Contains the application selection logic: client, server, or offline
@@ -15,7 +15,7 @@ Project’s Basic Structure
 
 Basic Structure of Basic Widget Integration Part
 
-####On a client side, you can find the following:
+#### On a client side, you can find the following:
 
 1. *_start* scene
 The BasicWidget prefab itself is located.
