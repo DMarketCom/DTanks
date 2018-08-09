@@ -108,9 +108,13 @@ namespace DMarketSDK.IntegrationAPI.Internal
             {
                 var item = query[key];
                 bool isNeedAddItem = item != null;
-                if (isNeedAddItem && item is int)
+                if (isNeedAddItem && (item is int))
                 {
                     isNeedAddItem = (int)item != 0;
+                }
+                else if (isNeedAddItem && (item is long))
+                {
+                    isNeedAddItem = (long)item != 0;
                 }
                 else if (isNeedAddItem && item is string)
                 {

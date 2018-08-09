@@ -8,13 +8,14 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
     {
         private const string Path = "/auth/dmarket/logout";
 		
+
         public LogoutRequest(string basicToken, string dmarketToken)
         {
 			if (string.IsNullOrEmpty(basicToken)) throw new ArgumentNullException("basicToken");
 			if (string.IsNullOrEmpty(dmarketToken)) throw new ArgumentNullException("dmarketToken");
-
             Params = new RequestParams
             {
+
 			};
 			WithBasicToken(basicToken);
 			WithDMarketToken(dmarketToken);
@@ -22,10 +23,11 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
 
         public class RequestParams
         {
+
 		}
 
         public class Response
-        {
+		{
 		}
 
         protected override string GetBasePath()

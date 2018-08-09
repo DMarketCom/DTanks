@@ -1,10 +1,9 @@
-﻿using DMarketSDK.Common.Forms.AnimationComponents;
-using SHLibrary.ObserverView;
+﻿using SHLibrary.ObserverView;
+using DMarketSDK.Common.Forms.AnimationComponents;
 
 namespace DMarketSDK.Common.Forms
 {
-    public abstract class AnimObserverFormBase<T> : ObserverViewBase<T>
-        where T : IObservable
+    public abstract class AnimObserverFormBase<T> : ObserverViewBase<T> where T : IObservable
     {
         private IFormAnimationComponent _anim;
 
@@ -30,7 +29,7 @@ namespace DMarketSDK.Common.Forms
 
         protected virtual IFormAnimationComponent CreateAnimComponent()
         {
-            return new FadeAnimationComponent(new TweenAnimParametrs(gameObject));
+            return new FadeAnimationComponent(new TweenAnimParameters(gameObject));
         }
     }
 }

@@ -1,0 +1,36 @@
+[
+  {
+    "id": "Green Skin",
+    "meta": {
+      "title": "Green",
+      "description": "",
+      "tags": [
+        "skin",
+        "decoration",
+        "small"
+      ],
+      "images": [
+        {
+          "image": "https://image.ibb.co/jKYYHo/Item_Skin_Green.png",
+          "type": "item"
+        }
+      ]
+    }
+  },
+  {
+    "id": "Red Skin",
+    "meta": {
+      "title": "Red",
+      "description": "So fucking red",
+      "tags": [
+        "default_tag"
+      ],
+      "images": [
+        {
+          "image": "https://image.ibb.co/jKYYHo/Item_Skin_Green.png",
+          "type": "item"
+        }
+      ]
+    }
+  }
+]

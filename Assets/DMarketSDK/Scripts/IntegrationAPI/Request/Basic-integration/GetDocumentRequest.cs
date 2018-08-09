@@ -22,10 +22,11 @@ namespace DMarketSDK.IntegrationAPI.Request.BasicIntegration
 
         public class RequestParams
         {
+
 		}
 
         public class Response
-        {
+		{		
 			public string body;
 		}
 
@@ -39,6 +40,5 @@ namespace DMarketSDK.IntegrationAPI.Request.BasicIntegration
         {
             return RequestMethod.Get;
         }
-
     }
 }

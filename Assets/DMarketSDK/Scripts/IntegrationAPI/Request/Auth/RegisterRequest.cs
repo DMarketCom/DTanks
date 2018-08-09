@@ -9,10 +9,10 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
     {
         private const string Path = "/auth/dmarket/register";
 		
+
         public RegisterRequest(string basicToken, string email, string password, string username)
         {
 			if (string.IsNullOrEmpty(basicToken)) throw new ArgumentNullException("basicToken");
-
             Params = new RequestParams
             {
 				email = email,
@@ -30,8 +30,8 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
 		}
 
         public class Response
-        {
-			public int expiresAt;
+		{		
+			public long expiresAt;
 			public string refreshToken;
 			public string token;
 			public string tokenType;
@@ -46,15 +46,14 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
         {
             return RequestMethod.Post;
         }
-
 		protected override Dictionary<string, object> GetBody()
 		{
-			return new Dictionary<string, object>
-			{
+			return new Dictionary<string, object>(){
 				{"email", Params.email},
-			    {"password", Params.password},
-			    {"username", Params.username}
+				{"password", Params.password},
+				{"username", Params.username}
 			};
 		}
+		
     }
 }

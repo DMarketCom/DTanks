@@ -166,7 +166,7 @@ public class SimpleInput : MonoBehaviour
 	{
 		SceneManager.sceneLoaded -= OnSceneChanged;
 	}
-    
+
 	private static void OnSceneChanged( Scene scene, LoadSceneMode loadSceneMode )
 	{
 		for( int i = 0; i < trackedTemporaryAxes.Count; i++ )
@@ -175,7 +175,7 @@ public class SimpleInput : MonoBehaviour
 		for( int i = 0; i < trackedTemporaryButtons.Count; i++ )
 			trackedTemporaryButtons[i].StopTracking();
 
-		for( int i = 0; i < trackedTemporaryMouseButtons.Count; i++ )
+		for( int i = 0; i < trackedTemporaryButtons.Count; i++ )
 			trackedTemporaryMouseButtons[i].StopTracking();
 
 		trackedTemporaryAxes.Clear();

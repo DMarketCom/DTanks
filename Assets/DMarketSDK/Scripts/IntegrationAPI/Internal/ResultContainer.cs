@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json;
+using SHLibrary.Logging;
 
 namespace DMarketSDK.IntegrationAPI.Internal
 {
@@ -53,16 +54,19 @@ namespace DMarketSDK.IntegrationAPI.Internal
                     };
                 }
             }
-            catch (JsonException)
+            catch (JsonException e)
             {
+                DevLogger.Error(string.Format("Cannot parse {0}. Error: {1}", rawResponse, e.Message),
+                    MarketLogType.MarketApi);
                 error = new Error
                 {
-                    ErrorCode = ErrorCode.Unknown,
+                    ErrorCode = ErrorCode.CannotParseResponse,
                     ErrorMessage = "Cant parse response to destination type"
                 };
             }
             catch (Exception e)
             {
+                DevLogger.Error(e.Message, MarketLogType.MarketApi);
                 error = new Error
                 {
                     ErrorCode = ErrorCode.Unknown,

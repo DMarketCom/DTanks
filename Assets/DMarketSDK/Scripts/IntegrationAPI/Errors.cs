@@ -2,6 +2,9 @@
 {
 	public enum ErrorCode
     {
+        CannotParseResponse = -11,
+        None = -10,
+
         Unknown = -1,
         CannotResolveDestinationHost = 0,
         RequestTimeout = 408,
@@ -46,7 +49,13 @@
         EmptySellOfferId = 4411,
         InventoryItemNotFound = 4412,
         Internal = 5000,
-        
+
+        EmptyLogin = 6000,
+        EmptyPassword = 6001,
+        EmptyEmail = 6002,
+        WrongEmailPattern = 6003,
+        PasswordsAreNotEqual = 6004,
+
         Highest
     }
 

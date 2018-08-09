@@ -8,23 +8,25 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
     {
         private const string Path = "/auth/dmarket/refresh-token";
 		
+
         public RefreshTokenRequest(string dmarketRefreshToken)
         {
 			if (string.IsNullOrEmpty(dmarketRefreshToken)) throw new ArgumentNullException("dmarketRefreshToken");
-
             Params = new RequestParams
             {
+
 			};
 			WithDMarketRefreshToken(dmarketRefreshToken);
         }
 
         public class RequestParams
         {
+
 		}
 
         public class Response
-        {
-			public int expiresAt;
+		{		
+			public long expiresAt;
 			public string refreshToken;
 			public string token;
 			public string tokenType;

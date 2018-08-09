@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481ae3c8c27e61346974232e9e25880c, type: 3}
+  m_Name: MarketSounds
+  m_EditorClassIdentifier: 
+  Sounds:
+  - SoundType: 10
+    Audio: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    VolumeScaleLevel: 1
+    _soundType: 10
+    _audio: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    _volumeScaleLevel: 1
+  - SoundType: 11
+    Audio: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
+    VolumeScaleLevel: 1
+    _soundType: 11
+    _audio: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
+    _volumeScaleLevel: 1
+  - SoundType: 20
+    Audio: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+    VolumeScaleLevel: 1
+    _soundType: 20
+    _audio: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+    _volumeScaleLevel: 1
+  - SoundType: 30
+    Audio: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    VolumeScaleLevel: 1
+    _soundType: 30
+    _audio: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    _volumeScaleLevel: 1
+  - SoundType: 31
+    Audio: {fileID: 8300000, guid: b9eff218e132a4e76be78840eca96fb2, type: 3}
+    VolumeScaleLevel: 1
+    _soundType: 31
+    _audio: {fileID: 8300000, guid: b9eff218e132a4e76be78840eca96fb2, type: 3}
+    _volumeScaleLevel: 1
+  - SoundType: 32
+    Audio: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    VolumeScaleLevel: 1
+    _soundType: 32
+    _audio: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    _volumeScaleLevel: 1

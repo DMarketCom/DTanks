@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using DMarketSDK.IntegrationAPI.Settings;
 
 namespace DMarketSDK.IntegrationAPI.Internal
 {
@@ -10,9 +12,12 @@ namespace DMarketSDK.IntegrationAPI.Internal
     }
     
     public delegate void ApiCallCallback(string response, int code);
-    
-    public interface IApiTransport
+
+    public interface IApiTransport : IDisposable
     {
-        void MakeCall(RequestMethod method, string path, string data, Dictionary<string, string> headers, ApiCallCallback callback);
+        void Initialize(IBaseApiSettings settings);
+
+        void MakeCall(RequestMethod method, string path, string data, Dictionary<string, string> headers,
+            ApiCallCallback callback);
     }
 }

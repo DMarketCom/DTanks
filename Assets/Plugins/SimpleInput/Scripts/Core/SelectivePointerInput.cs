@@ -10,8 +10,7 @@ namespace SimpleInputNamespace
 		public bool allowTouchInput = true;
 
 		[Tooltip( "Valid mouse buttons that can register input through this touchpad" )]
-		public List<PointerEventData.InputButton> allowedMouseButtons = new List<PointerEventData.InputButton>
-		{
+		public List<PointerEventData.InputButton> allowedMouseButtons = new List<PointerEventData.InputButton>() {
 			PointerEventData.InputButton.Left, PointerEventData.InputButton.Right, PointerEventData.InputButton.Middle };
 
 		protected PointerEventData GetSatisfyingPointer( List<PointerEventData> mousePointers, List<PointerEventData> touchPointers )

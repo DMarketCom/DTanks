@@ -25,4 +25,4 @@ MonoBehaviour:
   - Type: 5
     Scene: Server
   - Type: 6
-    Scene: Shop
+    Scene: Inventory

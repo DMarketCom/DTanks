@@ -9,10 +9,10 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
     {
         private const string Path = "/auth/dmarket/restore-password";
 		
+
         public RestorePasswordRequest(string basicToken, string email)
         {
 			if (string.IsNullOrEmpty(basicToken)) throw new ArgumentNullException("basicToken");
-
             Params = new RequestParams
             {
 				email = email
@@ -26,7 +26,7 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
 		}
 
         public class Response
-        {
+		{
 		}
 
         protected override string GetBasePath()
@@ -38,13 +38,12 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
         {
             return RequestMethod.Post;
         }
-
 		protected override Dictionary<string, object> GetBody()
 		{
-			return new Dictionary<string, object>
-			{
+			return new Dictionary<string, object>(){
 				{"email", Params.email}
 			};
 		}
+		
     }
 }

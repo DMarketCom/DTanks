@@ -9,10 +9,10 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
     {
         private const string Path = "/auth/basic/token";
 		
+
         public BasicTokenRequest(string gameToken, string gameUserId)
         {
 			if (string.IsNullOrEmpty(gameToken)) throw new ArgumentNullException("gameToken");
-
             Params = new RequestParams
             {
 				gameUserId = gameUserId
@@ -26,8 +26,8 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
 		}
 
         public class Response
-        {
-			public int expiresAt;
+		{		
+			public long expiresAt;
 			public string refreshToken;
 			public string token;
 			public string tokenType;
@@ -42,13 +42,12 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
         {
             return RequestMethod.Post;
         }
-
 		protected override Dictionary<string, object> GetBody()
 		{
-			return new Dictionary<string, object>
-			{
+			return new Dictionary<string, object>(){
 				{"gameUserId", Params.gameUserId}
 			};
 		}
+		
     }
 }

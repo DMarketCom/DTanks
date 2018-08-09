@@ -5,7 +5,7 @@ namespace DMarketSDK.Common.Forms.AnimationComponents
 {
     public class ScaleAnimationComponent : TweenAnimationComponentBase
     {
-        public ScaleAnimationComponent(TweenAnimParametrs tweenParametrs) : base(tweenParametrs)
+        public ScaleAnimationComponent(TweenAnimParameters tweenParameters) : base(tweenParameters)
         {
         }
 

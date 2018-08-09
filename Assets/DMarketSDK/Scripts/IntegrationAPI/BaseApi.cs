@@ -1,31 +1,31 @@
-﻿using System;
-using DMarketSDK.IntegrationAPI.Internal;
+﻿using DMarketSDK.IntegrationAPI.Internal;
+using DMarketSDK.IntegrationAPI.Settings;
 using UnityEngine;
 
 namespace DMarketSDK.IntegrationAPI
 {
-    public abstract class BaseApi : MonoBehaviour
+    public abstract class BaseApi<T> : MonoBehaviour
+        where T : IBaseApiSettings
     {
-        //TODO move to catalog settings
-        private readonly string _gameToken = "DTanks_API_token";
-        private readonly bool _useSandboxEnvironment = true;
-        private readonly string _sandboxEnvironmentUrl = "https://gi-sandbox.dmarket.com/";
-        private readonly string _productionEnvironmentUrl = string.Empty;
-
         protected IApiTransport ApiTransport { get; private set; }
 
-        public string GameToken { get { return _gameToken; } }
+        protected T ApiSettings { get; private set; }
 
-        private Uri BaseHost()
+        public void ApplyHttpProtocol(T apiSettings)
         {
-            return new Uri(_useSandboxEnvironment ? _sandboxEnvironmentUrl : _productionEnvironmentUrl);
+            var httpTransport = gameObject.AddComponent<HttpApiTransport>();
+            ApplyCustomProtocol(apiSettings, httpTransport);
         }
-        
-        private void Start()
+
+        public void ApplyCustomProtocol(T apiSettings, IApiTransport apiTransport)
         {
-            ApiTransport = gameObject.AddComponent<HttpApiTransport>();
-            ((HttpApiTransport)ApiTransport).SetBaseHost(BaseHost());
-            ((HttpApiTransport)ApiTransport).ToggleDebug(_useSandboxEnvironment);
+            if (ApiTransport != null)
+            {
+                ApiTransport.Dispose();
+            }
+            ApiSettings = apiSettings;
+            ApiTransport = apiTransport;
+            ApiTransport.Initialize(apiSettings);
         }
     }
 }

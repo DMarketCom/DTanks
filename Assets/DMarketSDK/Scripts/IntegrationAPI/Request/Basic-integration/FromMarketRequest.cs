@@ -7,13 +7,13 @@ namespace DMarketSDK.IntegrationAPI.Request.BasicIntegration
 {
     public class FromMarketRequest : BaseRequest<FromMarketRequest, FromMarketRequest.Response, FromMarketRequest.RequestParams>
     {
-        private const string Path = "/basic-integration/dmarket/from-market";
+        private const string Path = "/basic-integration/dmarket/from-marketWidget";
 		
+
         public FromMarketRequest(string gameToken, string dmarketToken, string assetId)
         {
 			if (string.IsNullOrEmpty(gameToken)) throw new ArgumentNullException("gameToken");
 			if (string.IsNullOrEmpty(dmarketToken)) throw new ArgumentNullException("dmarketToken");
-
             Params = new RequestParams
             {
 				assetId = assetId
@@ -28,7 +28,7 @@ namespace DMarketSDK.IntegrationAPI.Request.BasicIntegration
 		}
 
         public class Response
-        {
+		{
 		}
 
         protected override string GetBasePath()
@@ -40,13 +40,12 @@ namespace DMarketSDK.IntegrationAPI.Request.BasicIntegration
         {
             return RequestMethod.Post;
         }
-
 		protected override Dictionary<string, object> GetBody()
 		{
-			return new Dictionary<string, object>
-			{
+			return new Dictionary<string, object>(){
 				{"assetId", Params.assetId}
 			};
 		}
+		
     }
 }

@@ -8,7 +8,7 @@ namespace DMarketSDK.Common.Forms.AnimationComponents
         private Vector3 _showingPos;
         private Vector3 _hidingPos;
 
-        public JumpAnimationComponent(Vector3 hidingPos, TweenAnimParametrs tweenParametrs) : base(tweenParametrs)
+        public JumpAnimationComponent(Vector3 hidingPos, TweenAnimParameters tweenParameters) : base(tweenParameters)
         {
             _hidingPos = hidingPos;
         }

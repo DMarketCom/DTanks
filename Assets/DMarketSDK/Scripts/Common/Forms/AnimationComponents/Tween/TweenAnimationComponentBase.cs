@@ -28,7 +28,7 @@ namespace DMarketSDK.Common.Forms.AnimationComponents
         }
         #endregion
 
-        private readonly TweenAnimParametrs _animInfo;
+        private readonly TweenAnimParameters _animInfo;
         private Tweener _currentAnim;
 
         protected GameObject Target { get { return _animInfo.Target; } }
@@ -36,9 +36,9 @@ namespace DMarketSDK.Common.Forms.AnimationComponents
         protected RectTransform TransformAnchor { get; private set; }
         protected float AnimTime { get { return _animInfo.AnimTime; } }
 
-        public TweenAnimationComponentBase(TweenAnimParametrs tweenParametrs)
+        public TweenAnimationComponentBase(TweenAnimParameters tweenParameters)
         {
-            _animInfo = tweenParametrs;
+            _animInfo = tweenParameters;
         }
 
         protected abstract Tweener PlayBaseAnim(bool forShow);

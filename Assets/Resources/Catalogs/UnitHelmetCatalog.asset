@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Name: UnitHelmetCatalog
   m_EditorClassIdentifier: 
   _helmetItemsList:
-  - ItemType: 0
-    HelmetPrefab: {fileID: 0}
-  - ItemType: 7
-    HelmetPrefab: {fileID: 1000013515265712, guid: db5d3c63bbd5d4997bcf12ba3da35657,
+  - _itemType: 0
+    _helmetPrefab: {fileID: 0}
+  - _itemType: 7
+    _helmetPrefab: {fileID: 1000013515265712, guid: db5d3c63bbd5d4997bcf12ba3da35657,
       type: 2}
-  - ItemType: 8
-    HelmetPrefab: {fileID: 1000010869557790, guid: 63a59ccfc11af467b98e13ac5d64bc62,
+  - _itemType: 8
+    _helmetPrefab: {fileID: 1000010869557790, guid: 63a59ccfc11af467b98e13ac5d64bc62,
       type: 2}
-  - ItemType: 9
-    HelmetPrefab: {fileID: 1000011220515776, guid: ff086cb3b6738414db63243e1a8b3dfe,
+  - _itemType: 9
+    _helmetPrefab: {fileID: 1000011220515776, guid: ff086cb3b6738414db63243e1a8b3dfe,
       type: 2}
-  - ItemType: 10
-    HelmetPrefab: {fileID: 1200221149899512, guid: 543092cf569db7140aa48bcc00434dbe,
+  - _itemType: 10
+    _helmetPrefab: {fileID: 1200221149899512, guid: 543092cf569db7140aa48bcc00434dbe,
       type: 2}
-  - ItemType: 11
-    HelmetPrefab: {fileID: 1550232693546580, guid: 848f46ed934ab1842a600f988c05226e,
+  - _itemType: 11
+    _helmetPrefab: {fileID: 1550232693546580, guid: 848f46ed934ab1842a600f988c05226e,
       type: 2}

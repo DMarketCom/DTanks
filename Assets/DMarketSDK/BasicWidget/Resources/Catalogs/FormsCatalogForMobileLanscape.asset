@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c94a29bb0845a240b4d37958f88eba7, type: 3}
+  m_Name: FormsCatalogForMobileLanscape
+  m_EditorClassIdentifier: 
+  _canvasReferenceResolution: {x: 568, y: 320}
+  _UIType: 2
+  _forms:
+  - {fileID: 114624563468528222, guid: 78842555884affd4e9c52c1471bfac0f, type: 2}
+  - {fileID: 114494742063802712, guid: 1f29ed3bc935efd48aa1de488b5b46e9, type: 2}
+  - {fileID: 114025503786151304, guid: ea9e12ced89e90942b574fb925846608, type: 2}
+  - {fileID: 114627985108760930, guid: 88b591e678348504cade835827659bdd, type: 2}
+  - {fileID: 114106108593980264, guid: 7dc8bb535b6faad49bad1a9bf98a76b2, type: 2}
+  - {fileID: 114778159741413488, guid: 2d3a2a606bb8d7647b4103a48207c53e, type: 2}
+  - {fileID: 114931930836497464, guid: a646355eef9e7ea45a409471cf615d5c, type: 2}
+  - {fileID: 114572736053725786, guid: 91bd9710a3e34ab4d903884f3cecf163, type: 2}
+  - {fileID: 114576633383993512, guid: 6811fa40d65954a49b7611df61e75eec, type: 2}
+  - {fileID: 114763383210127364, guid: 78db00bb36a14004d887e9026a6b602f, type: 2}
+  - {fileID: 114486544829073666, guid: 6d867d3ce7b49124da14b9821763d013, type: 2}
+  - {fileID: 114076309647956582, guid: 76e71e39868128d4799a05a533547aad, type: 2}
+  - {fileID: 114638382263244556, guid: bc2fdf9df54932943a47b6dd6ddceb78, type: 2}
+  - {fileID: 114528914259603762, guid: a66e65f9e2e2c8a4b80b894aef0a9791, type: 2}
+  - {fileID: 114427904568666844, guid: 66ba623f4cc665649990bd0a601d22f3, type: 2}
+  - {fileID: 114396052618046328, guid: d81f6edd0d5f9cd4f987eecbb3a21c26, type: 2}
+  - {fileID: 114558623860913238, guid: d59198b9bff0ee04abeb5705309d4838, type: 2}

@@ -1,15 +1,11 @@
-﻿using PlayerData;
+﻿using System;
 using SHLibrary.Logging;
-using System;
+using TankGame.Domain.GameItem;
 
-namespace DMarketIntegration
+namespace TankGame.DMarketIntegration
 {
     public class DMarketInfoConverter
     {
-        static DMarketInfoConverter()
-        {
-        }
-
         public string GetClassId(GameItemType itemType)
         {
             return itemType.ToString();

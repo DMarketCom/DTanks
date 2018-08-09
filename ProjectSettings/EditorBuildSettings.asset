@@ -24,8 +24,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Server.unity
     guid: 5d519e781f3e1e844861fcfeb1455814
   - enabled: 1
-    path: Assets/Scenes/Shop.unity
+    path: Assets/Scenes/Inventory.unity
     guid: a4d4f198382dfad47b78d407477b8846
-  - enabled: 1
-    path: Assets/Scenes/ForTesting/TestMarket.unity
-    guid: 20e8da79fba94ca409bd8627a304b2a4

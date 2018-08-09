@@ -8,23 +8,25 @@ namespace DMarketSDK.IntegrationAPI.Request.Auth
     {
         private const string Path = "/auth/basic/refresh-token";
 		
+
         public BasicRefreshTokenRequest(string basicRefreshToken)
         {
 			if (string.IsNullOrEmpty(basicRefreshToken)) throw new ArgumentNullException("basicRefreshToken");
-
             Params = new RequestParams
             {
+
 			};
 			WithBasicRefreshToken(basicRefreshToken);
         }
 
         public class RequestParams
         {
+
 		}
 
         public class Response
-        {
-			public int expiresAt;
+		{		
+			public long expiresAt;
 			public string refreshToken;
 			public string token;
 			public string tokenType;

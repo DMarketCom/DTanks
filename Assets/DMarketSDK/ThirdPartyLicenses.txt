@@ -1,0 +1,16 @@
+DMarket used aditional plugins
+***
+DOTween:
+	http://dotween.demigiant.com/license.php
+	https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
+
+Dustyroom Casual Game Sound - One Shot SFX Pack:
+	Everything in the pack licensed CC Zero (CC0). 
+	You may use the sounds for free in non-commercial and commercial projects. 
+	https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116
+
+TextMeshPro:
+	https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126
+
+JsonDotNet:
+	https://assetstore.unity.com/packages/tools/input-management/json-net-for-unity-11347

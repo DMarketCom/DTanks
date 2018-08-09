@@ -7,7 +7,7 @@ namespace DMarketSDK.Common.Forms.AnimationComponents
     {
         private CanvasGroup _canvasGroup;
 
-        public FadeAnimationComponent(TweenAnimParametrs tweenParametrs) : base(tweenParametrs)
+        public FadeAnimationComponent(TweenAnimParameters tweenParameters) : base(tweenParameters)
         {
         }
 

@@ -57,8 +57,8 @@ PlayerSettings:
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 0
-  allowedAutorotateToPortraitUpsideDown: 0
+  allowedAutorotateToPortrait: 1
+  allowedAutorotateToPortraitUpsideDown: 1
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
@@ -446,9 +446,6 @@ PlayerSettings:
   switchUdpSendBufferSize: 9
   switchUdpReceiveBufferSize: 42
   switchSocketBufferEfficiency: 4
-  switchSocketInitializeEnabled: 1
-  switchNetworkInterfaceManagerInitializeEnabled: 1
-  switchPlayerConnectionEnabled: 1
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -578,10 +575,10 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    1: APPTYPE_CLIENT;ENVIRONMENT_QA
-    4: APPTYPE_CLIENT;ENVIRONMENT_QA
-    7: APPTYPE_CLIENT;ENVIRONMENT_QA
-    13: APPTYPE_CLIENT;ENVIRONMENT_QA
+    1: APPTYPE_CLIENT
+    4: APPTYPE_SERVER
+    7: APPTYPE_SERVER
+    13: APPTYPE_SERVER
     25: 
   platformArchitecture:
     iOS: 2

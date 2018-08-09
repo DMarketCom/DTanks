@@ -1,0 +1,1758 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1365600978441518}
+  m_IsPrefabParent: 1
+--- !u!1 &1221525054340716
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224136520881245844}
+  - component: {fileID: 222567407313919742}
+  - component: {fileID: 114198271833732788}
+  m_Layer: 5
+  m_Name: Spinner - Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1320847704982744
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224923270915365416}
+  - component: {fileID: 222518435653142366}
+  - component: {fileID: 114925880455175720}
+  m_Layer: 5
+  m_Name: Title - Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1365600978441518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224979554326748040}
+  - component: {fileID: 114194986172136142}
+  m_Layer: 5
+  m_Name: TermsOfUseForm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1469918715949074
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224608719323754706}
+  - component: {fileID: 114439599643078774}
+  m_Layer: 5
+  m_Name: Text - ScrolView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1606749085770068
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224116351817520382}
+  - component: {fileID: 222186042990269258}
+  - component: {fileID: 114758078138573468}
+  m_Layer: 5
+  m_Name: TMP SubMeshUI [Geometria SDF Material]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1651329687341360
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224450999546415214}
+  - component: {fileID: 222215732288529866}
+  - component: {fileID: 114215005297470274}
+  m_Layer: 5
+  m_Name: Overlay - Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1765963154981948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224250414858544596}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1806094527488880
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224317866042944890}
+  - component: {fileID: 222961331221575688}
+  - component: {fileID: 114875255631438978}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1865243762930748
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224313402038250032}
+  - component: {fileID: 222755368668807328}
+  - component: {fileID: 114430379282886274}
+  - component: {fileID: 114963271473524418}
+  m_Layer: 5
+  m_Name: Viewport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1865244060182700
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224717299897139380}
+  - component: {fileID: 222611783790394102}
+  - component: {fileID: 114807411051376700}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1872346335276216
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224808467791178934}
+  - component: {fileID: 222377477599437806}
+  - component: {fileID: 114725930828556352}
+  - component: {fileID: 114462961243289042}
+  m_Layer: 5
+  m_Name: Scrollbar Vertical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1906473589492734
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224880462803887392}
+  - component: {fileID: 222242463553463810}
+  - component: {fileID: 114514811413913108}
+  m_Layer: 5
+  m_Name: Background - Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1954015157658158
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224347002667822376}
+  - component: {fileID: 222639916381213816}
+  - component: {fileID: 114637200293768764}
+  - component: {fileID: 114141498421424398}
+  m_Layer: 5
+  m_Name: UserAgreements - Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1965586636053780
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224133716467221776}
+  - component: {fileID: 114652012083747024}
+  m_Layer: 5
+  m_Name: LoadingSpiner - Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1966662790157786
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224978595014233038}
+  - component: {fileID: 222829448301060442}
+  - component: {fileID: 114405766367410440}
+  - component: {fileID: 114877967164633410}
+  m_Layer: 5
+  m_Name: Close - Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1976927895801878
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224774921586294608}
+  m_Layer: 5
+  m_Name: Sliding Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &114141498421424398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1954015157658158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 0}
+  m_Horizontal: 1
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 0}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114194986172136142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365600978441518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b452e425e68ebe542af87a84bdf33b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer: 10
+  _type: terms-of-use
+  _text: {fileID: 114637200293768764}
+  _closeButton: {fileID: 114877967164633410}
+  _loadingSpinner: {fileID: 114652012083747024}
+--- !u!114 &114198271833732788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221525054340716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.10196079, g: 1, b: 0.82745105, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: f0f0c1a3a5edead41a803633e359ec1f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114215005297470274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651329687341360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.384}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114405766367410440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966662790157786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.14901961, g: 0.95294124, b: 0.82745105, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: a7d2e0bf7ef925045a9bd0440b2108a0, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114430379282886274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865243762930748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
+--- !u!114 &114439599643078774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469918715949074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 224347002667822376}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 224313402038250032}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 114462961243289042}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 1
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114462961243289042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872346335276216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2061169968, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114875255631438978}
+  m_HandleRect: {fileID: 224317866042944890}
+  m_Direction: 2
+  m_Value: 1
+  m_Size: 0.044568893
+  m_NumberOfSteps: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Scrollbar+ScrollEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114514811413913108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906473589492734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.105882354, g: 0.13725491, b: 0.1764706, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: db827606798fe9a489f1fde0e55786a6, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114637200293768764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1954015157658158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: "<color=#cccccc>Last updated: 13.06.2018</color>\n\n<size=16>SECTION 1.
+    DEFINITIONS. TERMS & CONDITIONS ACCEPTANCE</size=16>\r\n\n1.1 Herein the following
+    definitions are used:\n\n<b>\u201CDMarket\u201D</b> or the <b>\u201CCompany\u201D</b>
+    or the <b>\u201CWebsite Owner\u201D</b> or <b> \u201CWe\u201D</b> or <b>\u201COur\u201D</b>
+    or <b>\u201CUs\u201D</b> \u2013 means DMarket Ltd., the company incorporated in
+    the Cayman Islands, with registration No. 327272, located at: Genesis Building,
+    5th Floor, Genesis Close, PO Box 446, Cayman Islands, KY1-1106;\n\n<b>\u201CYou\u201D</b>
+    or <b>\u201CUser\u201D</b> means a person, who uses the Website;\n\n<b>\u201CWebsite\u201D</b>
+    means the website https://dmarket.com/ not limited by the direct access to it
+    but also through DMarket Integration API;\n\n<b>\u201CServices\u201D</b> means
+    services provided by the Company through the Website.\r\n\n1.2  These Website
+    Terms of Use (hereinafter referred to as the <b>\u201CTerms\u201D</b>), including
+    any and all accompanying documents, constitute a legally binding agreement between
+    You and DMarket. \n1.3 You must carefully read and comply with these Terms.\n1.4
+    By using the Website, You are confirming that You have fully read, understood
+    and irrevocably accepted these Terms. If You do not agree with these Terms in
+    general or any part of them, You are not permitted to use the Website and any
+    associated Services.\n\n<size=16>SECTION 2. GENERAL PROVISIONS</size=16>\n2.1
+    These Terms and any accompanying documents are effective and binding on You whenever
+    You use the Website. \n2.2 You acknowledge and accept that these Terms and any
+    accompanying documents and/or the Website are subject to change, modifications,
+    amendments, alterations or supplements at any time without prior written notice,
+    at DMarket\u2019s sole discretion. Your continued use of the Website after any
+    amendments or alterations of these Terms, any accompanying documents and/or the
+    Website shall constitute Your consent and acceptance of any such changes, modifications,
+    amendments, alternations or supplements. The date of the most recent amendments
+    and alterations will be indicated at the top of these Terms.\n2.3 You acknowledge
+    and accept that the Website Owner reserves the right at any time, in its sole
+    and complete discretion, to modify or to temporarily or permanently suspend or
+    eliminate the Website, and/or disable any access to the Website for any reason.\n2.4
+    By using the Website, You covenant, represent, and warrant that (under the Applicable
+    Law and law of Your country of residence): \nYou are of an age of majority in
+    the jurisdiction where You are a resident (at least 18 years of age), and are
+    fully able and legally competent to use the Website, and in doing so will not
+    violate any other agreement to which You are a party; \nYou have all necessary
+    and relevant experience and knowledge to deal with digital items, cryptocurrencies
+    and Blockchain-based systems, have a full understanding of their framework, are
+    aware of all the merits, risks and any restrictions associated with digital and
+    cryptographic assets (including their purchase and use), cryptocurrencies and
+    Blockchain-based systems, as well as the necessary and relevant expertise and
+    knowledge to purchase, use and manage them, and are solely responsible for any
+    evaluations based on such knowledge; \nIf You are a corporation, governmental
+    organization or other legal entity, You have the right, power and authority to
+    act on behalf of such corporation, governmental organization or other legal entity
+    and bind them to these Terms; \nYou will not use the Website for any illegal activity
+    and You are not engaged in any illegal activity; \nYou solely control Your credentials
+    (email address, password or other information provided for the purpose of the
+    Website use) and do not act on behalf of any third party. \n2.5  The pages of
+    the Website may contain services of the Company\u2019s partners, vendors,game
+    developers, etc. and/or links to third-party websites and services. Such services
+    and/or links are provided for Your convenience, but the Website Owner shall not
+    be considered to make any recommendation or endorsement of any third party website
+    or its content, unless expressly stated by the Website Owner. The Website Owner
+    does not guarantee or otherwise suggest or imply the safety of any third party
+    website or the conformity of any such third party website with Your expectations.
+    Furthermore, the Website Owner is not responsible for maintaining any materials
+    referenced from another site, and makes no warranties, recommendation or endorsement
+    for that site or respective service. The Website Owner assumes no obligations
+    in the event of any damage or loss, or any other impact, directly or indirectly
+    resulting from the use of any content, goods or services available on or through
+    any such third-party websites and resources. Please also note that these services
+    may have their own policies. We do not accept any responsibility or liability
+    for these policies. Please check policies of such services before using these
+    services. \n\n<size=16> SECTION 3. USER\u2019S WEBSITE REGISTRATION AND ACCOUNT
+    </size=16>\n3.1  For the purpose of proper use of the Website, You should register
+    on the Website and create an individual Account with Your respective login and
+    password. You are given access to an Account following Your provision of all information
+    required by the Website Owner, authorization by the Website Owner and upon Your
+    successful creation of an Account. You warrant that any and all information provided
+    for the purpose of Your Account creation and/or any other Website use is valid,
+    current, complete and accurate. Registration data and other information about
+    You is subject to the accompanying Privacy Policy available on the Website.\n3.2
+    DMarket reserves its right to prohibit without any compensations or explanations
+    access to the Website and/or Service of any residents (a) from a country or territory
+    that is the target of United States economic or trade sanctions, as defined at<a
+    href=\"https://www.treasury.gov/resource-center/sanctions/Programs/Pages/Programs.aspx\"
+    target=\"_blank\"> https://www.treasury.gov/resource-center/sanctions/Programs/Pages/Programs.aspx</a>
+    ; b) identified on the U.S. Treasury Department\u2019s list of Specially Designated
+    Nationals and Blocked Persons (<a href=\"https://www.treasury.gov/resource-center/sanctions/SDN-List/Pages/default.aspx\"
+    target=\"_blank\"> https://www.treasury.gov/resource-center/sanctions/SDN-List/Pages/default.aspx</a>),
+    the U.S. Commerce Department\u2019s Denied Person List ( <a href=\"https://www.bis.doc.gov/index.php/the-denied-persons-list\"
+    target=\"_blank\"> https://www.bis.doc.gov/index.php/the-denied-persons-list</a>),
+    the EU Consolidated List of Persons, or similar lists of sanctioned persons (
+    <a href=\"https://eeas.europa.eu/sizeeadquarters/sizeeadquarters-homepage_en/8442/Consolidated%20list%20of%20sanctions\"
+    target=\"_blank\"> https://eeas.europa.eu/sizeeadquarters/sizeeadquarters-homepage_en/8442/Consolidated%20list%20of%20sanctions</a>);
+    (c) acting for or on behalf of any person on the above-identified lists or the
+    government of a country or territory that is the target of United States economic
+    or trade sanctions; (d) being subject to any other UN-, US-, EU-, CH- or any other
+    sovereign country sanctions or embargoes or have any other affiliation to such
+    sanctions.\n3.3 You hereby expressly consent that You are solely responsible for
+    the use of Your login and password for the Account, for any registration data
+    provided for Account creation, and for any actions done during any use of Your
+    Account. You agree to keep Your login information and password private and to
+    immediately notify the Website Owner of any unauthorized Account activity. You
+    may be aware of and modify Your login information respectively. You are solely
+    responsible for any loss or damage You or the Website Owner may suffer as a result
+    of Your failure to do so.\n3.4 You may deactivate Your registration with the Website
+    at any time by sending respective request in the contact form on the Website.
+    We may terminate Your use of and registration with the Website or freeze any transactions
+    on DMarket platform at any time if You violate these Terms or any other DMarket
+    policies, at our sole discretion and without prior notice and without any liability
+    or further obligation of any kind whatsoever to You or any other party, when we
+    find such measures reasonable and/or necessary in a particular situation, without
+    any refunds.\n3.5 By creating an Account, You also consent to receive electronic
+    communications from Website Owner (e.g., via email). These communications may
+    include notices about Your Account (e.g., password changes and other transactional
+    information) and are part of Your relationship with Us. You agree that any notices,
+    agreements, disclosures or other communications that We send to You electronically
+    will satisfy any legal communication requirements, including, but not limited
+    to, that such communications be in writing. You should maintain copies of electronic
+    communications from Us by printing a paper copy or saving an electronic copy.
+    We may also send you promotional communications via email, including, but not
+    limited to, newsletters, special offers, surveys and other news and information
+    We think will be of interest to You. You may opt out of receiving these promotional
+    emails at any time by following the respective unsubscribe instructions.\n3.6
+    For the purpose of transactions performance on DMarket, a DMarket token (DMT)
+    is represented by DMarket Coin (DMC) \u2013 the internal currency, used across
+    DMarket for purchase, sale and exchange of virtual items.\n3.7 For the purpose
+    of Steam digital items trading on the Website You agree to register and sign-in
+    through Your Steam account provided by Valve Corporation or Valve S.a.r.l. (individually
+    and collectively referred to as \u201CValve\u201D). You are solely responsible
+    for managing Your respective account and password, for keeping Your password confidential,
+    and for restricting access to Your account. DMarket is not affiliated in any way
+    with Valve and its affiliates. You agree that the terms of any respective Steam
+    subscriber agreements and/or terms and conditions, and/or policies shall apply
+    to You in all respects. Any warranties, rights, obligations or other contractual
+    relationship that You have with respect to your Steam account and Valve shall
+    remain consistent with, but in addition to these Terms.\n\n<size=16> SECTION 4.
+    PAYMENTS AND FEES </size=16>\n4.1 Each transaction performed on DMarket with DMarket
+    Coin has the main fee of 5% of the total amount of the transaction. Most of the
+    fee will be sent to the developers and copyright holders whose items are involved
+    in the transaction (publishers and developers). The remaining element of the fee
+    will be due to DMarket.\n4.2 DMarket is entitled to use third-party payment service
+    processors for purchase and sale of virtual items by Users. The respective third-party
+    payment processor is primarily responsible for facilitating payment of User\u2019s
+    transactions. When You use any third-party payment processor (<b>\u201CPayment
+    processor\u201D</b>) to make a purchase or sale of items on the Website, responsibility
+    over Your transaction will first be transferred to the respective Payment processor
+    before it is delivered to You. The Payment processor assumes primary responsibility
+    for payment and payment-related customer support. The terms between the Payment
+    processor and Users who utilize the services offered by the Payment processor
+    are governed by separate agreements and are not subject to the Terms on this Website.\n4.3
+    For transactions made through a Payment processor (i) the privacy policy of the
+    respective Payment processor shall apply to all payments and should be reviewed
+    before making any transaction, and (ii) the payment processor refund policy shall
+    apply to all payments, unless notice is expressly provided by the relevant Payment
+    processor to Users in advance.\n4.4 You are responsible for payment of any fees,
+    taxes or other costs, associated with the conduction of transactions with Payment
+    processors or the duties and taxes imposed by Your local authorities. The respective
+    charged amounts shall be indicated on the respective payment page of Payment processor.\n4.5
+    The list of available Payment processors shall be solely defined by DMarket and
+    indicated on the Website.\n4.6 Any User demanding settlement through one of the
+    Payment processors agrees thereby for the payment to be made through websites
+    covering the payment systems and states that he/she has read and accepted the
+    terms and conditions available on such websites. To the extent permitted by law,
+    DMarket shall not be liable against the Users for any problems related to payments
+    for which the owners of such sites are responsible, in particular for any delays
+    in processing payments or inability to process them for technical reasons. In
+    such case the User shall contact the applicable Payment processor's site in accordance
+    with that website\u2019s terms and conditions.\n4.7 For the purpose of duly transactions
+    performance on the Website the Users shall provide their personal and payment
+    processing data (such as name, surname, address, copies of ID cards or other identifying
+    documents, residence place confirmation documents, credit card identification
+    data) to the Payment processors, including the consent for processing these data
+    by the payment services in order to carry out the requested transactions. \n4.8
+    You are responsible for providing DMarket and/or the respective Payment processor
+    with valid and accurate information for making and receiving payments in compliance
+    with the Privacy Policy of DMarket and the respective Payment processor.\n4.9
+    DMarket accepts no liability and specifically disclaims any implied warranty to
+    complete any transaction which cannot be cleared by its Payment processors, whether
+    because there are not sufficient funds available on Your credit card, issues related
+    to identity or localization or otherwise. DMarket reserves its right to verify
+    and approve any and all transactions made by You when using the Service to ensure
+    that they comply with this Terms and the terms imposed on the Website Owner by
+    third party service providers. You expressly acknowledge and agree that such verifications
+    may require You to provide Website Owner with additional personal information
+    in order to verify and confirm Your identity and to perform verifications aimed
+    to deter fraud and misuse of the Service, in compliance with the Website Owner\u2019s
+    Privacy Policy. Website Owner may suspend Your Account and contact You so You
+    can provide the Website Owner with additional information required to process
+    the respective payments. Such suspension shall not relieve You from Your obligation
+    to pay any fees incurred due to processing of transactions.\n4.10 The payment
+    transactions may be delayed while the Payment processor validates Your compliance
+    with these Terms and other applicable policies. You agree not to initiate any
+    claim and dispute procedure with third parties regarding payment and receipt of
+    virtual items.\n4.11 DMarket or respective Payment processors are entitled to
+    set forth the maximum daily transactions limitations on the Website due to regulatory
+    issues. By using the Website You expressly agree with such limitations.\n4.12
+    When dealing with Payment processors (including, but not limited to Leo Partners
+    (CY) Limited) DMarket shall act in full compliance with respective legal requirements
+    of Payment processors\u2019 country of residence or operations (including, in
+    compliance with legislation of EU-member countries, such as Cyprus and others).\n4.13
+    When you use G2A Pay services provided by G2A.COM Limited (hereinafter referred
+    to as the \"G2A Pay services provider\") to make a purchase on Our Website, responsibility
+    over Your purchase will first be transferred to G2A.COM Limited before it is delivered
+    to You. G2A Pay services provider assumes primary responsibility, with Our assistance,
+    for payment and payment related customer support. The terms between G2A Pay services
+    provider and Users who utilize services of G2A Pay are governed by separate agreements
+    and are not subject to the Terms on this Website. \n4.14 The purchase of certain
+    products may also require shoppers to agree to one or more End-User License Agreements
+    (or \u201CEULAs\u201C) that may include additional terms set by the product supplier
+    rather than by Us or any service provider, including G2A Pay services provider,
+    or any Payment processors. You will be bound by any EULA that you agree to.\n4.15
+    With respect to Users making purchases through G2A Pay services provider checkout,
+    (i) the Privacy Policy of G2A Pay services provider shall apply to all payments
+    and should be reviewed before making any purchase, and (ii) the G2A Pay services
+    provider Refund Policy shall apply to all payments unless notice is expressly
+    provided by the relevant supplier to buyers in advance. \n4.16 We and/or entities
+    that sell products on Our Website by using G2A Pay services are primarily responsible
+    for warranty, maintenance, technical or product support services for those products
+    within the limits, set forth by these Terms and the respective functionality purpose
+    of these products. We and/or entities that sell products on Our Website are primarily
+    responsible to users for any liabilities related to fulfillment of orders and
+    EULAs, entered into by the End-User Customer, if We are a party to such EULAs.
+    G2A Pay services provider is primarily responsible for facilitating Your payment.
+    \n4.17 You are responsible for any fees, taxes or other costs associated with
+    the purchase and delivery of Your items resulting from charges imposed by Your
+    relationship with payment services providers or the duties and taxes imposed by
+    Your local customs officials or other regulatory body.\n4.18 Questions related
+    to payments made through G2A Pay services provider payment should be addressed
+    to support@g2a.com.\n4.19 Where possible, we will work with You and/or any User
+    selling on Our website, to resolve any disputes arising from Your purchase. As
+    provided in Section 10.6. below, for customer service inquiries or disputes, You
+    may contact Us only via Your email at support@dmarket.com and through the Website
+    Owner\u2019s contact form on the Website . \n4.20 Being a virtual items marketplace,
+    DMarket does not provide any crypto-fiat, fiat-crypto or any other exchange services
+    and does not act as such exchange. To perform transactions with Blockchain-based
+    virtual items on DMarket, we set forth the respective funds deposit and withdrawal
+    limitations that follow, and which are mandatory for all Users.\n\n<size=16> SECTION
+    5. REFUND POLICY </size=16>\n5.1 There are no refunds when We terminate Your use
+    of and registration with the Website or freeze any transactions on DMarket platform
+    if You violate these Terms or any other DMarket policies. \n5.2 DMarket does not
+    assume any liability and does not refund with regard to any transactions on purchase
+    or sale of items on the Website through a Payment processor. Before making any
+    transaction You should review the Payment processor\u2019s refund policy which
+    shall apply to all payments through such Payment processor. \n5.3 Any fees and
+    transaction commissions paid by the Users are non-refundable and non-returnable.
+    Due to the commission being non-refundable and non-returnable, a User is not entitled
+    to claim any compensation from DMarket. \n5.4 If a User\u2019s Account is suspended
+    by DMarket, any balance on said Account may be fortified. In this case DMarket
+    may at its sole discretion assist the User in transferring of funds. \n\n<size=16>
+    SECTION 6. FUNDS DEPOSIT AND WITHDRAWAL RULES </size=16>\n<span>6.1.  Deposit
+    rules:\n\n<b>Deposit of DMC:</b> You can deposit less than 1000 DMC on Your DMarket
+    Account without KYC procedure completion. If You intend to deposit more than 1000
+    DMC You will have to complete KYC procedure, established by DMarket. It needs
+    to be completed just once.\n<i>If You deposit DMC to Your DMarket Account You
+    will not be able to withdraw them.</i>\n<i>You can withdraw only those DMC that
+    were gained during sale of virtual items on DMarket.</i>\n\n<b>Deposit of USD:</b>
+    You can deposit less than 5 USD on Your DMarket Account without KYC procedure
+    completion. If You intend to deposit more than 5 USD You will have to complete
+    KYC procedure, established by DMarket. It needs to be completed just once. After
+    that You will be able to use any available third-party Payment processor service.
+    \n<i>If you deposit USD to Your DMarket Account You won\u2019t be able to withdraw
+    them.</i>\n<i>You can withdraw only those USD that were gained during sale of
+    virtual items on DMarket.</i>\n<span>6.2.  Withdrawal rules:\n\n<b>Withdrawal
+    of DMC: </b> You can withdraw less than 100 DMC from Your DMarket Account without
+    KYC procedure completion. If You intend to withdraw more than 100 DMC You will
+    have to complete KYC procedure, established by DMarket. It needs to be completed
+    just once. \n<i>If You deposit DMC to Your DMarket Account You will not be able
+    to withdraw them.</i>\n<i>You can withdraw only those DMC that were gained during
+    sale of virtual items on DMarket. Delays can occur during funds withdrawal.</i>\n\n<b>Withdrawal
+    of USD:</b> You can withdraw less than 100 USD from Your DMarket Account without
+    KYC procedure completion. If You intend to withdraw more than 100 USD You will
+    have to complete KYC procedure, established by DMarket. It needs to be completed
+    just once. \n<i>If you deposit USD to Your DMarket Account You won\u2019t be able
+    to withdraw them.</i>\n<i>You can withdraw only those USD that were gained during
+    sale of virtual items on DMarket. Delays can occur during funds withdrawal.</i>\n\n<size=16>
+    SECTION 7. INDEMNIFICATION </size=16>\n7.1 To the extent permitted by Applicable
+    Law, You shall indemnify, defend, and hold the Website Owner and/or its subsidiaries,
+    Affiliates, directors, officers, employees, agents, successors, and permitted
+    assignees harmless from and against any and all claims, damages, losses, suits,
+    actions, demands, proceedings, expenses, and/or liabilities (including but not
+    limited to reasonable attorneys\u2019 fees incurred and/or those necessary to
+    successfully establish the right to indemnification) filed/incurred by any third
+    party against the Website Owner arising out of a breach of any warranty, representation,
+    or obligation hereunder.\n7.2 You shall not have any claim of any nature whatsoever
+    against the Website Owner for any failure by the Website Owner to carry out any
+    of its obligations under these Terms as a result of causes beyond its control,
+    including but not limited to any strike, lockout, shortage of labor or materials,
+    delays in transport, hacker attacks on the Website or any resources which have
+    any relation to DMarket, any economic instability, any advances in quantum computing
+    or cryptography that impact Blockchain immutability, any malfunction, breakdown
+    or abandonment of the Ethereum, Bitcoin or other Blockchain-based protocols, any
+    volatility in the value of cryptocurrencies, accidents of any kind, any default
+    or delay by any sub-contractor or supplier of Ours, riot, any political or civil
+    disturbances, the elements, by an act of state or government including regulatory
+    action imposed, any delay in securing any permit, consent or approval required
+    by the Website Owner, for the supply of products under these Terms or any other
+    authority or any other cause whatsoever beyond Our absolute and direct control.\n\n<size=16>
+    SECTION 8. LIMITATION OF LIABILITY </size=16>\n8.1  You hereby expressly agree
+    that, to the maximum extent permitted by the Applicable Law, neither the Website
+    Owner nor its Affiliates shall be liable to You, regardless of the basis or theory
+    upon which the liability is claimed, for any damage or loss, including loss of
+    business, revenue, or profits, or loss of or damage to data, equipment, or software
+    (direct, indirect, punitive, actual, consequential, incidental, special, exemplary
+    or otherwise) resulting from: \nthe use of, inability to use, or availability
+    or unavailability of the Website or the material, information, software, facilities,
+    services or content on the Website; \nYour purchase of the DMarket Coins or DMarket
+    Tokens or Your use of them;\nany change of the value of the DMarket Coins or DMarket
+    Tokens or any cryptocurrency; \nany illegal or unauthorized use of the Website
+    or purchase or use of the DMarket Coins or DMarket Tokens; \nthe resale or exchange
+    or attempted resale or exchange of DMarket Coins or DMarket Tokens for any fiat
+    currency, cryptocurrency or cryptoasset; \nthe product failing to be suitable
+    for the special or particular purpose You intend, or the failure of any services
+    on or related to the Website, including online cryptocurrency services, assets
+    or platforms or the information, images or audio contained or related to the Website;
+    and \nthe Website being infected with any malicious code or viruses.\n8.2 You
+    understand and agree that it is Your obligation to ensure compliance with any
+    legislation relevant to Your country of domicile concerning Your use of the Website.\n8.3
+    The Website owner does not warrant or represent that any information on the Website
+    is accurate or reliable or that the Website will be free of errors or viruses,
+    that defects will be corrected, or that the service or the server that makes it
+    available is free of viruses or other harmful components. Your use of the Website
+    and its services, including cryptocurrency services, assets or platforms, and
+    any information, images or audio contained or related to the Website is at Your
+    own risk.\n8.4 If Applicable Law or the law of Your country of residence does
+    not permit all or any part of the above limitation of liability or exclusion of
+    warranties or disclaimer of implied terms in contracts to apply to You, the limitations,
+    exclusions and disclaimers will apply to You only to the extent permitted by Applicable
+    Law.\n8.5 It is possible that due to a number of reasons outside of the Website
+    Owner\u2019s control, including but not limited to, changes in regulatory or intellectual
+    property law, technological advancements, decreases in token or cryptocurrency
+    utility, social or economic reforms, the failure of commercial relationships,
+    or the malfunction, breakdown or abandonment of the Ethereum Protocol, DMarket,
+    Blockchain-based technology, Bitcoin, Ethereum and other related technologies
+    may dissolve, disappear, be abandoned or otherwise no longer operate, or operate
+    with material impairments.\n8.6 The market value of cryptocurrencies may go up
+    or down, and the market value of cryptocurrencies has demonstrated extreme volatility.
+    Any cryptographic coins or tokens may not have market value. You should expect
+    fluctuations, both down and up, in the market value of cryptocurrencies that you
+    purchase, if any, and such fluctuations may be extremely volatile, including price
+    crashes that may occur in the event of political or economic crises that cause
+    a large-scale sell-off of cryptocurrencies.\n8.7 There may be restrictions on
+    the sale and purchase of cryptocurrencies in certain jurisdictions, including
+    outright prohibition or a requirement that the sale or purchase must take place
+    on a regulated exchange or trading venue. These restrictions may become more prohibitive
+    over time.\n8.8 DMarket is currently under development and may undergo significant
+    changes. Any expectations regarding the form and functionality of the DMarket
+    held by You may not be met for a number of reasons including a change in the design
+    and implementation plans and execution of the implementation of the DMarket.\n8.9
+    Despite Website Owner\u2019s good faith efforts to exclude any viruses from the
+    Website and secure the network and technologies interacting with DMarket, it is
+    possible that one or more third-parties can or will introduce malicious code or
+    other viruses into the open-source software and code underlying DMarket and/or
+    create, undercover or exploit weaknesses in the security of the cloud-based services
+    used by the Website Owner. Such events may impact the continued development, deployment
+    or operation of DMarket.\n8.10 There are risks associated with using the Website,
+    including, but not limited to, the failure of hardware, software and Internet
+    connections. The Website Owner is not responsible for the proper and/or complete
+    transmission of the information contained in any electronic communication or of
+    the electronic communication itself, nor for any disruption, distortion or delay
+    in its delivery or receipt, however so caused.\n8.11 Security measures have been
+    implemented to ensure the safety and integrity of any of the services related
+    to the DMarket Platform. However, despite this, You acknowledge that information
+    that is transmitted over the internet or Blockchain may be susceptible to unlawful
+    access and monitoring.\n\n<size=16> SECTION 9. INTELLECTUAL PROPERTY RIGHTS </size=16>\n9.1
+    Any trademarks, logos, skins, artworks and other objects of intellectual property
+    (either registered or unregistered), represented on the Website, belong to their
+    respective owners and there are no implied licenses to use them, unless otherwise
+    stipulated by the respective owners. The mentioned objects may not be copied or
+    imitated in whole or in part, without the permission of the applicable owner.
+    Reference to any products, services, processes or other information by name, trademark,
+    manufacturer, supplier or otherwise does not constitute or imply endorsement,
+    sponsorship or recommendation by the Website Owner. Thus the Website Owner accepts
+    no responsibility or liability whatsoever with regard to the information (including
+    images, logos, skins, trademarks, slogans, etc.) about its activities or about
+    third parties activities published on this Website.\n9.2 The DMarket logo and
+    any DMarket product or service names, logos or slogans that may appear on the
+    Website or service are trademarks of the Website Owner or Our affiliates and may
+    not be copied, imitated or used, in whole or in part, without Our prior written
+    permission. You may not use any metatags or other \u201Chidden text\u201D utilizing
+    \u201CDMarket\u201D or any other name, trademark or product or service name of
+    Us or Our affiliates without Our prior written permission. In addition, the look
+    and feel of the Website and its content, including, without limitation, all page
+    headers, custom graphics, button icons and scripts, constitute the service mark,
+    trademark or trade dress of the Website Owner and may not be copied, imitated
+    or used, in whole or in part, without Our prior written permission.\n\n<size=16>SECTION
+    10. MISCELLANEOUS</size=16>\n10.1 <b>Termination and Suspension.</b> Notwithstanding
+    anything contained herein, the Website Owner reserves the right, without notice
+    and in its sole discretion, to terminate these Terms, suspend Your right to access
+    the Website, and delete or deactivate Your Account and all related information
+    and files in such Account without liability to You, including (but not limited
+    to) in case of Your breach of these Terms or if the Website Owner believes You
+    have committed fraud, negligence or other misconduct. You may terminate these
+    Terms without notice by discontinuing use of the Website. All rights granted to
+    You under these Terms will immediately be revoked upon the Website Owner\u2019s
+    termination of these Terms or suspension of Your access to the Website. In the
+    event of any Force Majeure Event (as defined in \"Miscellaneous\" Section), breach
+    of this Agreement, or any other event that would make the provision of services
+    commercially unreasonable, the Website Owner may, in its discretion and without
+    liability to You, with or without prior notice, suspend Your access to all or
+    a portion of its services or the Website.\n10.2 <b>Assignment.</b> The Website
+    Owner may, at its sole discretion, assign any of its rights and/or delegate its
+    duties (including, but not limited any and all intellectual property rights for
+    all the intellectual property rights objects created during or referring to DMarket
+    platform) to any third party at any time. You may not assign Your rights or delegate
+    Your duties as Website User and DMarket Coins purchaser, and any assignment or
+    delegation without the previous written consent of the Website Owner shall be
+    null and void.\n10.3 <b>Communication and Notices.</b> Any communication concerning
+    these Terms execution and/or violation should be conducted only via Your email
+    and through the Website Owner\u2019s contact form on the Website. Your official
+    email for communication shall be deemed the email specified by You during the
+    Account registration process. The one and only language of the communication shall
+    be English. The Website Owner may provide any notice to You under this Agreement
+    by: (i) posting a notice on the Website; or (ii) sending an email to the email
+    address then associated with Your account. Notices the Website Owner provides
+    by posting on the Website will be effective upon posting and notices Website Owner
+    provides by email will be effective when such email is sent. It is Your responsibility
+    to keep Your email address current. You will be deemed to have received any email
+    sent to the email address then associated with Your account when Website Owner
+    sends such email, whether or not You actually receive or read the email.\n10.4
+    <b>Further Assistance.</b> You shall cooperate with and assist the Website Owner
+    in connection with any investigation, examination or enquiry by any government
+    entity. You shall promptly provide the Website Owner with any documents, certification,
+    record or other information it may request in connection with such investigation,
+    examination or enquiry.\n10.5 <b>Force Majeure Events.</b> Website Owner shall
+    not be liable for any loss or damage arising from any event beyond its reasonable
+    control, including but not limited to flood, extraordinary weather conditions,
+    earthquake, or other act of God, fire, war, insurrection, riot, labor dispute,
+    accident, action of government, communications, power failure, or equipment or
+    software malfunction or any other cause beyond its reasonable control (each, a
+    \u201CForce Majeure Event\u201D).\n10.6 <b>Applicable Law.</b> All questions concerning
+    the construction, validity, enforcement and interpretation of this Agreement shall
+    be governed by and construed and enforced in accordance with the laws of the Cayman
+    Islands. To resolve any dispute, controversy or claim between them arising out
+    of or relating to this Agreement, or the breach thereof, the Parties agree first
+    to negotiate in good faith for a period of not less than sixty (60) days following
+    written notification of such controversy or claim to the other Party. If the negotiations
+    do not resolve the dispute, controversy or claim to the reasonable satisfaction
+    of all Parties during such period, then the Parties irrevocably and unconditionally
+    submit the respective claim to the binding arbitration with the Rules of Arbitration
+    of International Chamber of Commerce. The claim is to be reviewed by one or more
+    arbitrators appointed in accordance with the said rules. Except for any disputes,
+    claims, suits, actions, causes of action, demands or proceedings in which either
+    Party seeks injunctive or other equitable relief for the alleged unlawful use
+    of intellectual property, including, without limitation, copyrights, trademarks,
+    trade names, logos, trade secrets or patents, You and the Website Owner (a) waive
+    Your and Website Owner\u2019s respective rights to have any and all disputes arising
+    from or related to these Terms resolved in a court, and (b) waive Your and Website
+    Owner\u2019s respective rights to a jury trial. The substantive law shall be the
+    Applicable Law (including all other operating rules, policies, and procedures
+    that may be issued by the Website Owner and published from time to time on the
+    Website), without regard to conflict of law rules or principles. The language
+    of the arbitration shall be English.\n Intellectual property notification: This
+    document belongs to the Website Owner and is protected by copyright laws. It\u2019s
+    copying and/or use by any third party in full or in part without prior written
+    consent of the Website Owner is strictly prohibited."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7c6663185e2743748a9ee6c73a8de8c7, type: 2}
+  m_sharedMaterial: {fileID: 21551165262514330, guid: 7c6663185e2743748a9ee6c73a8de8c7,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294966214
+  m_fontColor: {r: 0.7764706, g: 0.9843137, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 12
+  m_fontSizeBase: 12
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 264
+  m_isAlignmentEnumConverted: 1
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 20
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 114637200293768764}
+    characterCount: 35759
+    spriteCount: 0
+    spaceCount: 5654
+    wordCount: 5729
+    linkCount: 0
+    lineCount: 302
+    pageCount: 1
+    materialCount: 2
+  m_havePropertiesChanged: 0
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_isInputParsingRequired: 0
+  m_inputSource: 0
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 114758078138573468}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114652012083747024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965586636053780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5850ac1cb8ccdda4abccd927b7d65c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spinnerImage: {fileID: 224136520881245844}
+--- !u!114 &114725930828556352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872346335276216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 73bb428318768504d996d3be00bd2019, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114758078138573468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606749085770068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1908110080, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_fontAsset: {fileID: 11400000, guid: 7c6663185e2743748a9ee6c73a8de8c7, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 0.5
+  m_canvasRenderer: {fileID: 222186042990269258}
+  m_TextComponent: {fileID: 114637200293768764}
+  m_materialReferenceIndex: 1
+--- !u!114 &114807411051376700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865244060182700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.14901961, g: 0.9529412, b: 0.827451, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 516ccc89ea40f3e43afd1cf1d28c5985, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114875255631438978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1806094527488880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: a622f3bd03d0b7c45a5f48b6b5730201, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114877967164633410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966662790157786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114405766367410440}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114925880455175720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1320847704982744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: DMARKET WIDGET TERMS OF USE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 1ac634e3f54783340b6b93ba0e52366d, type: 2}
+  m_sharedMaterial: {fileID: 21227894353172360, guid: 1ac634e3f54783340b6b93ba0e52366d,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4293000193
+  m_fontColor: {r: 0.003921569, g: 0.9882353, b: 0.88235295, a: 1}
+  m_enableVertexGradient: 0
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_isAlignmentEnumConverted: 1
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 114925880455175720}
+    characterCount: 27
+    spriteCount: 0
+    spaceCount: 4
+    wordCount: 5
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_havePropertiesChanged: 0
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_isInputParsingRequired: 0
+  m_inputSource: 0
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114963271473524418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865243762930748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &222186042990269258
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606749085770068}
+--- !u!222 &222215732288529866
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651329687341360}
+--- !u!222 &222242463553463810
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906473589492734}
+--- !u!222 &222377477599437806
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872346335276216}
+--- !u!222 &222518435653142366
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1320847704982744}
+--- !u!222 &222567407313919742
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221525054340716}
+--- !u!222 &222611783790394102
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865244060182700}
+--- !u!222 &222639916381213816
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1954015157658158}
+--- !u!222 &222755368668807328
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865243762930748}
+--- !u!222 &222829448301060442
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966662790157786}
+--- !u!222 &222961331221575688
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1806094527488880}
+--- !u!224 &224116351817520382
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606749085770068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224347002667822376}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!224 &224133716467221776
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965586636053780}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224450999546415214}
+  - {fileID: 224136520881245844}
+  m_Father: {fileID: 224250414858544596}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 1, y: 1}
+--- !u!224 &224136520881245844
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221525054340716}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224133716467221776}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224250414858544596
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765963154981948}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224880462803887392}
+  - {fileID: 224923270915365416}
+  - {fileID: 224978595014233038}
+  - {fileID: 224608719323754706}
+  - {fileID: 224133716467221776}
+  m_Father: {fileID: 224979554326748040}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -28}
+  m_SizeDelta: {x: 960, y: 620}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224313402038250032
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865243762930748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224347002667822376}
+  m_Father: {fileID: 224608719323754706}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224317866042944890
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1806094527488880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224774921586294608}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224347002667822376
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1954015157658158}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224116351817520382}
+  m_Father: {fileID: 224313402038250032}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.00024414062}
+  m_SizeDelta: {x: -24, y: 11250}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!224 &224450999546415214
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651329687341360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224133716467221776}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224608719323754706
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469918715949074}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224313402038250032}
+  - {fileID: 224808467791178934}
+  m_Father: {fileID: 224250414858544596}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 4, y: 290.7}
+  m_SizeDelta: {x: -44, y: 501.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224717299897139380
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865244060182700}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224978595014233038}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -18, y: -18}
+  m_SizeDelta: {x: 8, y: 8}
+  m_Pivot: {x: 1, y: 1}
+--- !u!224 &224774921586294608
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1976927895801878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224317866042944890}
+  m_Father: {fileID: 224808467791178934}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224808467791178934
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1872346335276216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224774921586294608}
+  m_Father: {fileID: 224608719323754706}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 8, y: 0}
+  m_Pivot: {x: 1, y: 1}
+--- !u!224 &224880462803887392
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906473589492734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224250414858544596}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224923270915365416
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1320847704982744}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224250414858544596}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -35}
+  m_SizeDelta: {x: 350.8, y: 22}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!224 &224978595014233038
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966662790157786}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224717299897139380}
+  m_Father: {fileID: 224250414858544596}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 48, y: 48}
+  m_Pivot: {x: 1, y: 1}
+--- !u!224 &224979554326748040
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365600978441518}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224250414858544596}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}

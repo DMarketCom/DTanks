@@ -1,6 +1,6 @@
-﻿using SHLibrary.ObserverView;
-using DMarketSDK.Common.Forms.AnimationComponents;
+﻿using DMarketSDK.Common.Forms.AnimationComponents;
 using System.Collections.Generic;
+using SHLibrary.ObserverView;
 
 namespace DMarketSDK.Common.Forms
 {
@@ -37,7 +37,7 @@ namespace DMarketSDK.Common.Forms
         protected virtual List<IFormAnimationComponent> CreateAnimComponents()
         {
             var result = new List<IFormAnimationComponent>();
-            result.Add(new FadeAnimationComponent(new TweenAnimParametrs(gameObject)));
+            result.Add(new FadeAnimationComponent(new TweenAnimParameters(gameObject)));
             return result;
         }
     }
