@@ -34,17 +34,6 @@ namespace DMarketSDK.Common.Navigation
 
         private MethodInfo _getFocusElementMethod;
 
-        #region INavigationElement implementation
-        public RectTransform Transform
-        {
-            get
-            {
-                return gameObject.GetComponent<RectTransform>();
-            }
-        }
-        
-        #endregion
-
         private bool IsHorizontalNavigationEnable
         {
             get
@@ -106,8 +95,9 @@ namespace DMarketSDK.Common.Navigation
             EventSystem.current.SetSelectedGameObject(targetObject);          
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
             var focusedElement = GetCurrentElementInFocus();
             if (focusedElement != null && _components.Contains(focusedElement))
             {

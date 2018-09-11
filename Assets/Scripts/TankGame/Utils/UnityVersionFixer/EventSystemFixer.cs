@@ -27,7 +27,7 @@ namespace UnityVersionFixer
 
         private IEnumerator RefreshEventSystem()
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.5f);
             var eventSystem = FindObjectOfType<EventSystem>();
             var selectedObject = EventSystem.current.currentSelectedGameObject;
             if (eventSystem != null)
@@ -41,7 +41,6 @@ namespace UnityVersionFixer
             }
 
             EventSystem.current.SetSelectedGameObject(selectedObject);
-            yield return null;
         }
     }
 }

@@ -16,14 +16,16 @@ namespace TankGame.GameClient.UI
         [SerializeField]
         private Button _btnRestart;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             _btnExit.onClick.AddListener(OnExitClicked);
             _btnRestart.onClick.AddListener(OnRestartClicked);
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             _btnExit.onClick.RemoveListener(OnExitClicked);
             _btnRestart.onClick.RemoveListener(OnRestartClicked);
         }

@@ -13,14 +13,12 @@ namespace TankGame.Authorization.States
         public override void Start(object[] args = null)
         {
             base.Start(args);
-            View.BackClicked += OnBackClick;
             Client.AppMsgReceived += OnMessageReceived;
         }
 
         public override void Finish()
         {
             base.Finish();
-            View.BackClicked -= OnBackClick;
             Client.AppMsgReceived -= OnMessageReceived;
         }
 

@@ -47,7 +47,7 @@ namespace DMarketSDK.Common.Navigation
 
         private int GetSiblingValue(INavigationElement element)
         {
-            var elementTransform = element.Transform;
+            var elementTransform = element.RectTransform;
             var siblingValue = elementTransform.GetSiblingIndex();
             var navigationParent = elementTransform.parent;
             var parentCount = 0;

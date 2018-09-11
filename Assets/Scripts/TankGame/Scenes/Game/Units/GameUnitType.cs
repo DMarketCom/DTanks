@@ -2,8 +2,7 @@
 {
     public enum GameUnitType
     {
-        Player,
-        Oponent,
-        Decoration
+        Player = 0,
+        Opponent = 1,
     }
 }

@@ -19,24 +19,16 @@ namespace DMarketSDK.Domain
             RotateToPortraitDown = rotateToPortraitDown;
         }
 
-        public static ScreenOrientationSettings GetGameSettings()
+        public static ScreenOrientationSettings GetGameOrientationSettings()
         {
-            return new ScreenOrientationSettings(Screen.autorotateToLandscapeRight,
-                Screen.autorotateToLandscapeLeft, Screen.autorotateToPortrait,
-                Screen.autorotateToPortraitUpsideDown);
+            return new ScreenOrientationSettings(Screen.autorotateToLandscapeRight, Screen.autorotateToLandscapeLeft, Screen.autorotateToPortrait, Screen.autorotateToPortraitUpsideDown);
         }
 
-        public static ScreenOrientationSettings GetMarketSettings()
+        public static ScreenOrientationSettings GetMarketOrientationSettings()
         {
-            if (Screen.orientation == ScreenOrientation.Portrait ||
-                Screen.orientation == ScreenOrientation.PortraitUpsideDown)
-            {
-                return new ScreenOrientationSettings(false, false, true, true);
-            }
-            else
-            {
-                return new ScreenOrientationSettings(true, true, false, false);
-            }
+            bool isPortrait = Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown;
+
+            return new ScreenOrientationSettings(!isPortrait, !isPortrait, isPortrait, isPortrait);
         }
     }
 }

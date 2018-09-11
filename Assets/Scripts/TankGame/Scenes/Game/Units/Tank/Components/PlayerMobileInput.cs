@@ -39,8 +39,9 @@ namespace Game.Units.Components.Standalone
 
         private float _timeOfFirePress = 0;
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
             if (_timeOfFirePress > 0)
             {
                 if (IsFirePressed)

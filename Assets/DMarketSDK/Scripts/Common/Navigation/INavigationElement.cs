@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public interface INavigationElement
+namespace DMarketSDK.Common.Navigation
 {
-    RectTransform Transform { get; }
+    public interface INavigationElement
+    {
+        RectTransform RectTransform { get; }
+    }
 }

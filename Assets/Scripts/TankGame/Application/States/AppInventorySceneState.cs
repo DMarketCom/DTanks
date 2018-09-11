@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DMarketSDK.Domain;
 using DMarketSDK.IntegrationAPI;
 using DMarketSDK.Market;
-using TankGame.Application.Commands;
 using TankGame.Catalogs.Scene;
 using TankGame.Inventory;
 using TankGame.Inventory.Domain;
@@ -82,7 +81,7 @@ namespace TankGame.Application.States
 
         private void OnLoadDMarketData(DMarketLoadDataRequest request)
         {
-            var message = new AppLoadDMarketDataMessage { MarketToken = request.MarketToken };
+            var message = new AppLoadDMarketDataMessage();
             _waitingLoadDataCallback = request.Callback;
             Client.Send(message);
         }

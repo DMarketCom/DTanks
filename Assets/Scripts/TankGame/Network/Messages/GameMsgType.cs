@@ -2,13 +2,12 @@
 {
     public enum GameMsgType : short
     {
-        UnitMoved = AppMsgType.Highest + 1,
+        UnitPosition = AppMsgType.Highest + 1,
         BulletStarted,
-        Died,
+        UnitDestroy,
         ConnectToBattleRequest,
         ConnectToBattleAnswer,
         OpponentRespawn,
-        TankStateUpdate,
         CreateDropItem,
         PickupGameItem,
 

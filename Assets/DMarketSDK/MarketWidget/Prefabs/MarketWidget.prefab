@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _formContainer: {fileID: 114507722057922322}
-  _apiErrorHepler: {fileID: 114326451979717188}
+  _apiErrorHelper: {fileID: 114326451979717188}
   _marketPopUpController: {fileID: 114594776642628880}
   _soundManager: {fileID: 114200511637884632}
 --- !u!222 &222014508504796176

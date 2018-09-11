@@ -1,14 +1,11 @@
-﻿using DMarketSDK.Domain;
-using DMarketSDK.Forms;
-using DMarketSDK.WidgetCore.Forms;
+﻿using DMarketSDK.WidgetCore.Forms;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 namespace DMarketSDK.Basic.Forms
 {
-    public sealed class WidgetLoggedForm : WidgetFormViewBase<WidgetLoginFormModel>
+    public sealed class WidgetLoggedForm : WidgetFormViewBase<WidgetLoggedFormModel>
     {
         [SerializeField]
         private TextMeshProUGUI _loginText;
@@ -20,24 +17,17 @@ namespace DMarketSDK.Basic.Forms
         public override void Show()
         {
             base.Show();
-            ShowUserLogin();
+            UpdateUserNameUI();
         }
 
-        private void ShowUserLogin()
+        private void UpdateUserNameUI()
         {
-            if (FormModel == null || string.IsNullOrEmpty(FormModel.UserLogin))
-            {
-                _loginText.text = "Logged";
-            }
-            else
-            {
-                _loginText.text = string.Format("Logged as {0}", FormModel.UserLogin);
-            }
+            _loginText.text = string.IsNullOrEmpty(FormModel.UserName) ? "Logged" : string.Format("Logged as {0}", FormModel.UserName);
         }
 
         protected override void OnModelChanged()
         { 
-            ShowUserLogin();
+            UpdateUserNameUI();
         }
     }
 }

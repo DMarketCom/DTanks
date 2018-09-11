@@ -40,7 +40,6 @@ namespace DMarketSDK.Basic.States
         {
             FormModel.Text = response.body;
             FormModel.SetChanges();
-
             View.SetLoadingState(false);
         }
 
@@ -48,7 +47,6 @@ namespace DMarketSDK.Basic.States
         {
             DevLogger.Error(string.Format("Can't load {0} from API", Type));
 
-            FormModel.Text = string.Format("Load text error:\n{0}", Type);
             View.SetLoadingState(false);
         }
     }

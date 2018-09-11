@@ -19,8 +19,9 @@ namespace DMarketSDK.Market
         public abstract int ItemsPerPage { get; }
         public abstract bool IsInitialize { get; }
 
-        protected virtual void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             CacheShowingComponents();
             CacheContainerComponents();
         }

@@ -41,7 +41,7 @@ namespace TankGame.GameServer.Commands.Inventory
 
             if (ValidateLoginMessage(message, out validationError))
             {
-                answer.Data = Storage.Get(message.UserName);
+                answer.PlayerInfo = Storage.Get(message.UserName);
                 Model.AddUserSession(message.ConnectionId, message.UserName);
             }
             else

@@ -2,8 +2,6 @@
 {
     public enum EnvironmentDirective
     {
-        None = -1,
-
-        ProductionSandbox = 0,
+        ProductionSandbox = 1,
     }
 }

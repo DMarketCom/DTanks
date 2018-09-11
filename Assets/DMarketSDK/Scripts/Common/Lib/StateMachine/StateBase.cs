@@ -1,5 +1,6 @@
 ﻿using System;
 using SHLibrary.ObserverView;
+using UnityEngine;
 
 namespace SHLibrary.StateMachine
 {
@@ -78,6 +79,12 @@ namespace SHLibrary.StateMachine
         public override string ToString()
         {
             return _name;
+        }
+
+
+        protected void OpenUrl(string url)
+        {
+            Application.OpenURL(url);
         }
     }
 

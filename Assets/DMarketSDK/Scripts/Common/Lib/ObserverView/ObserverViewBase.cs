@@ -43,8 +43,9 @@
             }
         }
 
-        protected virtual void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             if (_isNeedAdditionalUpdate)
             {
                 if (Model != null)
@@ -52,10 +53,6 @@
                     OnChanged(Model);
                 }
             }
-        }
-
-        protected virtual void OnDisable()
-        {
         }
     }
 }

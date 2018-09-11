@@ -18,7 +18,7 @@ namespace DMarketSDK.Market.Commands.API
 
         private void OnSuccess(UserSellOfferBuyRequest.Response result, UserSellOfferBuyRequest.RequestParams request)
         {
-            var message = string.Format("Congratulations! Your {0} will appear in DMarket inventory as soon as transaction will be processed. It may take up to 15 minutes", TargetItemModel.Tittle);
+            var message = "Item purchased! It will appear on your DMarket wallet shortly.";
             Controller.SoundManager.Play(MarketSoundType.SimpleMessage);
             Controller.PopUpController.ShowSimpleNotification(message);
             Terminate(true);

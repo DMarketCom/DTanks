@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using Game.Bullet;
 using Game.PickupItems;
 using Game.Tank;
-using Game.Units.Components;
 using TankGame.GameClient.Commands;
 using TankGame.Network.Client;
 using TankGame.Network.Messages;
@@ -16,18 +14,17 @@ namespace Game.States.Online
         private IGameClient Client { get { return Controller.Client; } }
         private PickUpItemsManager PickUpManager { get { return Context.PickUpManager; } }
 
-        private readonly Dictionary<int, ITank> _oponents = new Dictionary<int, ITank>();
+        private readonly Dictionary<int, ITank> _opponnets = new Dictionary<int, ITank>();
 
         public override void Start(object[] args = null)
         {
             base.Start(args);
-            var alreadyExistingOponents = args[0] as List<GameBattlePlayerInfo>;
-            alreadyExistingOponents.ForEach(oponent => CreateAndRespawnOponent(oponent));
+            var existingOpponents = args[0] as List<GameBattlePlayerInfo>;
+            existingOpponents.ForEach(CreateAndRespawnOpponent);
             Client.GameMsgReceived += OnMsgReceived;
             Player.Moved += OnPlayerMoved;
-            (Player.Weapon as IWeaponOutsideComponent).MakedFire += OnPlayerMakedFire;
-            PickUpManager.UnitPicked += OnPickedItem;
-            ScheduledUpdate(2f, true);
+            Player.Weapon.Fire += OnPlayerFire;
+            PickUpManager.UnitPickUpItem += OnPlayerPickUpItem;
         }
 
         public override void Finish()
@@ -35,28 +32,15 @@ namespace Game.States.Online
             base.Finish();
             Client.GameMsgReceived -= OnMsgReceived;
             Player.Moved -= OnPlayerMoved;
-            (Player.Weapon as IWeaponOutsideComponent).MakedFire -= OnPlayerMakedFire;
-            PickUpManager.UnitPicked -= OnPickedItem;
-            _oponents.Clear();
-        }
-
-        protected override void OnScheduledUpdate()
-        {
-            base.OnScheduledUpdate();
-            if (Player.IsAlive)
-            {
-                Client.Send(new TankStateUpdateMsg(Player.Pos));
-            }
+            Player.Weapon.Fire -= OnPlayerFire;
+            PickUpManager.UnitPickUpItem -= OnPlayerPickUpItem;
+            _opponnets.Clear();
         }
 
         protected override void OnPlayerDied(ITank tank)
         {
-            Client.Send(new TankDiedMsg());
+            Client.Send(new UnitDestroyMessage());
             ApplyCommand(new ShowGameOverPopUpCommand());
-        }
-
-        protected override void OnOponentHitted(GameUnitBase unit, IBullet bullet)
-        {
         }
 
         protected override void OnBackClick()
@@ -69,11 +53,11 @@ namespace Game.States.Online
 
         private void OnPlayerMoved(ITank tank)
         {
-            var message = new UnitMovedMsg(tank.Pos, tank.Rotation);
+            var message = new UnitPositionMessage(tank.Position, tank.Rotation);
             Client.Send(message);
         }
         
-        private void OnPlayerMakedFire(IWeaponOutsideComponent weapon, Vector3 target, float force)
+        private void OnPlayerFire(Vector3 direction, Vector3 target, float force)
         {
             var message = new BulletStartedMsg(target, force);
             Client.Send(message);
@@ -84,19 +68,16 @@ namespace Game.States.Online
             switch (message.Type)
             {
                 case GameMsgType.OpponentRespawn:
-                    OnOponentTankRespawn(message as TankRespawnMsg);
+                    OnOpponentTankRespawn(message as TankRespawnMsg);
                     break;
-                case GameMsgType.UnitMoved:
-                    OnUnitMoved(message as UnitMovedMsg);
+                case GameMsgType.UnitPosition:
+                    OnUnitMoved(message as UnitPositionMessage);
                     break;
-                case GameMsgType.Died:
-                    OnOponentDied(message as TankDiedMsg);
+                case GameMsgType.UnitDestroy:
+                    OnOpponentDied(message as UnitDestroyMessage);
                     break;
                 case GameMsgType.BulletStarted:
-                    OnOponentBulletStarted(message as BulletStartedMsg);
-                    break;
-                case GameMsgType.TankStateUpdate:
-                    OnOpponentUpdateState(message as TankStateUpdateMsg);
+                    OnOpponentBulletStarted(message as BulletStartedMsg);
                     break;
                 case GameMsgType.PickupGameItem:
                     OnPickupGameItem(message as PickUpGameItemMsg);
@@ -107,49 +88,44 @@ namespace Game.States.Online
             }
         }
 
-        private void OnOponentTankRespawn(TankRespawnMsg message)
+        private void OnOpponentTankRespawn(TankRespawnMsg message)
         {
-            CreateAndRespawnOponent(message.Opponent);
+            CreateAndRespawnOpponent(message.Opponent);
         }
 
-        private void CreateAndRespawnOponent(GameBattlePlayerInfo oponentInfo)
+        private void CreateAndRespawnOpponent(GameBattlePlayerInfo opponentUnit)
         {
-            if (!_oponents.ContainsKey(oponentInfo.UnitId))
+            if (!_opponnets.ContainsKey(opponentUnit.UnitId))
             {
-                var newOponent = Context.CreateTank(false, Model.Mode, oponentInfo.EquippedItemsTypes);
-                _oponents.Add(oponentInfo.UnitId, newOponent);
-                Controller.Opponents.Add(newOponent);
+                var newOpponent = Context.CreateTank(false, Model.Mode, opponentUnit.EquippedItemsTypes);
+                _opponnets.Add(opponentUnit.UnitId, newOpponent);
+                Controller.Opponents.Add(newOpponent);
             }
-            _oponents[oponentInfo.UnitId].Respawn(oponentInfo.Position);
+            _opponnets[opponentUnit.UnitId].Respawn(opponentUnit.Position);
         }
 
-        private void OnOponentBulletStarted(BulletStartedMsg message)
+        private void OnOpponentBulletStarted(BulletStartedMsg message)
         {
-            _oponents[message.UnitId].Weapon.MakeFire(message.Target, message.Force);
+            _opponnets[message.UnitId].Weapon.MakeFire(message.Target, message.Force);
         }
 
-        private void OnOponentDied(TankDiedMsg message)
+        private void OnOpponentDied(UnitDestroyMessage message)
         {
-            (_oponents[message.UnitId] as INetworkTank).Broke();
+            (_opponnets[message.UnitId] as INetworkTank).Broke();
         }
 
-        private void OnUnitMoved(UnitMovedMsg message)
+        private void OnUnitMoved(UnitPositionMessage message)
         {
-            _oponents[message.UnitId].Rotation = message.RotY;
-            UpdateOpponentTankPos(message.UnitId, message.Pos);
-        }
-
-        private void OnOpponentUpdateState(TankStateUpdateMsg message)
-        {
-            UpdateOpponentTankPos(message.UnitId, message.Pos);
+            _opponnets[message.UnitId].Rotation = message.RotationY;
+            UpdateOpponentTankPos(message.UnitId, message.Position);
         }
 
         private void UpdateOpponentTankPos(int unitId, Vector3 pos)
         {
-            var tank = _oponents[unitId];
+            var tank = _opponnets[unitId];
             const float kMinDistanceForUsingTween = 0.05f;
             const float kMaxDistanceForUsingTween = 3f;
-            var distanceDelay = Vector3.Distance(tank.Pos, pos);
+            var distanceDelay = Vector3.Distance(tank.Position, pos);
             if (distanceDelay > kMinDistanceForUsingTween 
                 && distanceDelay < kMaxDistanceForUsingTween)
             {
@@ -157,7 +133,7 @@ namespace Game.States.Online
             }
             else
             {
-                tank.Pos = pos;
+                tank.Position = pos;
             }
         }
 
@@ -173,9 +149,9 @@ namespace Game.States.Online
                 dropItem.Pos);
         }
 
-        private void OnPickedItem(int unitId, PickupItem item)
+        private void OnPlayerPickUpItem(int unitId, PickupItem item)
         {
-            if (Player.Unit.UnitID == unitId && Player.IsAlive)
+            if (Player.Unit.UnitId == unitId && Player.IsAlive)
             {
                 var itemType = item.ItemType;
                 var dropInfo = new DropItemInfo { WorldId = item.WorldId, CatalogId = itemType };

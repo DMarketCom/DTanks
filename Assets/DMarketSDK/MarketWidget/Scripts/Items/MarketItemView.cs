@@ -16,8 +16,6 @@ namespace DMarketSDK.Market.Items
 
         public bool IsInitialize { get { return _components != null; } }
 
-        public RectTransform RectTransform { get; private set; }
-
         public void Initialize()
         {
             if (!IsInitialize)
@@ -53,17 +51,12 @@ namespace DMarketSDK.Market.Items
             }
         }
 
-        public virtual bool IsShowed
+        public bool IsShowed
         {
             get
             {
                 return gameObject.activeSelf;
             }
-        }
-
-        private void Awake()
-        {
-            RectTransform = transform as RectTransform;
         }
 
         protected override void OnModelChanged()

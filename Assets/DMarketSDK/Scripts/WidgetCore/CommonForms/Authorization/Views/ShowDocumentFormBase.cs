@@ -31,7 +31,11 @@ namespace DMarketSDK.Forms
 
         protected override void OnModelChanged()
         {
-            _text.text = FormModel.Text;
+            //TODO string.IsNullOrEmpty is tmp WebGl loading fix
+            if (!string.IsNullOrEmpty(FormModel.Text))
+            {
+                _text.text = FormModel.Text;
+            }
         }
 
         protected override void OnEnable()

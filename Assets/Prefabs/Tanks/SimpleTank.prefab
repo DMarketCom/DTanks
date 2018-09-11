@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4992622205819290}
   m_Layer: 9
-  m_Name: TankRenderers
+  m_Name: TankBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,7 +697,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1c4876e23f2de44a2936c23cd16a1124, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -917,8 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9601e5e2b0d32b64eac6e57c2e79ada2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gun: {fileID: 4004833584234476}
-  _unit: {fileID: 114299089869222766}
+  _turretFireTransform: {fileID: 4004833584234476}
 --- !u!114 &114380141574650354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -942,12 +941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594f1926e2b542947bc0e4b8885fdd16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Body: {fileID: 4227703092328890}
-  GunPoint: {fileID: 4004833584234476}
-  "Bod\u0443Renders":
-  - {fileID: 23986123315640460}
-  - {fileID: 23892636197506890}
+  _bodyTransform: {fileID: 4227703092328890}
   _helmetPoint: {fileID: 4404512313742618}
+  _bodyRenderers:
+  - {fileID: 23892636197506890}
+  - {fileID: 23986123315640460}
+  _rigidbody: {fileID: 54736415734301278}
 --- !u!198 &198432079117835208
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -10662,7 +10661,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6303ae47ae70243b38cb8045c41b314e, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

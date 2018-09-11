@@ -1,35 +1,39 @@
 ﻿using SHLibrary.ObserverView;
 using DMarketSDK.Common.Forms.AnimationComponents;
+using System.Collections.Generic;
 
 namespace DMarketSDK.Common.Forms
 {
     public abstract class AnimObserverFormBase<T> : ObserverViewBase<T> where T : IObservable
     {
-        private IFormAnimationComponent _anim;
+        protected List<IFormAnimationComponent> _animComponents;
 
         public override void Show()
         {
-            GetAnimComponent().Show();
+            GetAnimComponents().ForEach(anim => anim.Show());
         }
 
         public override void Hide()
         {
-            GetAnimComponent().Hide();
+            GetAnimComponents().ForEach(anim => anim.Hide());
         }
 
-        private IFormAnimationComponent GetAnimComponent()
+        private List<IFormAnimationComponent> GetAnimComponents()
         {
-            if (_anim == null)
+            if (_animComponents == null)
             {
-                _anim = CreateAnimComponent();
-                _anim.Initialize();
+                _animComponents = CreateAnimComponents();
+                _animComponents.ForEach(anim => anim.Initialize());
             }
-            return _anim;
+            return _animComponents;
         }
 
-        protected virtual IFormAnimationComponent CreateAnimComponent()
+        protected virtual List<IFormAnimationComponent> CreateAnimComponents()
         {
-            return new FadeAnimationComponent(new TweenAnimParameters(gameObject));
+            return new List<IFormAnimationComponent>
+            {
+                new FadeAnimationComponent(new TweenAnimParameters(gameObject))
+            };
         }
     }
 }

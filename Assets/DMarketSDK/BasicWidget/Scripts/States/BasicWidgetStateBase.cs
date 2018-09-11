@@ -10,11 +10,19 @@ namespace DMarketSDK.Basic.States
 
         protected BasicView WidgetView { get { return Controller.WidgetView; } }
 
-        private ApproveForm ApproveForm { get { return Controller.GetForm<ApproveForm>(); } }
+        protected TForm GetForm<TForm>() where TForm : WidgetFormViewBase
+        {
+            return Controller.GetForm<TForm>();
+        }
 
         protected void OnLogoutClicked()
         {
-            ApproveForm.ShowChoiceWindow("Are you sure?", DoLogout);  
+            GetForm<ApproveForm>().ShowChoiceWindow("Are you sure?", DoLogout);  
+        }
+
+        protected void OnCloseMarketClicked()
+        {
+            Controller.Close();
         }
 
         private void DoLogout(bool result)
@@ -22,19 +30,6 @@ namespace DMarketSDK.Basic.States
             if (result)
             {
                 Controller.PreLogout();
-            }
-        }
-
-        protected void OnCloseMarketClicked()
-        {
-            ApproveForm.ShowChoiceWindow("Are you sure?", DoClose);
-        }
-
-        private void DoClose(bool result)
-        {
-            if (result)
-            {
-                Controller.Close();
             }
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DMarketSDK.Market.Commands.API;
 using DMarketSDK.Market.Domain;
 using DMarketSDK.Market.Items;
+using DMarketSDK.WidgetCore.Forms;
 using SHLibrary.Logging;
 using SHLibrary.StateMachine;
 
@@ -121,9 +122,17 @@ namespace DMarketSDK.Market.Forms
 
         private void ApplyCancelSellOfferCommand(MarketItemModel model)
         {
-            var cancelOfferCommand = Strategy.GetCancelSellOfferCommand(model);
-            cancelOfferCommand.CommandFinished += OnCancelSellOfferFinished;
-            SendApiCommand(cancelOfferCommand, false);
+            Action<bool> approveCallback = isApproveCancel =>
+            {
+                if (isApproveCancel)
+                {
+                    var cancelOfferCommand = Strategy.GetCancelSellOfferCommand(model);
+                    cancelOfferCommand.CommandFinished += OnCancelSellOfferFinished;
+                    SendApiCommand(cancelOfferCommand, false);
+                }
+            };
+
+            Controller.GetForm<ApproveForm>().ShowChoiceWindow("Are you sure?", approveCallback);
         }
 
         private void OnCancelSellOfferFinished(CommandBase command)

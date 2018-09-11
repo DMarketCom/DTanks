@@ -34,7 +34,7 @@ namespace DMarketSDK.Market.Forms
         {
             base.OnCloseClicked();
 
-            (Controller as IMarketWidget).Close();
+            Controller.Close();
         }
 
         private void OnIAgreeToggle(bool value)

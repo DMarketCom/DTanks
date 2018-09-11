@@ -1,5 +1,4 @@
 ﻿using DMarketSDK.Domain;
-using UnityEngine;
 
 namespace DMarketSDK.Basic.States
 {
@@ -31,7 +30,8 @@ namespace DMarketSDK.Basic.States
 
         private void ApplyScreenSettings()
         {
-            Controller.ApplyScreenSettings(ScreenOrientationSettings.GetMarketSettings());
+            Controller.SaveGameSettings(ScreenOrientationSettings.GetGameOrientationSettings());
+            Controller.ApplyScreenSettings(ScreenOrientationSettings.GetMarketOrientationSettings());
         }
     }
 }

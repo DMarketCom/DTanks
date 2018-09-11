@@ -37,7 +37,7 @@ namespace DMarketSDK.Forms
             MarketRefreshToken = marketRefreshToken;
         }
 
-        public void SetScreenOrientationSettings(ScreenOrientationSettings settings)
+        public void SetGameScreenSettings(ScreenOrientationSettings settings)
         {
             GameOrientationSettings = settings;
         }

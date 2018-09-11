@@ -29,14 +29,16 @@ namespace TankGame.UI.Forms
             _txtMessage.text = messageText;
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             _btnClose.onClick.AddListener(OnCloseClicked);
             _btnOk.onClick.AddListener(OnCloseClicked);
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             _btnClose.onClick.RemoveListener(OnCloseClicked);
             _btnOk.onClick.RemoveListener(OnCloseClicked);
         }

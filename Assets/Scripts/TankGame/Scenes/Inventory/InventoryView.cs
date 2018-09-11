@@ -5,6 +5,8 @@ using TankGame.UI.Forms;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TankGame.Inventory
 {
@@ -32,15 +34,37 @@ namespace TankGame.Inventory
         [SerializeField]
         private TextMeshProUGUI _marketButtonText;
 
+        #region Notifications
+        [SerializeField]
+        private Transform _notificationPanel;
+
+        public int CountNotificationForm = 5;
+
+        [SerializeField]
+        private SimpleMessageForm _notificationFormPrefab;
+
+        private List<SimpleMessageForm> _notificationForms;
+        #endregion
+
         public MessageBoxForm MessageBoxForm
         {
             get { return _messageBoxForm; }
+        }
+
+        protected override void Start()
+        {
+            CreateNotificationForms();
         }
 
         public override void Show()
         {
             base.Show();
             _itemsContainer.ApplyModel(Model);
+        }
+
+        public SimpleMessageForm CreateNotificationForm()
+        {
+            return _notificationForms.First(p => p.gameObject.activeSelf == false);
         }
 
         protected override void OnModelChanged()
@@ -89,6 +113,15 @@ namespace TankGame.Inventory
         private void OnMarketWidgetClicked()
         {
             MarketWidgetClicked.SafeRaise();
+        }
+
+        private void CreateNotificationForms()
+        {
+            _notificationForms = new List<SimpleMessageForm>();
+            for (int i = 0; i < CountNotificationForm; i++)
+            {
+                _notificationForms.Add(Instantiate(_notificationFormPrefab, _notificationPanel));
+            }
         }
     }
 }

@@ -18,9 +18,10 @@ namespace Game.Units.Components.Standalone
         private float _nextFireTime;
         private float _nextChangeDirTime;
         private Vector2 _currentDirection;
-        
-        private void Update()
+
+        protected override void Update()
         {
+            base.Update();
             if (_nextFireTime < Time.timeSinceLevelLoad)
             {
                 Fire.SafeRaise(GetRandomDirection(), UnityEngine.Random.value);

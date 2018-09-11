@@ -7,13 +7,10 @@ namespace DMarketSDK.Market.Forms
     {
         protected override bool IsNeedChangeTabOnStart
         {
-            get
-            {
-                return false;
-            }
+            get { return false; }
         }
 
-        public override void Start(object[] args)
+        public override void Start(object[] args = null)
         {
             base.Start(args);
 

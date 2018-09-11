@@ -27,8 +27,9 @@ namespace DMarketSDK.Market
 
         private List<MarketTabOptionsData> _dropdownOptions;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             InitializeDropdown();
         }
 

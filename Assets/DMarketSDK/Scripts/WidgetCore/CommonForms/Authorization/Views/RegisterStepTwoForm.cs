@@ -105,7 +105,7 @@ namespace DMarketSDK.Forms
             LoadingSpinner.SetActiveSpinner(isWait);
         }
 
-        public virtual void ClearFields()
+        public void ClearFields()
         {
             _accountName.text = string.Empty;
             _passwordField.text = string.Empty;

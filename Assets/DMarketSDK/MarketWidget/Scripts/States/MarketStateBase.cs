@@ -14,8 +14,6 @@ namespace DMarketSDK.Market.States
 
         protected IMarketStrategy Strategy { get { return Controller.Strategy; } }
 
-        private ApproveForm ApproveForm { get { return Controller.GetForm<ApproveForm>(); } }
-
         public override void Start(object[] args = null)
         {
             base.Start(args);
@@ -30,6 +28,11 @@ namespace DMarketSDK.Market.States
             MarketView.CloseClicked -= OnCloseMarketClicked;
         }
 
+        protected TForm GetForm<TForm>() where TForm : WidgetFormViewBase
+        {
+            return Controller.GetForm<TForm>();
+        }
+
         protected void ShowSimpleNotification(string message)
         {
             Controller.SoundManager.Play(MarketSoundType.SimpleMessage);
@@ -38,27 +41,19 @@ namespace DMarketSDK.Market.States
 
         private void OnLogoutClicked()
         {
-            ApproveForm.ShowChoiceWindow("Are you sure?", DoLogout);  
-        }
-
-        private void DoLogout(bool result)
-        {
-            if (result)
-            {
-                Controller.Logout();
-            }
+            GetForm<ApproveForm>().ShowChoiceWindow("Are you sure?", OnLogoutResult);  
         }
 
         private void OnCloseMarketClicked()
         {
-            ApproveForm.ShowChoiceWindow("Are you sure?", DoClose);
+            Controller.Close();
         }
 
-        private void DoClose(bool result)
+        private void OnLogoutResult(bool isLogout)
         {
-            if (result)
+            if (isLogout)
             {
-                Controller.Close();
+                Controller.Logout();
             }
         }
     }

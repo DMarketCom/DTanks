@@ -180,8 +180,11 @@ namespace TankGame.GameServer.Commands.DMarket
                                 }
                                 case DMarketTransactionStatusType.Success:
                                 {
-                                    OnSuccessMarketOperation(transactionItem, transaction);
-                                    transaction.RemoveOperation(transactionItem.operationId);
+                                    if (transaction.IsPendingOperation(transactionItem.operationId))
+                                    {
+                                        OnSuccessMarketOperation(transactionItem, transaction);
+                                        transaction.RemoveOperation(transactionItem.operationId);
+                                    }
                                     break;
                                 }
                             }

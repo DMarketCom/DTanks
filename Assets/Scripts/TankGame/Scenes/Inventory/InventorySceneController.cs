@@ -10,6 +10,8 @@ using UnityEngine;
 using DMarketSDK.Basic;
 using TankGame.Catalogs.Game;
 using TankGame.Domain.PlayerData;
+using TankGame.UI.Forms;
+using TankGame.GameClient.Commands;
 
 namespace TankGame.Inventory
 {
@@ -88,6 +90,11 @@ namespace TankGame.Inventory
         {
             Model.IsLoggedDMarket = Widget.IsLogged;
             Model.SetChanges();
+
+            if (IsBasicIntegration)
+            {
+                ShowNotification("DMarket login was successful");
+            }
         }
 
         private void WidgetLogoutEvent()
@@ -112,6 +119,14 @@ namespace TankGame.Inventory
         public void CloseInventory()
         {
             ApplyState<InventoryCloseState>();
+        }
+
+        private void ShowNotification(string messageText)
+        {
+            SimpleMessageForm notificationMessage = View.CreateNotificationForm();
+            notificationMessage.Init(messageText);
+
+            ApplyCommand(new ShowNotificationFormCommand(notificationMessage, 2f));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Game.Bullet;
 using Game.Tank;
 using System.Collections.Generic;
+using Game.Units.Components;
 using UnityEngine;
 
 namespace Game.States
@@ -18,7 +19,7 @@ namespace Game.States
 
             Player.Died += OnPlayerDied;
 
-            BulletManager.Hitted += OnHitted;
+            BulletManager.Hit += OnBulletHit;
         }
 
         public override void Finish()
@@ -26,32 +27,19 @@ namespace Game.States
             base.Finish();
             Player.Died -= OnPlayerDied;
 
-            BulletManager.Hitted -= OnHitted;
+            BulletManager.Hit -= OnBulletHit;
         }
 
-        private void OnHitted(Collider collider, IBullet bullet)
+        private void OnBulletHit(Collider collider, IBullet bullet)
         {
-            var unit = collider.gameObject.GetComponent<GameUnitBase>();
+            var unit = collider.gameObject.GetComponent<TankHealthComponent>();
             if (unit != null)
             {
-                var unitType = UnitCatalog.GetUnitType(unit.UnitID);
-                if (unitType == GameUnitType.Player)
-                {
-                    OnPlayerHitted(unit, bullet);
-                }
-                else if (unitType == GameUnitType.Oponent)
-                {
-                    OnOponentHitted(unit, bullet);
-                }
+                OnUnitDamaged(unit, bullet);
             }
         }
 
-        protected virtual void OnPlayerHitted(GameUnitBase unit, IBullet bullet)
-        {
-            unit.TakeDamage(bullet.Damage, bullet.UnitID);
-        }
-
-        protected virtual void OnOponentHitted(GameUnitBase unit, IBullet bullet)
+        private void OnUnitDamaged(IHealthComponent unit, IBullet bullet)
         {
             unit.TakeDamage(bullet.Damage, bullet.UnitID);
         }

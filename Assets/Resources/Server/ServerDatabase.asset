@@ -11,4 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0c20f276807a1429010b48e3e2a55f, type: 3}
   m_Name: ServerDatabase
   m_EditorClassIdentifier: 
-  Players: []
+  Players:
+  - Version: 1
+    Autorziation:
+      UserName: 22222
+      Password: 22222
+    Inventory:
+      Coins: 1000
+      Items:
+      - WorldId: 1
+        ItemType: 2
+        IsInMarket: 0
+      - WorldId: 2
+        ItemType: 7
+        IsInMarket: 0
+      EquippedItems: 01000000000000000200000000000000

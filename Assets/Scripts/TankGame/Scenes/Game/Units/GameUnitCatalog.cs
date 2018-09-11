@@ -4,10 +4,11 @@ namespace Game
 {
     public class GameUnitCatalog
     {
-        private int _freeUnitId = 0;
+        private int _freeUnitId;
 
-        private readonly Dictionary<int, GameUnitBase> _unitsById 
+        private readonly Dictionary<int, GameUnitBase> _unitsById
             = new Dictionary<int, GameUnitBase>();
+
         private readonly Dictionary<int, GameUnitType> _unitsTypesById
             = new Dictionary<int, GameUnitType>();
 

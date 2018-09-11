@@ -5,7 +5,7 @@ namespace Game.Bullet
 {
     public interface IBullet
     {
-        event Action<IBullet, Collider> Hitted;
+        event Action<IBullet, Collider> Hit;
 
         void Fire(Vector3 startPos, Vector3 endPos, float force);
 

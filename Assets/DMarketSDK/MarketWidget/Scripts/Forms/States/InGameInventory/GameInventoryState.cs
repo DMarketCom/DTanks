@@ -16,6 +16,15 @@ namespace DMarketSDK.Market.Forms
 
             GameModel.ItemsChanged += OnGameModelChanged;
             LoadFormItems();
+
+            //TODO need refactoring
+            //TODO refactoring != delete
+            if (Controller.IsNeedBlockMarket)
+            {
+                Debug.LogWarning("Inventory in Market widget is blocking for that platform and Market will be closed." +
+                                 " For that platform recommended to use Basic widget");
+                Controller.Close();
+            }
         }
 
         public override void Finish()

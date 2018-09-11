@@ -1,7 +1,5 @@
-﻿using DMarketSDK.Basic;
-using DMarketSDK.Domain;
+﻿using DMarketSDK.Domain;
 using DMarketSDK.Market.Forms;
-using UnityEngine;
 
 namespace DMarketSDK.Market.States
 {
@@ -21,7 +19,7 @@ namespace DMarketSDK.Market.States
                 return;
             }
 
-            var isLogged = ((IMarketWidget)Controller).IsLogged;
+            var isLogged = Controller.IsLogged;
             if (isLogged)
             {
                 ApplyState<GameInventoryState>();
@@ -34,7 +32,8 @@ namespace DMarketSDK.Market.States
 
         private void ApplyScreenSettings()
         {
-            Controller.ApplyScreenSettings(ScreenOrientationSettings.GetMarketSettings());
+            Controller.SaveGameSettings(ScreenOrientationSettings.GetGameOrientationSettings());
+            Controller.ApplyScreenSettings(ScreenOrientationSettings.GetMarketOrientationSettings());
         }
     }
 }

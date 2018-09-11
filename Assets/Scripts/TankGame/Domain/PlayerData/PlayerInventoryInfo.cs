@@ -86,7 +86,7 @@ namespace TankGame.Domain.PlayerData
             return itemsList;
         }
 
-        public void RemoveAllDMarketItems()
+        public void RemoveAllDMakretItems()
         {
             var dmarketItems = Items.FindAll(item => item.IsInMarket == true);
             dmarketItems.ForEach(item => Items.Remove(item));

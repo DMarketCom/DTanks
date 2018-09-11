@@ -12,7 +12,7 @@ namespace SHLibrary.Logging
         private static ILogColorSetter _logColorSetter;
 
         public static bool IsEnable = true;
-        public static bool IsNeedLogInConsole;
+        public static bool IsNeedLogInConsole = true;
         public static string Header = string.Empty;
 
         public static void AddFilter(ILogFilter filter)
@@ -66,7 +66,7 @@ namespace SHLibrary.Logging
                     return;
                 }
             }
-            var resultMessage = string.Format("<b>[{0}]</b> {1}", channel, message);
+            var resultMessage = string.Format("<b>[{0}][{1:HH:mm:ss:fff}]</b> {2}", channel, DateTime.Now, message);
             if (!string.IsNullOrEmpty(Header))
             {
                 resultMessage = string.Format("{0}:   {1}", Header, resultMessage);

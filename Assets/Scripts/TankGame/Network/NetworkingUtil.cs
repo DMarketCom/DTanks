@@ -18,13 +18,12 @@ namespace TankGame.Network
         {
             GameMsgHandlers = new Dictionary<GameMsgType, Func<NetworkMessage, GameMessageBase>>
             {
-                {GameMsgType.UnitMoved, msg => msg.ReadMessage<UnitMovedMsg>()},
+                {GameMsgType.UnitPosition, msg => msg.ReadMessage<UnitPositionMessage>()},
                 {GameMsgType.BulletStarted, msg => msg.ReadMessage<BulletStartedMsg>()},
-                {GameMsgType.Died, msg => msg.ReadMessage<TankDiedMsg>()},
+                {GameMsgType.UnitDestroy, msg => msg.ReadMessage<UnitDestroyMessage>()},
                 {GameMsgType.ConnectToBattleRequest, msg => msg.ReadMessage<ConnectToBattleRequestMsg>()},
                 {GameMsgType.ConnectToBattleAnswer, msg => msg.ReadMessage<ConnectToBattleAnswerMsg>()},
                 {GameMsgType.OpponentRespawn, msg => msg.ReadMessage<TankRespawnMsg>()},
-                {GameMsgType.TankStateUpdate, msg => msg.ReadMessage<TankStateUpdateMsg>()},
                 {GameMsgType.CreateDropItem, msg => msg.ReadMessage<CreateDropItemMsg>()},
                 {GameMsgType.PickupGameItem, msg => msg.ReadMessage<PickUpGameItemMsg>()}
             };
@@ -87,7 +86,7 @@ namespace TankGame.Network
 
         public static List<short> GetAllShortCodesForGameMessages()
         {
-            return GetAllNumbersFromRange((short)GameMsgType.UnitMoved,
+            return GetAllNumbersFromRange((short)GameMsgType.UnitPosition,
                 (short)GameMsgType.Highest);
         }
 

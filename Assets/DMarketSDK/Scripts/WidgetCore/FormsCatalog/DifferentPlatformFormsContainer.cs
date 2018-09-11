@@ -64,7 +64,7 @@ namespace DMarketSDK.FormsCatalog
                 case RuntimePlatform.IPhonePlayer:
                     return Screen.orientation == ScreenOrientation.Landscape
                     ? FormUIType.MobileLandscape
-                    : FormUIType.MobilePortait;
+                    : FormUIType.MobilePortrait;
                 default:
                     return FormUIType.Standalone;
             }

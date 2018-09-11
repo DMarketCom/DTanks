@@ -60,8 +60,9 @@ namespace Game.Explosions
             _playEndTime = Time.timeSinceLevelLoad + duration;
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
             if (_playEndTime > 1f && Time.timeSinceLevelLoad > _playEndTime)
             {
                 _playEndTime = 0;

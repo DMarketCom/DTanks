@@ -56,12 +56,12 @@ namespace DMarketSDK.Market.Forms
 
         private void OnTermOfUseClicked()
         {
-            ApplyState<TermsOfUseState>();
+            OpenUrl(FormModel.TermsOfUseUrl);
         }
 
         private void OnPrivacyPolicyClicked()
         {
-            ApplyState<PrivacyPolicyState>();
+            OpenUrl(FormModel.PrivacyPolicyUrl);
         }
 
         private void OnBackButton()

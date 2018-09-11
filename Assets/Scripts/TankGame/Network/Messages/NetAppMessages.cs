@@ -11,8 +11,8 @@ namespace TankGame.Network.Messages
 {
     public abstract class AppMessageBase : MessageBase
     {
-        public abstract AppMsgType Type { get; }
         public int ConnectionId;
+        public abstract AppMsgType Type { get; }
 
         public override void Serialize(NetworkWriter writer)
         {
@@ -31,10 +31,7 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.Login;
-            }
+            get { return AppMsgType.Login; }
         }
 
         public string UserName;
@@ -59,10 +56,7 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.Registration;
-            }
+            get { return AppMsgType.Registration; }
         }
 
         public string UserName;
@@ -87,20 +81,7 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.Logout;
-            }
-        }
-
-        public override void Serialize(NetworkWriter writer)
-        {
-            base.Serialize(writer);
-        }
-
-        public override void Deserialize(NetworkReader reader)
-        {
-            base.Deserialize(reader);
+            get { return AppMsgType.Logout; }
         }
     }
 
@@ -127,20 +108,7 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.RegistrationAnswer;
-            }
-        }
-
-        public override void Serialize(NetworkWriter writer)
-        {
-            base.Serialize(writer);
-        }
-
-        public override void Deserialize(NetworkReader reader)
-        {
-            base.Deserialize(reader);
+            get { return AppMsgType.RegistrationAnswer; }
         }
     }
 
@@ -148,24 +116,21 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.LoginAnswer;
-            }
+            get { return AppMsgType.LoginAnswer; }
         }
 
-        public PlayerInfo Data;
+        public PlayerInfo PlayerInfo;
 
         public override void Serialize(NetworkWriter writer)
         {
             base.Serialize(writer);
-            writer.Write(JsonConvert.SerializeObject(Data));
+            writer.Write(JsonConvert.SerializeObject(PlayerInfo));
         }
 
         public override void Deserialize(NetworkReader reader)
         {
             base.Deserialize(reader);
-            Data = JsonConvert.DeserializeObject<PlayerInfo>(reader.ReadString());
+            PlayerInfo = JsonConvert.DeserializeObject<PlayerInfo>(reader.ReadString());
         }
     }
 
@@ -173,15 +138,14 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.UpdatePlayerDataAnswer;
-            }
+            get { return AppMsgType.UpdatePlayerDataAnswer; }
         }
 
         public PlayerInfo Data;
 
-        public AppUpdatePlayerDataAnswerMessage() { }
+        public AppUpdatePlayerDataAnswerMessage()
+        {
+        }
 
         public AppUpdatePlayerDataAnswerMessage(PlayerInfo data)
         {
@@ -200,32 +164,12 @@ namespace TankGame.Network.Messages
             Data = JsonConvert.DeserializeObject<PlayerInfo>(reader.ReadString());
         }
     }
-    
+
     public class AppLoadDMarketDataMessage : AppMessageBase
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.LoadDMarketDataRequest;
-            }
-        }
-
-        public string MarketToken; // TODO: i think this filed not used in any proccess, maybe need to remove.
-        public DMarketDataLoadResponse Response;
-
-        public override void Serialize(NetworkWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write(MarketToken);
-            writer.Write(JsonConvert.SerializeObject(Response));
-        }
-
-        public override void Deserialize(NetworkReader reader)
-        {
-            base.Deserialize(reader);
-            MarketToken = reader.ReadString();
-            Response = JsonConvert.DeserializeObject<DMarketDataLoadResponse>(reader.ReadString());
+            get { return AppMsgType.LoadDMarketDataRequest; }
         }
     }
 
@@ -309,10 +253,7 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.LoadDMarketDataAnswer;
-            }
+            get { return AppMsgType.LoadDMarketDataAnswer; }
         }
 
         public DMarketDataLoadResponse Response;
@@ -325,7 +266,9 @@ namespace TankGame.Network.Messages
         /// <summary>
         /// Default constructor for serialization.
         /// </summary>
-        public AppLoadDMarketAnswerMessage() { }
+        public AppLoadDMarketAnswerMessage()
+        {
+        }
 
         public override void Serialize(NetworkWriter writer)
         {
@@ -342,7 +285,10 @@ namespace TankGame.Network.Messages
 
     public class AppChangingItemsAnswerMessage : AppServerAnswerMessageBase
     {
-        public override AppMsgType Type { get { return AppMsgType.ItemChangingAnswer; } }
+        public override AppMsgType Type
+        {
+            get { return AppMsgType.ItemChangingAnswer; }
+        }
 
         public ItemsChangingResponse Response;
 
@@ -354,7 +300,9 @@ namespace TankGame.Network.Messages
         /// <summary>
         /// Default constructor for serialization.
         /// </summary>
-        public AppChangingItemsAnswerMessage() { }
+        public AppChangingItemsAnswerMessage()
+        {
+        }
 
         public override void Serialize(NetworkWriter writer)
         {
@@ -373,10 +321,7 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.GetGameTokenRequest;
-            }
+            get { return AppMsgType.GetGameTokenRequest; }
         }
 
         public string UserId;
@@ -407,10 +352,7 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.GetGameTokenAnswer;
-            }
+            get { return AppMsgType.GetGameTokenAnswer; }
         }
 
         public DMarketGameTokenResponse Response;
@@ -436,10 +378,7 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.UpdateMarketToken;
-            }
+            get { return AppMsgType.UpdateMarketToken; }
         }
 
         public string MarketToken;
@@ -460,7 +399,6 @@ namespace TankGame.Network.Messages
             base.Serialize(writer);
             writer.Write(MarketToken);
             writer.Write(RefreshMarketToken);
-
         }
 
         public override void Deserialize(NetworkReader reader)
@@ -475,15 +413,14 @@ namespace TankGame.Network.Messages
     {
         public override AppMsgType Type
         {
-            get
-            {
-                return AppMsgType.DMarketTransactionCompleted;
-            }
+            get { return AppMsgType.DMarketTransactionCompleted; }
         }
 
         public MarketMoveItemRequestParams TransactionData;
 
-        public AppDMarketTransactionMessage() { }
+        public AppDMarketTransactionMessage()
+        {
+        }
 
         public AppDMarketTransactionMessage(MarketMoveItemRequestParams transactionData)
         {
@@ -499,22 +436,30 @@ namespace TankGame.Network.Messages
         public override void Deserialize(NetworkReader reader)
         {
             base.Deserialize(reader);
-            TransactionData = JsonConvert.DeserializeObject< MarketMoveItemRequestParams>(reader.ReadString());
+            TransactionData = JsonConvert.DeserializeObject<MarketMoveItemRequestParams>(reader.ReadString());
         }
     }
 
     public class InventoryBasicIntegrationMessage : AppMessageBase
     {
-        public override AppMsgType Type { get { return AppMsgType.LoadInventoryBasicIntegration; } }
+        public override AppMsgType Type
+        {
+            get { return AppMsgType.LoadInventoryBasicIntegration; }
+        }
     }
 
     public class InventoryBasicIntegrationAnswerMessage : AppServerAnswerMessageBase
     {
-        public override AppMsgType Type { get { return AppMsgType.LoadInventoryBasicIntegrationAnswer; } }
+        public override AppMsgType Type
+        {
+            get { return AppMsgType.LoadInventoryBasicIntegrationAnswer; }
+        }
 
         public DMarketDataLoadResponse Response { get; private set; }
 
-        public InventoryBasicIntegrationAnswerMessage() { }
+        public InventoryBasicIntegrationAnswerMessage()
+        {
+        }
 
         public InventoryBasicIntegrationAnswerMessage(DMarketDataLoadResponse response)
         {

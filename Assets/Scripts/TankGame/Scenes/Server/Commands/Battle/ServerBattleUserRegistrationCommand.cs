@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TankGame.Domain.GameItem;
 using TankGame.Network.Messages;
 using UnityEngine;
@@ -10,23 +11,21 @@ namespace TankGame.GameServer.Commands.Battle
         public override void Start()
         {
             base.Start();
-            Server.Connected += OnConnected;
             Server.Disconnected += OnDisconnected;
         }
 
         protected override void Finish()
         {
             base.Finish();
-            Server.Connected -= OnConnected;
             Server.Disconnected -= OnDisconnected;
         }
 
         protected override void OnGameMsgReceived(GameMessageBase message)
         {
-            var unitMessage = message as GameUnitMessageBase;
+            var unitMessage = message as UnitMessageBase;
             if (unitMessage != null)
             {
-                unitMessage.UnitId = Model.UnitsInBattle[unitMessage.ClientId].UnitId;
+                unitMessage.UnitId = Model.GetBattlePlayer(unitMessage.ClientId).UnitId;
             }
 
             var connectMessage = message as ConnectToBattleRequestMsg;
@@ -36,51 +35,61 @@ namespace TankGame.GameServer.Commands.Battle
             }
         }
 
-        private void OnConnected(int conId)
+        private void OnDisconnected(int connectionId)
         {
-            Model.UnitsInBattle.Add(conId, new GameBattlePlayerInfo());
-        }
-
-        private void OnDisconnected(int conId)
-        {
-            var diedMsg = new TankDiedMsg {ClientId = conId};
-            Server.SendToAllExcept(diedMsg, conId);
-            Model.UnitsInBattle.Remove(conId);
+            if(Model.IsUserInBattle(connectionId))
+            {
+                Model.RemoveBattlePlayer(connectionId);
+                var destroyMessage = new UnitDestroyMessage { ClientId = connectionId };
+                Server.SendToAllExcept(destroyMessage, connectionId);
+            }
         }
 
         private void OnConnectedToBattleRequest(ConnectToBattleRequestMsg message)
         {
-            string userName = Model.GetUserNameByConnectionId(message.ClientId);
+            int connectionId = message.ClientId;
+            string userName = Model.GetUserNameByConnectionId(connectionId);
             List<GameItemType> equippedItems = Storage.Get(userName).Inventory.GetEquippedItemsTypes();
 
-            GameBattlePlayerInfo battlePlayerInfo = new GameBattlePlayerInfo(message.ClientId, userName, GetFreeRespawnPoint(), equippedItems);
+            GameBattlePlayerInfo battlePlayerInfo = new GameBattlePlayerInfo(connectionId, userName, GetFreeRespawnPoint(), equippedItems);
 
-            Model.UnitsInBattle[message.ClientId] = battlePlayerInfo;
+            if (Model.IsUserInBattle(connectionId)) // TODO: need separate EnterBattle and RespawnTank logic.
+            {
+                Model.RemoveBattlePlayer(connectionId);
+            }
 
-            SendBattleStateToNewPlayer(message, battlePlayerInfo);
-            SendToAllAboutNewPlayer(message, battlePlayerInfo);
+            Model.AddBattlePlayer(message.ClientId, battlePlayerInfo);
+
+            SendBattleState(message.ClientId);
+            SendToAllAboutNewPlayer(battlePlayerInfo);
         }
 
-        private void SendBattleStateToNewPlayer(ConnectToBattleRequestMsg message,
-            GameBattlePlayerInfo newPlayer)
+        private void SendBattleState(int playerConnectionId)
         {
-            var answer = new ConnectToBattleAnswerMsg();
-            answer.IsCanConnect = true;
-            answer.Player = newPlayer;
-            answer.Opponents = new List<GameBattlePlayerInfo>();
-            foreach (var unitId in Model.UnitsInBattle.Keys)
+            var battlePlayer = Model.GetBattlePlayer(playerConnectionId);
+            var allPlayersConnection = Model.GetBattlePlayersConnections();
+
+            var answer = new ConnectToBattleAnswerMsg
             {
-                if (unitId != message.ClientId && Model.UnitsInBattle[unitId].IsAlive)
+                IsCanConnect = true,
+                Player = battlePlayer,
+                Opponents = new List<GameBattlePlayerInfo>(),
+                DroppedItems = Model.ItemsInField
+            };
+
+            foreach (var connectionId in allPlayersConnection.Where(c => c != playerConnectionId))
+            {
+                GameBattlePlayerInfo gameBattlePlayerInfo = Model.GetBattlePlayer(connectionId);
+                if (gameBattlePlayerInfo.IsAlive)
                 {
-                    answer.Opponents.Add(Model.UnitsInBattle[unitId]);
+                    answer.Opponents.Add(gameBattlePlayerInfo);
                 }
             }
-            answer.DroppedItems = Model.ItemsInField;
-            Server.SendToPlayer(answer, message.ClientId);
+
+            Server.SendToPlayer(answer, playerConnectionId);
         }
 
-        private void SendToAllAboutNewPlayer(ConnectToBattleRequestMsg message,
-            GameBattlePlayerInfo player)
+        private void SendToAllAboutNewPlayer(GameBattlePlayerInfo player)
         {
             var newUnitMessage = new TankRespawnMsg();
             newUnitMessage.Opponent = player;

@@ -13,10 +13,10 @@ namespace Game.States.Offline
         protected override void OnScheduledUpdate()
         {
             base.OnScheduledUpdate();
-            var diedOponent = Controller.Opponents.Find(oponent => !oponent.IsAlive);
-            if (diedOponent != null)
+            var diedOpponent = Controller.Opponents.Find(opponent => !opponent.IsAlive);
+            if (diedOpponent != null)
             {
-                diedOponent.Respawn(Context.BattleField.GetSpawnPoint());
+                diedOpponent.Respawn(Context.BattleField.GetSpawnPoint());
             }
         }
 

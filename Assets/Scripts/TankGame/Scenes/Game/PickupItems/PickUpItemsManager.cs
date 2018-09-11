@@ -18,7 +18,7 @@ namespace Game.PickupItems
         /// <summary>
         /// Calls when unit pick up dropped item(UnitId, ItemInstance).
         /// </summary>
-        public event Action<int, PickupItem> UnitPicked;
+        public event Action<int, PickupItem> UnitPickUpItem;
 
         public void DropItem(GameItemType itemType, long worldId, Vector3 pos)
         {
@@ -63,7 +63,7 @@ namespace Game.PickupItems
             var unit = collider.gameObject.GetComponent<TankHealthComponent>();
             if (unit != null)
             {
-                UnitPicked.SafeRaise(unit.UnitID, item);
+                UnitPickUpItem.SafeRaise(unit.UnitId, item);
                 DestroyItem(item.WorldId);
             }
         }

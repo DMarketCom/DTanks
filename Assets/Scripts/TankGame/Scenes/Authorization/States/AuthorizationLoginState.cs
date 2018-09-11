@@ -9,14 +9,16 @@ namespace TankGame.Authorization.States
         {
             base.Start(args);
             FormView.SendButton.onClick.AddListener(OnSignInClicked);
-            FormView.SignUpButton.onClick.AddListener(OnSignUpClicked);
+            FormView.SignUpClicked += OnSignUpClicked;
+            FormView.BackClicked += OnBackClick;
         }
 
         public override void Finish()
         {
             base.Finish();
             FormView.SendButton.onClick.RemoveListener(OnSignInClicked);
-            FormView.SignUpButton.onClick.RemoveListener(OnSignUpClicked);
+            FormView.SignUpClicked -= OnSignUpClicked;
+            FormView.BackClicked -= OnBackClick;
         }
 
         private void OnSignInClicked()
@@ -40,16 +42,15 @@ namespace TankGame.Authorization.States
             if (message.Error != NetworkMessageErrorType.None)
             {
                 FormView.ShowError(NetworkMessagesInfo.GetMessage(message.Error));
+                return;
             }
-            else
-            {
-                Model.UserName = message.Data.AuthInfo.UserName;
-                Model.Password = message.Data.AuthInfo.Password;
-                Model.IsLogged = true;
-                Model.SetChanges();
-                Controller.Login.SafeRaise(message.Data);
-                ApplyState<AuthorizationLoggedState>();
-            }
+
+            Model.UserName = message.PlayerInfo.AuthInfo.UserName;
+            Model.Password = message.PlayerInfo.AuthInfo.Password;
+            Model.IsLogged = true;
+            Model.SetChanges();
+            Controller.Login.SafeRaise(message.PlayerInfo);
+            ApplyState<AuthorizationLoggedState>();
         }
 
         private void OnSignUpClicked()

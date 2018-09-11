@@ -29,6 +29,19 @@ namespace DMarketSDK.Basic
 
         public void Init(string basicAccessToken, string basicRefreshToken, ClientApi clientApi)
         {
+            if (string.IsNullOrEmpty(basicAccessToken) || string.IsNullOrEmpty(basicRefreshToken))
+            {
+                DevLogger.Error(string.Format("It is not possible to initialize BasicWidget. Basic tokens are empty. BasicAccessToken: {0}, BasicRefreshToken: {1}",
+                    basicAccessToken, basicRefreshToken), MarketLogType.MarketWidget);
+                return;
+            }
+
+            if (clientApi == null)
+            {
+                DevLogger.Error("It is not possible to initialize BasicWidget. ClientApi is null", MarketLogType.MarketWidget);
+                return;
+            }
+
             Model = new WidgetModel();
             Model.SetBasicTokens(basicAccessToken, basicRefreshToken);
             MarketApi = clientApi;
@@ -39,7 +52,7 @@ namespace DMarketSDK.Basic
         {
             if (!IsInitialized)
             {
-                DevLogger.Error("Initialize MarketWidget before use.");
+                DevLogger.Error("Initialize BasicMarketWidget before use.");
                 return;
             }
 
@@ -95,7 +108,7 @@ namespace DMarketSDK.Basic
         [SerializeField]
         private WidgetFormCreator _formContainer;
         [SerializeField]
-        private ApiErrorHelper _apiErrorHepler;
+        private ApiErrorHelper _apiErrorHelper;
 
         public WidgetModel Model { get; private set; }
 
@@ -103,7 +116,7 @@ namespace DMarketSDK.Basic
 
         public ClientApi MarketApi { get; private set; }
 
-        public IApiErrorHelper ErrorHelper { get { return _apiErrorHepler; } }
+        public IApiErrorHelper ErrorHelper { get { return _apiErrorHelper; } }
 
         protected override void OnStateStarted()
         {
@@ -115,6 +128,19 @@ namespace DMarketSDK.Basic
 
         public void Login(string login, string marketAccessToken, string marketRefreshToken)
         {
+            if (string.IsNullOrEmpty(login))
+            {
+                DevLogger.Error("It is not possible to login. Login is empty or null.", MarketLogType.MarketWidget);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(marketAccessToken) || string.IsNullOrEmpty(marketRefreshToken))
+            {
+                DevLogger.Error(string.Format("It is not possible to login. Market tokens are empty or null. MarketAccessToken: {0}, MarketRefreshToken: {1}",
+                        marketAccessToken, marketRefreshToken), MarketLogType.MarketWidget);
+                return;
+            }
+
             Model.UserName = login;
             Model.SetMarketTokens(marketAccessToken, marketRefreshToken);
             Model.SetChanges();
@@ -122,6 +148,7 @@ namespace DMarketSDK.Basic
             MarketApi.MarketToken = marketAccessToken;
 
             LoginEvent.SafeRaise(new LoginEventData(marketAccessToken, marketRefreshToken, login));
+            Close();
         }
 
         public T GetForm<T>() where T : WidgetFormViewBase
@@ -135,8 +162,11 @@ namespace DMarketSDK.Basic
             Screen.autorotateToLandscapeRight = settings.RotateToLandscapeRight;
             Screen.autorotateToPortrait = settings.RotateToPortraitUp;
             Screen.autorotateToPortraitUpsideDown = settings.RotateToPortraitDown;
+        }
 
-            Model.SetScreenOrientationSettings(settings);
+        public void SaveGameSettings(ScreenOrientationSettings gameSettings)
+        {
+            Model.SetGameScreenSettings(gameSettings);
             Model.SetChanges();
         }
 

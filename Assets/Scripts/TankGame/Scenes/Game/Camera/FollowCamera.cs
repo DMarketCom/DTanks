@@ -40,14 +40,14 @@ namespace TankGame.GameClient.Camera
 
         private void FollowTweenUpdate()
         {
-            var distance = Vector3.Distance(_target.Pos, transform.position);
+            var distance = Vector3.Distance(_target.Position, transform.position);
             if (distance > _maxDistance)
             {
                 if (_tweener != null && _tweener.IsPlaying())
                 {
                     _tweener.Kill();
                 }
-               _tweener = transform.DOMove(_target.Pos, _duration);
+               _tweener = transform.DOMove(_target.Position, _duration);
             }
         }
     }

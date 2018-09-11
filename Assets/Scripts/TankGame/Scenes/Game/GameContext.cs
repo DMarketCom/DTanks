@@ -34,6 +34,9 @@ namespace Game
         [SerializeField]
         private UnitHelmetCatalog _unitHelmetCatalog;
 
+        [SerializeField]
+        public PickUpItemsManager PickUpManager;
+
         public readonly GameUnitCatalog UnitCatalog = new GameUnitCatalog();
 
         public IBulletManager BulletManager { get { return _bulletManager; } }
@@ -42,24 +45,20 @@ namespace Game
 
         public IFollowCamera FollowCamera { get { return _followCamera; } }
 
-        [SerializeField]
-        public PickUpItemsManager PickUpManager;
-
-        public IExplosionEffectsManager ExplosionManager
-            { get { return _explosionManager; } }
+        public IExplosionEffectsManager ExplosionManager { get { return _explosionManager; } }
 
         public void Run()
         {
             BulletManager.BulletStarted += OnBulletStarted;
-            BulletManager.Hitted += OnBulletHidded;
-            PickUpManager.UnitPicked += OnUnitPicked;
+            BulletManager.Hit += OnBulletHit;
+            PickUpManager.UnitPickUpItem += OnUnitPickUpItem;
         }
 
         public void Shutdown()
         {
             BulletManager.BulletStarted -= OnBulletStarted;
-            BulletManager.Hitted -= OnBulletHidded;
-            PickUpManager.UnitPicked -= OnUnitPicked;
+            BulletManager.Hit -= OnBulletHit;
+            PickUpManager.UnitPickUpItem -= OnUnitPickUpItem;
         }
 
         public ITank CreateTank(bool forPlayer, GameMode mode, List<GameItemType> playerItems)
@@ -82,20 +81,20 @@ namespace Game
             return newTank;
         }
 
-        public ITank CreateTank(bool forPlayer, GameMode mode)
+        private ITank CreateTank(bool forPlayer, GameMode mode)
         {
-            var tank = GameObject.Instantiate<TankController>(_tankPrefab);
-            var healt = tank.gameObject.GetComponent<TankHealthComponent>();
-            var unitType = forPlayer ? GameUnitType.Player : GameUnitType.Oponent;
-            UnitCatalog.AddAs(healt, unitType);
-            var input = GetTankInput(tank, forPlayer, mode);
+            TankController tank = Instantiate(_tankPrefab);
+            var healthComponent = tank.gameObject.GetComponent<TankHealthComponent>();
+            var unitType = forPlayer ? GameUnitType.Player : GameUnitType.Opponent;
+            UnitCatalog.AddAs(healthComponent, unitType);
+            var inputComponent = GetTankInput(tank, forPlayer, mode);
             var weapon = tank.gameObject.GetComponent<TankWeaponComponent>();
 
             BulletManager.AddWeapon(weapon);
             tank.Died += OnTankDied;
-            tank.Healt = healt;
-            tank.Unit = healt;
-            tank.Input = input;
+            tank.Health = healthComponent;
+            tank.Unit = healthComponent;
+            tank.Input = inputComponent;
             tank.Weapon = weapon;
             tank.gameObject.name = string.Format("{0} tank", unitType);
             tank.transform.SetParent(transform, true);
@@ -105,7 +104,7 @@ namespace Game
                 _tankHealthBar.ApplyModel(tank.Model);
             }
 
-            return tank as ITank;
+            return tank;
         }
 
         public void DestroyTank(ITank tank)
@@ -119,11 +118,10 @@ namespace Game
 
         private void OnTankDied(ITank tank)
         {
-            ExplosionManager.Play(tank.Pos, ExplosionEffectType.TankExplosion); 
+            ExplosionManager.Play(tank.Position, ExplosionEffectType.TankExplosion); 
         }
 
-        private IUnitInsideInputComponent GetTankInput(TankController tank, bool forPlayer,
-            GameMode mode)
+        private IUnitInsideInputComponent GetTankInput(TankController tank, bool forPlayer, GameMode mode)
         {
             if (forPlayer)
             {
@@ -133,17 +131,16 @@ namespace Game
                     return tank.gameObject.AddComponent<PlayerStandaloneInput>();
                 #endif
             }
-            else if (mode == GameMode.Offline)
+
+            if (mode == GameMode.Offline)
             {
                 return tank.gameObject.AddComponent<BotTankInput>();
             }
-            else
-            {
-                return tank.gameObject.AddComponent<EmptyTankInput>();
-            }
+
+            return tank.gameObject.AddComponent<EmptyTankInput>();
         }
 
-        private void OnBulletHidded(Collider target, IBullet bullet)
+        private void OnBulletHit(Collider target, IBullet bullet)
         {
             ExplosionManager.Play(bullet.Pos, ExplosionEffectType.BulletExplosion);
         }
@@ -153,7 +150,7 @@ namespace Game
             ExplosionManager.Play(bullet.Pos, ExplosionEffectType.GunShoot);
         }
 
-        private void OnUnitPicked(int unitId, PickupItem item)
+        private void OnUnitPickUpItem(int unitId, PickupItem item)
         {
             ExplosionManager.Play(item.transform.position, ExplosionEffectType.ItemPickUp);
         }

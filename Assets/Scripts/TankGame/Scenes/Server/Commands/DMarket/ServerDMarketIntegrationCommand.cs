@@ -142,7 +142,7 @@ namespace TankGame.GameServer.Commands.DMarket
 
                     PlayerInventoryInfo inventory = GetInventory(connectionId);
                     playerInfo.Inventory = inventory;
-                    inventory.RemoveAllDMarketItems();
+                    inventory.RemoveAllDMakretItems();
 
                     foreach (var item in response.Items)
                     {

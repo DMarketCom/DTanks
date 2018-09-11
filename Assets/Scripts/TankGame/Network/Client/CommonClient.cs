@@ -8,16 +8,44 @@ namespace TankGame.Network.Client
 {
     public class CommonClient : IAppClient, IGameClient
     {
-        #region IClientConnectionObservable implementation
-
         public event Action Disconnected;
         public event Action Connected;
+        
+        private NetworkClient _currentClient;
+
+        #region IAppClient implementation
+
+        public event Action<AppServerAnswerMessageBase> AppMsgReceived;
+
+        public void Send(AppMessageBase message)
+        {
+            message.ConnectionId = _currentClient.connection.connectionId;
+            _currentClient.Send((short)message.Type, message);
+
+            #if NETWORK_DEBUG
+            DevLogger.Log("Send AppMessageBase: " + message.Type + " body: \n" + Newtonsoft.Json.JsonConvert.SerializeObject(message, Newtonsoft.Json.Formatting.Indented));
+            #endif
+        }
 
         #endregion
 
-        #region IClientLifecycleManager implementation
+        #region IGameClient implementation
 
-        public void Start(string serverIP, int port)
+        public event Action<GameMessageBase> GameMsgReceived;
+
+        public void Send(GameMessageBase message)
+        {
+            message.ClientId = _currentClient.connection.connectionId;
+            _currentClient.Send((short)message.Type, message);
+
+            #if NETWORK_DEBUG
+            DevLogger.Log("Send GameMessageBase: " + message.Type + " body: \n" + Newtonsoft.Json.JsonConvert.SerializeObject(message, Newtonsoft.Json.Formatting.Indented));
+            #endif
+        }
+
+        #endregion
+
+                public void Start(string serverIP, int port)
         {
             _currentClient = new NetworkClient();
             RegisterHandles();
@@ -35,34 +63,6 @@ namespace TankGame.Network.Client
         {
             _currentClient.Shutdown();
         }
-
-        #endregion
-        
-        #region IAppClient implementation
-
-        public event Action<AppServerAnswerMessageBase> AppMsgReceived;
-
-        public void Send(AppMessageBase message)
-        {
-            message.ConnectionId = _currentClient.connection.connectionId;
-            _currentClient.Send((short)message.Type, message);
-        }
-
-        #endregion
-
-        #region IGameClient implementation
-
-        public event Action<GameMessageBase> GameMsgReceived;
-
-        public void Send(GameMessageBase message)
-        {
-            message.ClientId = _currentClient.connection.connectionId;
-            _currentClient.Send((short)message.Type, message);
-        }
-
-        #endregion
-
-        private NetworkClient _currentClient;
 
         private void RegisterHandles()
         {
@@ -83,7 +83,7 @@ namespace TankGame.Network.Client
 
         private void OnConnect(NetworkMessage msg)
         {
-            DevLogger.Log(string.Concat("Connected: ", msg.conn.address));
+            DevLogger.Log(string.Concat("Connected to IP: ", msg.conn.address));
             Connected.SafeRaise();
         }
 
@@ -94,12 +94,22 @@ namespace TankGame.Network.Client
 
         private void OnGameMessageReceive(NetworkMessage msg)
         {
-            GameMsgReceived.SafeRaise(NetworkingUtil.ReadGameMessage(msg));
+            GameMessageBase gameMessage = NetworkingUtil.ReadGameMessage(msg);
+            #if NETWORK_DEBUG
+            DevLogger.Log("NetworkMessage received: " + gameMessage.Type + "\n" + Newtonsoft.Json.JsonConvert.SerializeObject(gameMessage, Newtonsoft.Json.Formatting.Indented));
+            #endif
+
+            GameMsgReceived.SafeRaise(gameMessage);
         }
 
         private void OnAppMessageReceive(NetworkMessage msg)
         {
-            AppMsgReceived.SafeRaise(NetworkingUtil.ReadAppMessage(msg) as AppServerAnswerMessageBase);
+            AppMessageBase appMessage = NetworkingUtil.ReadAppMessage(msg);
+            #if NETWORK_DEBUG
+            DevLogger.Log("NetworkMessage received: " + appMessage.Type + "\n" + Newtonsoft.Json.JsonConvert.SerializeObject(appMessage, Newtonsoft.Json.Formatting.Indented));
+            #endif
+
+            AppMsgReceived.SafeRaise(appMessage as AppServerAnswerMessageBase);
         }
     }
 }

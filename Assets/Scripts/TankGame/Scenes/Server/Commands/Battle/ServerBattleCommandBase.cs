@@ -22,6 +22,5 @@ namespace TankGame.GameServer.Commands.Battle
         }
 
         protected abstract void OnGameMsgReceived(GameMessageBase message);
-
     }
 }

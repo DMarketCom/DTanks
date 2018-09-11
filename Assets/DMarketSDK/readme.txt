@@ -4,3 +4,4 @@ Documentation on integration: https://dmarket.gitbook.io/integration-sdk/
 
 Demo game with integrated SDK: https://github.com/DMarketCom/DTanks/
 
+Current version: v2.0.0

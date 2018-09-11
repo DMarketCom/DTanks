@@ -7,9 +7,10 @@ namespace DMarketSDK.Market.Forms
     {
         [SerializeField]
         private MarketItemView _itemViewPanel;
-        
-        private void Awake()
+
+        protected override void Awake()
         {
+            base.Awake();
             _itemViewPanel.Initialize();
         }
 

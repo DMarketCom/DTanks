@@ -2,13 +2,15 @@
 
 namespace Game.Units.Components
 {
-    public class TankHealthComponent : GameUnitBase, IHealtInsideComponent
+    public class TankHealthComponent : GameUnitBase, IHealthComponent
     {
         #region IHealtInsideComponent implementation
+
         public event Action<float> Damaged;
+
         #endregion
-        
-        public override void TakeDamage(float damage, int unitID)
+
+        public void TakeDamage(float damage, int unitId)
         {
             Damaged.SafeRaise(damage);
         }

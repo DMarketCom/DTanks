@@ -17,7 +17,7 @@ namespace Game.Units.Components
             var material = _decorator.GetTankMaterial(item);
             if (material != null)
             {
-                _tankView.BodуRenders.ForEach(render =>
+                _tankView.BodyRenderers.ForEach(render =>
                 render.sharedMaterial = material);
             }
         }

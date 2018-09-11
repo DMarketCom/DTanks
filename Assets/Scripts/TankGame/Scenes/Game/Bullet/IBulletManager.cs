@@ -6,10 +6,10 @@ namespace Game.Bullet
 {
     public interface IBulletManager
     {
-        event Action<Collider, IBullet> Hitted;
+        event Action<Collider, IBullet> Hit;
         event Action<IBullet> BulletStarted;
 
-        void AddWeapon(IWeaponOutsideComponent component);
-        void RemoveWeapon(IWeaponOutsideComponent component);
+        void AddWeapon(IWeaponComponent component);
+        void RemoveWeapon(IWeaponComponent component);
     }
 }

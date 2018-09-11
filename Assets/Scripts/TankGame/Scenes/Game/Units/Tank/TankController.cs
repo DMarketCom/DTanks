@@ -10,10 +10,11 @@ namespace Game.Tank
     public class TankController : StateMachineBase<TankView>, ITank, INetworkTank
     {
         #region ITank implementation
+
         public event Action<ITank> Died;
         public event Action<ITank> Moved;
         
-        public Vector3 Pos
+        public Vector3 Position
         {
             get { return View.Body.position; }
             set { View.Body.position = value; }
@@ -24,9 +25,9 @@ namespace Game.Tank
             get { return View.Body.eulerAngles.y; }
             set
             {
-                var currentAngles = View.Body.eulerAngles;
-                currentAngles.y = value;
-                View.Body.eulerAngles = currentAngles;
+                var currentRotation = View.Body.eulerAngles;
+                currentRotation.y = value;
+                View.Body.eulerAngles = currentRotation;
             }
         }
 
@@ -37,26 +38,28 @@ namespace Game.Tank
             View.Show();
             Model.Health = Model.MaxHealth;
             Model.SetChanges();
-            Healt.Damaged += OnDamaged;
+            Health.Damaged += OnDamaged;
             ApplyState<TankRespawnState>(point);
         }
 
         void ITank.Broke()
         {
             View.Hide();
-            Healt.Damaged -= OnDamaged;
+            Health.Damaged -= OnDamaged;
         }
 
-        public IHealtInsideComponent Healt { get; set; }
+        public IHealthComponent Health { get; set; }
         public IUnitInsideInputComponent Input { get; set; }
-        public IWeaponInsideComponent Weapon { get; set; }
+        public IWeaponComponent Weapon { get; set; }
         public GameUnitBase Unit { get; set; }
+
         #endregion
 
         #region INetworkTank implementation
+
         void INetworkTank.Move(Vector3 pos, float time)
         {
-            DOTween.Kill(View.Body, false);
+            DOTween.Kill(View.Body);
             View.Body.DOMove(pos, time);
         }
 
@@ -65,6 +68,7 @@ namespace Game.Tank
             OnDamaged(Model.Health + 1);
             View.Hide();
         }
+
         #endregion
 
         public readonly TankModel Model = new TankModel();
@@ -77,16 +81,34 @@ namespace Game.Tank
             Moved.SafeRaise(this);
         }
 
-        private void OnDamaged(float damage)
+        public void Fire(Vector2 direction, float force)
         {
-            Model.Health -= damage;
-            if (Model.Health <= 0)
+            if (!Weapon.ReadyForFire)
             {
-                Model.Health = 0;
+                return;
+            }
+
+            const float fireDistance = 30f;
+
+            Vector3 bulletPosition = View.Body.position + View.Body.forward * fireDistance;
+
+            Weapon.MakeFire(bulletPosition, force);
+        }
+
+        private void OnDamaged(float damagedHealth)
+        {
+            var currentHealth = Model.Health;
+            float newHealth = Mathf.Clamp(currentHealth - damagedHealth, 0f, int.MaxValue);
+
+            Model.Health = newHealth;
+            Model.SetChanges();
+
+            if (!(this as ITank).IsAlive)
+            {
                 Died.SafeRaise(this);
                 ApplyState<TankDiedState>();
             }
-            Model.SetChanges();
+
         }
     }
 }

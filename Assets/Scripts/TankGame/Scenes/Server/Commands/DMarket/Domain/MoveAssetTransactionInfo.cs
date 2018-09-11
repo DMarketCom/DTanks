@@ -21,6 +21,11 @@ namespace TankGame.GameServer.Commands.DMarket.Domain
             get { return _operations.Count; }
         }
 
+        public bool IsPendingOperation(string operationId)
+        {
+            return _operations.ContainsKey(operationId);
+        }
+
         public MoveAssetTransactionInfo(AppChangingItemsMessage sender)
         {
             Sender = sender;

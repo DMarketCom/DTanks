@@ -16,8 +16,9 @@ namespace DMarketSDK.Market.Forms
 			}
 		}
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _marketItemView.Initialize();
             _marketItemView.Show();
         }

@@ -10,7 +10,7 @@ namespace Game.Bullet
     {
         #region IBullet implementation
 
-        public event Action<IBullet, Collider> Hitted;
+        public event Action<IBullet, Collider> Hit;
 
         Vector3 IBullet.Pos { get { return transform.position; } }
 
@@ -75,15 +75,15 @@ namespace Game.Bullet
 
         private void OnInTarget()
         {
-            Hitted.SafeRaise(this, null);
+            Hit.SafeRaise(this, null);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
             if (Vector3.Distance(transform.position, _startPos) >
                 kMinDistanceForActivation)
             {
-                Hitted.SafeRaise(this, collision.collider);
+                Hit.SafeRaise(this, other);
                 _currentDamage = 0;
             }
         }

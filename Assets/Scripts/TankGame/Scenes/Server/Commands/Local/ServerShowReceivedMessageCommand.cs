@@ -12,14 +12,12 @@ namespace TankGame.GameServer.Commands.Local
         private IAppServer AppServer { get { return Controller.AppServer; } }
 
         private readonly TextMeshProUGUI _text;
-        private readonly List<GameMsgType> _exeptGameTypes;
+        private readonly List<GameMsgType> _exceptedGameTypes;
 
         public ServerShowReceivedMessageCommand(TextMeshProUGUI text)
         {
             _text = text;
-            _exeptGameTypes = new List<GameMsgType>(new GameMsgType[] {
-                GameMsgType.TankStateUpdate, GameMsgType.UnitMoved
-            });
+            _exceptedGameTypes = new List<GameMsgType>(new[] { GameMsgType.UnitPosition });
         }
 
         public override void Start()
@@ -39,7 +37,7 @@ namespace TankGame.GameServer.Commands.Local
 
         private void OnGameMessageReceived(GameMessageBase message)
         {
-            if (!_exeptGameTypes.Contains(message.Type))
+            if (!_exceptedGameTypes.Contains(message.Type))
             {
                 ShowMsg(message.Type.ToString(), message.ClientId, "yellow");
             }

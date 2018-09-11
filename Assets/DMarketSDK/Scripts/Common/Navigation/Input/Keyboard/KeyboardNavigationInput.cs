@@ -48,8 +48,9 @@ namespace DMarketSDK.Common.Navigation.Keyboard
             }
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
             InputLogic();       
         }         
 

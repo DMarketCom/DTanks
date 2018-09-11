@@ -25,8 +25,9 @@ namespace DMarketSDK.Common.Forms
             base.Show();
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
             if (_closeTime > 0 && _closeTime < Time.timeSinceLevelLoad)
             {
                 _closeTime = -1;

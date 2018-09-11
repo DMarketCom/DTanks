@@ -7,22 +7,15 @@ namespace Game.Units.Components.Standalone
 {
     public class PlayerStandaloneInput : UnityBehaviourBase, IUnitInsideInputComponent
     {
-        private static readonly Dictionary<KeyCode, Vector2> _keysToDirection;
-
-        static PlayerStandaloneInput()
-        {
-            _keysToDirection = new Dictionary<KeyCode, Vector2>();
-            _keysToDirection.Add(KeyCode.LeftArrow, Vector2.left);
-            _keysToDirection.Add(KeyCode.RightArrow, Vector2.right);
-            _keysToDirection.Add(KeyCode.UpArrow, Vector2.up);
-            _keysToDirection.Add(KeyCode.DownArrow, Vector2.down);
-        }
-
+        private readonly Dictionary<KeyCode, Vector2> _keysToDirection;
+        
         public event Action<Vector2> Move;
         public event Action<Vector2, float> Fire;
 
         private const float kMinFireHoldTime = 0.5f;
         private const float kMaxFireHoldTime = 2f;
+
+        private float _timeOfFirePress;
 
         private bool IsFirePressed
         {
@@ -36,15 +29,24 @@ namespace Game.Units.Components.Standalone
         {
             get
             {
-                return Mathf.Clamp(Time.timeSinceLevelLoad - _timeOfFirePress,
-                    0, kMaxFireHoldTime);
+                return Mathf.Clamp(Time.timeSinceLevelLoad - _timeOfFirePress, 0, kMaxFireHoldTime);
             }
         }
 
-        private float _timeOfFirePress = 0;
-
-        private void Update()
+        protected PlayerStandaloneInput()
         {
+            _keysToDirection = new Dictionary<KeyCode, Vector2>
+            {
+                {KeyCode.LeftArrow, Vector2.left},
+                {KeyCode.RightArrow, Vector2.right},
+                {KeyCode.UpArrow, Vector2.up},
+                {KeyCode.DownArrow, Vector2.down}
+            };
+        }
+
+        protected override void Update()
+        {
+            base.Update();
             if (_timeOfFirePress > 0)
             {
                 if (IsFirePressed)
@@ -61,17 +63,17 @@ namespace Game.Units.Components.Standalone
             }
             if (Input.anyKey)
             {
-                foreach (var key in _keysToDirection.Keys)
+                foreach (KeyValuePair<KeyCode, Vector2> keyValue in _keysToDirection)
                 {
-                    if (Input.GetKey(key))
+                    if (Input.GetKey(keyValue.Key))
                     {
-                        Move.SafeRaise(_keysToDirection[key]);
+                        Move.SafeRaise(keyValue.Value);
                     }
                 }
+
                 if (IsFirePressed && _timeOfFirePress == 0)
                 {
-                    //_timeOfFirePress = Time.timeSinceLevelLoad;
-                    Fire.SafeRaise(GetFireDirection(), 2f);
+                    Fire.SafeRaise(Vector2.zero, 2f);
                 }
             }
         }
@@ -80,15 +82,9 @@ namespace Game.Units.Components.Standalone
         {
             if (CurrentFireHoldTime > kMinFireHoldTime)
             {
-                Fire.SafeRaise(GetFireDirection(), CurrentFireHoldTime);
+                Fire.SafeRaise(Vector2.zero, CurrentFireHoldTime);
             }
             _timeOfFirePress = 0;
-        }
-        
-        private Vector2 GetFireDirection()
-        {
-            //TODO need implement
-            return Vector2.zero;
         }
     }
 }

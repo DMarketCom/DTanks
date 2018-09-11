@@ -7,7 +7,7 @@ namespace TankGame.GameServer
 {
     public class ServerModel : ObservableBase
     {
-        public readonly Dictionary<int, GameBattlePlayerInfo> UnitsInBattle = new Dictionary<int, GameBattlePlayerInfo>();
+        private readonly Dictionary<int, GameBattlePlayerInfo> _battlefieldUnits = new Dictionary<int, GameBattlePlayerInfo>();
         private readonly HashSet<UserSessionInfo> _registeredUserSessions = new HashSet<UserSessionInfo>();
         private readonly Dictionary<int, string> _playersMarketAccessTokens = new Dictionary<int, string>();
         private readonly Dictionary<int, string> _playerMarketRefreshTokens = new Dictionary<int, string>();
@@ -109,6 +109,31 @@ namespace TankGame.GameServer
         public bool IsUserSessionActive(int connectionId)
         {
             return _registeredUserSessions.Any(c => c.ConnectionId == connectionId);
+        }
+
+        public void AddBattlePlayer(int connectionId, GameBattlePlayerInfo battlePlayerInfo)
+        {
+            _battlefieldUnits.Add(connectionId, battlePlayerInfo);
+        }
+
+        public void RemoveBattlePlayer(int connectionId)
+        {
+            _battlefieldUnits.Remove(connectionId);
+        }
+
+        public GameBattlePlayerInfo GetBattlePlayer(int connectionId)
+        {
+            return _battlefieldUnits[connectionId];
+        }
+
+        public bool IsUserInBattle(int connectionId)
+        {
+            return _battlefieldUnits.ContainsKey(connectionId);
+        }
+
+        public IEnumerable<int> GetBattlePlayersConnections()
+        {
+            return _battlefieldUnits.Keys;
         }
 
         private struct UserSessionInfo

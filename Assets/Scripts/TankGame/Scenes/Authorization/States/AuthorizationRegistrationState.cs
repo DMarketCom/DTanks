@@ -9,14 +9,14 @@ namespace TankGame.Authorization.States
         {
             base.Start(args);
             FormView.SendButton.onClick.AddListener(OnSignUpClicked);
-            FormView.ToLogInButton.onClick.AddListener(OnSignInClicked);
+            FormView.GoToLoginClicked -= OnGoToLoginClicked;
         }
 
         public override void Finish()
         {
             base.Finish();
             FormView.SendButton.onClick.RemoveListener(OnSignUpClicked);
-            FormView.ToLogInButton.onClick.RemoveListener(OnSignInClicked);
+            FormView.GoToLoginClicked -= OnGoToLoginClicked;
         }
 
         private void OnSignUpClicked()
@@ -48,7 +48,7 @@ namespace TankGame.Authorization.States
             }
         }
 
-        private void OnSignInClicked()
+        private void OnGoToLoginClicked()
         {
             ApplyState<AuthorizationLoginState>();
         }

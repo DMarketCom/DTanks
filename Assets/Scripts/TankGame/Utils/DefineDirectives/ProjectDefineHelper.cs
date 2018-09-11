@@ -18,18 +18,7 @@
 
         public static EnvironmentDirective TargetEnvironment
         {
-            get
-            {
-                switch (BuildDirective)
-                {
-                    case BuildTypeDirective.Develop:
-                        return EnvironmentDirective.ProductionSandbox;
-                    case BuildTypeDirective.Release:
-                        return EnvironmentDirective.ProductionSandbox;
-                    default:
-                        return EnvironmentDirective.None;
-                }
-            }
+            get { return EnvironmentDirective.ProductionSandbox; }
         }
     }
 }

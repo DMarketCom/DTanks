@@ -9,18 +9,18 @@ namespace Game.Bullet
     {
         #region IBulletManager implementation
 
-        public event Action<Collider, IBullet> Hitted;
+        public event Action<Collider, IBullet> Hit;
 
         public event Action<IBullet> BulletStarted;
 
-        void IBulletManager.AddWeapon(IWeaponOutsideComponent component)
+        void IBulletManager.AddWeapon(IWeaponComponent component)
         {
-            component.MakedFire += OnMakedFire;
+            component.Fire += OnTankFire;
         }
 
-        void IBulletManager.RemoveWeapon(IWeaponOutsideComponent component)
+        void IBulletManager.RemoveWeapon(IWeaponComponent component)
         {
-            component.MakedFire -= OnMakedFire;
+            component.Fire -= OnTankFire;
         }
 
         #endregion
@@ -35,28 +35,27 @@ namespace Game.Bullet
             _bulletPool = new BulletPool(CreateNewBullet);
         }
 
-        private void OnMakedFire(IWeaponOutsideComponent weapon, Vector3 target,
-                                 float force)
+        private void OnTankFire(Vector3 fireDirection, Vector3 target, float force)
         {
             var bullet = _bulletPool.GetBullet();
-            bullet.Fire(weapon.GunPos, target, force);
-            bullet.Hitted += OnBulletHitted;
+            bullet.Fire(fireDirection, target, force);
+            bullet.Hit += OnBulletHit;
             BulletStarted.SafeRaise(bullet);
         }
 
-        private void OnBulletHitted(IBullet bullet, Collider coll)
+        private void OnBulletHit(IBullet bullet, Collider coll)
         {
             if (coll != null)
             {
-                Hitted.SafeRaise(coll, bullet);
+                Hit.SafeRaise(coll, bullet);
             }
-            bullet.Hitted -= OnBulletHitted;
+            bullet.Hit -= OnBulletHit;
             _bulletPool.ReturnBullet(bullet);
         }
 
         private TankBullet CreateNewBullet()
         {
-            return GameObject.Instantiate(_bulletPrefab, transform);
+            return Instantiate(_bulletPrefab, transform);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Game.Tank
         event Action<ITank> Died;
         event Action<ITank> Moved;
 
-        Vector3 Pos { get; set; }
+        Vector3 Position { get; set; }
 
         float Rotation { get; set; }
 
@@ -20,8 +20,8 @@ namespace Game.Tank
         void Broke();
 
         GameUnitBase Unit { set; get; }
-        IHealtInsideComponent Healt { set; get; }
+        IHealthComponent Health { set; get; }
         IUnitInsideInputComponent Input { set; get; }
-        IWeaponInsideComponent Weapon { set; get; }  
+        IWeaponComponent Weapon { set; get; }  
     }
 }

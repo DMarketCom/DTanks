@@ -49,6 +49,19 @@ namespace DMarketSDK.Market
 
         public void Init(string basicAccessToken, string basicRefreshToken, ClientApi clientApi)
         {
+            if (string.IsNullOrEmpty(basicAccessToken) || string.IsNullOrEmpty(basicRefreshToken))
+            {
+                DevLogger.Error(string.Format("It is not possible to initialize MarketWidget. Basic tokens are empty. BasicAccessToken: {0}, BasicRefreshToken: {1}",
+                    basicAccessToken, basicRefreshToken), MarketLogType.MarketWidget);
+                return;
+            }
+
+            if (clientApi == null)
+            {
+                DevLogger.Error("It is not possible to initialize MarketWidget. ClientApi is null", MarketLogType.MarketWidget);
+                return;
+            }
+
             Model = new WidgetModel();
             Model.SetBasicTokens(basicAccessToken, basicRefreshToken);
             MarketApi = clientApi;
@@ -59,7 +72,13 @@ namespace DMarketSDK.Market
         {
             if (!IsInitialized)
             {
-                DevLogger.Error("Initialize MarketWidget before use.");
+                DevLogger.Error("Initialize MarketWidget before use.", MarketLogType.MarketWidget);
+                return;
+            }
+
+            if (gameItems == null)
+            {
+                DevLogger.Error("It's not impossible to Open MarketWidget. IGameIntegrationModel is null", MarketLogType.MarketWidget);
                 return;
             }
 
@@ -106,7 +125,7 @@ namespace DMarketSDK.Market
 #endregion
 
         [SerializeField] private WidgetFormCreator _formContainer;
-        [SerializeField] private ApiErrorHelper _apiErrorHepler;
+        [SerializeField] private ApiErrorHelper _apiErrorHelper;
         [SerializeField] private MarketPopUpContainer _marketPopUpController;
         [SerializeField] private MarketSoundManager _soundManager;
 
@@ -122,7 +141,7 @@ namespace DMarketSDK.Market
 
         public IApiErrorHelper ErrorHelper
         {
-            get { return _apiErrorHepler; }
+            get { return _apiErrorHelper; }
         }
 
         public MarketPopUpContainer PopUpController
@@ -135,6 +154,13 @@ namespace DMarketSDK.Market
             get { return _soundManager; }
         }
 
+        //TODO wait more good architecture decision
+        //TODO wait and delete != delete
+        public bool IsNeedBlockMarket
+        {
+            get { return _formContainer.TargetUiType != FormUIType.Standalone; }
+        }
+
         protected override void OnStateStarted()
         {
             base.OnStateStarted();
@@ -145,6 +171,19 @@ namespace DMarketSDK.Market
 
         public void Login(string login, string marketAccessToken, string marketRefreshToken)
         {
+            if (string.IsNullOrEmpty(login))
+            {
+                DevLogger.Error("It is not possible to login. Login is empty or null.", MarketLogType.MarketWidget);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(marketAccessToken) || string.IsNullOrEmpty(marketRefreshToken))
+            {
+                DevLogger.Error(string.Format("It is not possible to login. Market tokens are empty. MarketAccessToken: {0}, MarketRefreshToken: {1}",
+                    marketAccessToken, marketRefreshToken), MarketLogType.MarketWidget);
+                return;
+            }
+
             Model.UserName = login;
             Model.SetMarketTokens(marketAccessToken, marketRefreshToken);
             Model.SetChanges();
@@ -159,14 +198,17 @@ namespace DMarketSDK.Market
             return _formContainer.GetForm<T>();
         }
 
-        public void ApplyScreenSettings(ScreenOrientationSettings settings)
+        public void ApplyScreenSettings(ScreenOrientationSettings screenSettings)
         {
-            Screen.autorotateToLandscapeLeft = settings.RotateToLandscapeLeft;
-            Screen.autorotateToLandscapeRight = settings.RotateToLandscapeRight;
-            Screen.autorotateToPortrait = settings.RotateToPortraitUp;
-            Screen.autorotateToPortraitUpsideDown = settings.RotateToPortraitDown;
+            Screen.autorotateToLandscapeLeft = screenSettings.RotateToLandscapeLeft;
+            Screen.autorotateToLandscapeRight = screenSettings.RotateToLandscapeRight;
+            Screen.autorotateToPortrait = screenSettings.RotateToPortraitUp;
+            Screen.autorotateToPortraitUpsideDown = screenSettings.RotateToPortraitDown;
+        }
 
-            Model.SetScreenOrientationSettings(settings);
+        public void SaveGameSettings(ScreenOrientationSettings gameSettings)
+        {
+            Model.SetGameScreenSettings(gameSettings);
             Model.SetChanges();
         }
 
@@ -179,7 +221,7 @@ namespace DMarketSDK.Market
             else
             {
                 request.Callback.SafeRaise(new MarketMoveItemResponse(
-                    "Not implement in game side. Subscribe to IMarketWidget change event"));
+                    "Not implemented in the game side. Subscribe to IMarketWidget change event"));
             }
         }
 

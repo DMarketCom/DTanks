@@ -48,8 +48,8 @@ namespace TankGame.GameServer.Commands.Battle
         {
             switch (message.Type)
             {
-                case GameMsgType.Died:
-                    OnTankDied(message as TankDiedMsg);
+                case GameMsgType.UnitDestroy:
+                    OnTankDied(message as UnitDestroyMessage);
                     break;
                 case GameMsgType.PickupGameItem:
                     OnPickUpItem(message as PickUpGameItemMsg);
@@ -57,9 +57,9 @@ namespace TankGame.GameServer.Commands.Battle
             }
         }
 
-        private void OnTankDied(TankDiedMsg message)
+        private void OnTankDied(UnitDestroyMessage message)
         {
-            DropItem(GameItemCategory.Skin, Model.UnitsInBattle[message.ClientId].Position);
+            DropItem(GameItemCategory.Skin, Model.GetBattlePlayer(message.ClientId).Position);
         }
 
         private void OnPickUpItem(PickUpGameItemMsg message)

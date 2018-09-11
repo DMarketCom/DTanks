@@ -4,41 +4,27 @@ using SHLibrary;
 
 namespace Game.Units.Components
 {
-    public class TankWeaponComponent : UnityBehaviourBase, IWeaponInsideComponent,
-        IWeaponOutsideComponent
+    public sealed class TankWeaponComponent : UnityBehaviourBase, IWeaponComponent
     {
-        private float _lastFireTime = 0;
+        private float _lastFireTime;
         private float _reloadTime = 1f;
 
         [SerializeField]
-        private Transform _gun;
-        [SerializeField]
-        private GameUnitBase _unit;
+        private Transform _turretFireTransform;
 
-        #region IWeaponOutsideComponent implementation
+        #region IWeaponComponent implementation
 
-        public event Action<IWeaponOutsideComponent, Vector3, float> MakedFire;
+        public event Action<Vector3, Vector3, float> Fire;
 
-        Vector3 IWeaponOutsideComponent.GunPos { get { return _gun.position; } }
+        Vector3 IWeaponComponent.WeaponDirection { get { return _turretFireTransform.position; } }
 
-        int IWeaponOutsideComponent.UnitId { get { return _unit.UnitID; } }
+        bool IWeaponComponent.ReadyForFire { get { return Time.timeSinceLevelLoad > _lastFireTime + _reloadTime; } }
 
-        #endregion
-
-        #region IWeaponInsideComponent implementation
-
-        bool IWeaponInsideComponent.ReadyForFire
-        {
-            get
-            {
-                return Time.timeSinceLevelLoad > _lastFireTime + _reloadTime;
-            }
-        }
-
-        void IWeaponInsideComponent.MakeFire(Vector3 target, float power)
+        void IWeaponComponent.MakeFire(Vector3 target, float power)
         {
             _lastFireTime = Time.timeSinceLevelLoad;
-            MakedFire.SafeRaise(this, target, power);
+            Vector3 direction = ((IWeaponComponent) this).WeaponDirection;
+            Fire.SafeRaise(direction, target, power);
         }
 
         #endregion

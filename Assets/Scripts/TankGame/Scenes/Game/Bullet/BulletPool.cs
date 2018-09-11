@@ -5,7 +5,7 @@ namespace Game.Bullet
 {
     public class BulletPool : PoolBase<TankBullet>
     {
-        private Func<TankBullet> _bulletCreator;
+        private readonly Func<TankBullet> _bulletCreator;
 
         public BulletPool(Func<TankBullet> bulletCreator)
         {

@@ -25,15 +25,15 @@ namespace TankGame.Network.Messages
         }
     }
 
-    public abstract class GameUnitMessageBase : GameMessageBase
+    public abstract class UnitMessageBase : GameMessageBase
     {
         public int UnitId;
 
-        public GameUnitMessageBase()
+        public UnitMessageBase()
         {
         }
 
-        public GameUnitMessageBase(int unitId)
+        public UnitMessageBase(int unitId)
         {
             UnitId = unitId;
         }
@@ -51,69 +51,62 @@ namespace TankGame.Network.Messages
         }
     }
 
-    public class UnitMovedMsg : GameUnitMessageBase
+    public class UnitPositionMessage : UnitMessageBase
     {
         public override GameMsgType Type
         {
-            get
-            {
-                return GameMsgType.UnitMoved;
-            }
+            get { return GameMsgType.UnitPosition; }
         }
-        
-        public Vector3 Pos;
-        public float RotY;
 
-        public UnitMovedMsg()
-        { }
+        public Vector3 Position;
+        public float RotationY;
 
-        public UnitMovedMsg(Vector3 pos, float rotY)
+        public UnitPositionMessage()
         {
-            Pos = pos;
-            RotY = rotY;
+        }
+
+        public UnitPositionMessage(Vector3 position, float rotationY)
+        {
+            Position = position;
+            RotationY = rotationY;
         }
 
         public override void Serialize(NetworkWriter writer)
         {
             base.Serialize(writer);
-            writer.Write(Pos);
-            writer.Write((double)RotY);
+            writer.Write(Position);
+            writer.Write(RotationY);
         }
 
         public override void Deserialize(NetworkReader reader)
         {
             base.Deserialize(reader);
-            Pos = reader.ReadVector3();
-            RotY = (float)reader.ReadDouble();
+            Position = reader.ReadVector3();
+            RotationY = reader.ReadSingle();
         }
     }
 
-    public class TankDiedMsg : GameUnitMessageBase
+    public class UnitDestroyMessage : UnitMessageBase
     {
         public override GameMsgType Type
         {
-            get
-            {
-                return GameMsgType.Died;
-            }
+            get { return GameMsgType.UnitDestroy; }
         }
     }
 
-    public class BulletStartedMsg : GameUnitMessageBase
+    public class BulletStartedMsg : UnitMessageBase
     {
         public override GameMsgType Type
         {
-            get
-            {
-                return GameMsgType.BulletStarted;
-            }
+            get { return GameMsgType.BulletStarted; }
         }
 
         public Vector3 Target;
         public float Force;
 
         public BulletStartedMsg()
-        { }
+        {
+        }
 
         public BulletStartedMsg(Vector3 target, float force)
         {
@@ -125,14 +118,14 @@ namespace TankGame.Network.Messages
         {
             base.Serialize(writer);
             writer.Write(Target);
-            writer.Write((double)Force);
+            writer.Write(Force);
         }
 
         public override void Deserialize(NetworkReader reader)
         {
             base.Deserialize(reader);
             Target = reader.ReadVector3();
-            Force = (float)reader.ReadDouble();
+            Force = reader.ReadSingle();
         }
     }
 
@@ -145,7 +138,8 @@ namespace TankGame.Network.Messages
         public bool IsAlive = true;
 
         public GameBattlePlayerInfo()
-        { }
+        {
+        }
 
         public GameBattlePlayerInfo(int unitId, string userName, Vector3 position, List<GameItemType> equippedItems)
         {
@@ -160,21 +154,7 @@ namespace TankGame.Network.Messages
     {
         public override GameMsgType Type
         {
-            get
-            {
-                return GameMsgType.ConnectToBattleRequest;
-            }
-        }
-        
-
-        public override void Serialize(NetworkWriter writer)
-        {
-            base.Serialize(writer);
-        }
-
-        public override void Deserialize(NetworkReader reader)
-        {
-            base.Deserialize(reader);
+            get { return GameMsgType.ConnectToBattleRequest; }
         }
     }
 
@@ -182,10 +162,7 @@ namespace TankGame.Network.Messages
     {
         public override GameMsgType Type
         {
-            get
-            {
-                return GameMsgType.OpponentRespawn;
-            }
+            get { return GameMsgType.OpponentRespawn; }
         }
 
         public GameBattlePlayerInfo Opponent;
@@ -203,40 +180,6 @@ namespace TankGame.Network.Messages
         }
     }
 
-    public class TankStateUpdateMsg : GameUnitMessageBase
-    {
-        public override GameMsgType Type
-        {
-            get
-            {
-                return GameMsgType.TankStateUpdate;
-            }
-        }
-
-        public Vector3 Pos;
-
-        public TankStateUpdateMsg()
-        {
-        }
-
-        public TankStateUpdateMsg(Vector3 pos)
-        {
-            Pos = pos;
-        }
-
-        public override void Serialize(NetworkWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write(Pos);
-        }
-
-        public override void Deserialize(NetworkReader reader)
-        {
-            base.Deserialize(reader);
-            Pos = reader.ReadVector3();
-        }
-    }
-
     public class DropItemInfo
     {
         public GameItemType CatalogId;
@@ -249,10 +192,7 @@ namespace TankGame.Network.Messages
     {
         public override GameMsgType Type
         {
-            get
-            {
-                return GameMsgType.ConnectToBattleAnswer;
-            }
+            get { return GameMsgType.ConnectToBattleAnswer; }
         }
 
         public bool IsCanConnect;
@@ -283,16 +223,14 @@ namespace TankGame.Network.Messages
     {
         public override GameMsgType Type
         {
-            get
-            {
-                return GameMsgType.CreateDropItem;
-            }
+            get { return GameMsgType.CreateDropItem; }
         }
 
         public DropItemInfo DropInfo;
 
         public CreateDropItemMsg()
-        { }
+        {
+        }
 
         public override void Serialize(NetworkWriter writer)
         {
@@ -311,16 +249,14 @@ namespace TankGame.Network.Messages
     {
         public override GameMsgType Type
         {
-            get
-            {
-                return GameMsgType.PickupGameItem;
-            }
+            get { return GameMsgType.PickupGameItem; }
         }
 
         public DropItemInfo DropInfo;
 
         public PickUpGameItemMsg()
-        { }
+        {
+        }
 
         public override void Serialize(NetworkWriter writer)
         {

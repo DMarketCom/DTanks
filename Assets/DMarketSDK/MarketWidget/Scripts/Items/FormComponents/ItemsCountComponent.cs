@@ -10,8 +10,9 @@ namespace DMarketSDK.Market.Containers
         [SerializeField]
         private TextMeshProUGUI _txtItemsFound;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _textFormat = _txtItemsFound.text;
         }
 

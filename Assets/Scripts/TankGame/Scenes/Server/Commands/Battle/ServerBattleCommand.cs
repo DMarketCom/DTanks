@@ -8,36 +8,28 @@ namespace TankGame.GameServer.Commands.Battle
         {
             switch (message.Type)
             {
-                case GameMsgType.UnitMoved:
-                    UpdateTankPos(message as UnitMovedMsg);
+                case GameMsgType.UnitPosition:
+                    OnUnitPositionUpdate(message as UnitPositionMessage);
                     break;
-                case GameMsgType.TankStateUpdate:
-                    UpdateTankState(message as TankStateUpdateMsg);
-                    break;
-                case GameMsgType.Died:
-                    OnTankDied(message as TankDiedMsg);
-                    break;
-                default:
-                    Server.SendToAllExcept(message, message.ClientId);
+                case GameMsgType.UnitDestroy:
+                    OnUnitDestroy(message as UnitDestroyMessage);
                     break;
             }
         }
 
-        private void UpdateTankPos(UnitMovedMsg message)
+        private void OnUnitPositionUpdate(UnitPositionMessage message)
         {
-            Model.UnitsInBattle[message.ClientId].Position = message.Pos;
+            GameBattlePlayerInfo battlePlayer = Model.GetBattlePlayer(message.ClientId);
+            battlePlayer.Position = message.Position;
+
             Server.SendToAllExcept(message, message.ClientId);
         }
 
-        private void UpdateTankState(TankStateUpdateMsg message)
+        private void OnUnitDestroy(UnitDestroyMessage message)
         {
-            Model.UnitsInBattle[message.ClientId].Position = message.Pos;
-            Server.SendToAllExcept(message, message.ClientId);
-        }
+            GameBattlePlayerInfo battlePlayer = Model.GetBattlePlayer(message.ClientId);
+            battlePlayer.IsAlive = false;
 
-        private void OnTankDied(TankDiedMsg message)
-        {
-            Model.UnitsInBattle[message.ClientId].IsAlive = false;
             Server.SendToAllExcept(message, message.ClientId);
         }
     }

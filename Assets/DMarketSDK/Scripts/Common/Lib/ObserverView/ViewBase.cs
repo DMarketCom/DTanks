@@ -1,21 +1,15 @@
-﻿using UnityEngine;
-
-namespace SHLibrary.ObserverView
+﻿namespace SHLibrary.ObserverView
 {
-    public abstract class ViewBase : MonoBehaviour
+    public abstract class ViewBase : UnityBehaviourBase
     {
-        protected virtual void Start()
+        public virtual void Show()
         {
+            gameObject.SetActive(true);
         }
 
         public virtual void Hide()
         {
             gameObject.SetActive(false);
-        }
-
-        public virtual void Show()
-        {
-            gameObject.SetActive(true);
         }
     }
 }
